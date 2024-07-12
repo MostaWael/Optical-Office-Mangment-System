@@ -15,6 +15,8 @@ namespace Optical_Office_Mangment_System
         public MainForm()
         {
             InitializeComponent();
+            this.dateTimePickerAnalyticsMonthley.Format = DateTimePickerFormat.Custom;
+            this.dateTimePickerAnalyticsMonthley.CustomFormat = "MMMM yyyy";
         }
     }
 }

@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -95,6 +101,14 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabWorkers = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -140,14 +154,20 @@
             this.tabAnalytics = new System.Windows.Forms.TabPage();
             this.tabPageReportUpload = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.button16 = new System.Windows.Forms.Button();
-            this.label39 = new System.Windows.Forms.Label();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.dateTimePickerAnalyticsMonthley = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -164,13 +184,18 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabWorkers.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox8.SuspendLayout();
-            this.groupBox13.SuspendLayout();
+            this.tabAnalytics.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -833,6 +858,80 @@
             this.tabWorkers.Text = "العاملين";
             this.tabWorkers.UseVisualStyleBackColor = true;
             // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.comboBox11);
+            this.groupBox13.Controls.Add(this.textBox24);
+            this.groupBox13.Controls.Add(this.label35);
+            this.groupBox13.Controls.Add(this.textBox26);
+            this.groupBox13.Controls.Add(this.label38);
+            this.groupBox13.Controls.Add(this.button16);
+            this.groupBox13.Controls.Add(this.label39);
+            this.groupBox13.Location = new System.Drawing.Point(8, 436);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(399, 266);
+            this.groupBox13.TabIndex = 22;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "أضافة هالك";
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Location = new System.Drawing.Point(10, 58);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(231, 32);
+            this.comboBox11.TabIndex = 20;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(90, 142);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(151, 32);
+            this.textBox24.TabIndex = 19;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(247, 142);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(119, 24);
+            this.label35.TabIndex = 18;
+            this.label35.Text = "قيمة الهوالك:";
+            // 
+            // textBox26
+            // 
+            this.textBox26.Location = new System.Drawing.Point(38, 100);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(203, 32);
+            this.textBox26.TabIndex = 15;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(247, 108);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(73, 24);
+            this.label38.TabIndex = 14;
+            this.label38.Text = "المرتب:";
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(114, 187);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(101, 44);
+            this.button16.TabIndex = 13;
+            this.button16.Text = "تقبيض";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(247, 61);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(113, 24);
+            this.label39.TabIndex = 5;
+            this.label39.Text = "أسم العامل:";
+            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.comboBox10);
@@ -1225,6 +1324,13 @@
             // 
             // tabAnalytics
             // 
+            this.tabAnalytics.Controls.Add(this.dateTimePickerAnalyticsMonthley);
+            this.tabAnalytics.Controls.Add(this.label44);
+            this.tabAnalytics.Controls.Add(this.label43);
+            this.tabAnalytics.Controls.Add(this.dateTimePicker3);
+            this.tabAnalytics.Controls.Add(this.chart1);
+            this.tabAnalytics.Controls.Add(this.groupBox15);
+            this.tabAnalytics.Controls.Add(this.groupBox14);
             this.tabAnalytics.Location = new System.Drawing.Point(4, 33);
             this.tabAnalytics.Name = "tabAnalytics";
             this.tabAnalytics.Size = new System.Drawing.Size(1359, 673);
@@ -1251,79 +1357,148 @@
             this.tabPage1.Text = "المخزن";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox13
+            // groupBox14
             // 
-            this.groupBox13.Controls.Add(this.comboBox11);
-            this.groupBox13.Controls.Add(this.textBox24);
-            this.groupBox13.Controls.Add(this.label35);
-            this.groupBox13.Controls.Add(this.textBox26);
-            this.groupBox13.Controls.Add(this.label38);
-            this.groupBox13.Controls.Add(this.button16);
-            this.groupBox13.Controls.Add(this.label39);
-            this.groupBox13.Location = new System.Drawing.Point(8, 436);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(399, 266);
-            this.groupBox13.TabIndex = 22;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "أضافة هالك";
+            this.groupBox14.Controls.Add(this.chart2);
+            this.groupBox14.Location = new System.Drawing.Point(8, 30);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(533, 269);
+            this.groupBox14.TabIndex = 2;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "المبيعات";
             // 
-            // comboBox11
+            // groupBox15
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(10, 58);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(231, 32);
-            this.comboBox11.TabIndex = 20;
+            this.groupBox15.Controls.Add(this.textBox29);
+            this.groupBox15.Controls.Add(this.label42);
+            this.groupBox15.Controls.Add(this.textBox28);
+            this.groupBox15.Controls.Add(this.label41);
+            this.groupBox15.Controls.Add(this.textBox27);
+            this.groupBox15.Controls.Add(this.label40);
+            this.groupBox15.Location = new System.Drawing.Point(559, 30);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(418, 269);
+            this.groupBox15.TabIndex = 3;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "الأرباح";
             // 
-            // textBox24
+            // label40
             // 
-            this.textBox24.Location = new System.Drawing.Point(90, 142);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(151, 32);
-            this.textBox24.TabIndex = 19;
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(295, 57);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(65, 24);
+            this.label40.TabIndex = 0;
+            this.label40.Text = "الأرباح:";
             // 
-            // label35
+            // textBox27
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(247, 142);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(119, 24);
-            this.label35.TabIndex = 18;
-            this.label35.Text = "قيمة الهوالك:";
+            this.textBox27.Location = new System.Drawing.Point(18, 57);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.ReadOnly = true;
+            this.textBox27.Size = new System.Drawing.Size(262, 32);
+            this.textBox27.TabIndex = 1;
             // 
-            // textBox26
+            // textBox28
             // 
-            this.textBox26.Location = new System.Drawing.Point(38, 100);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(203, 32);
-            this.textBox26.TabIndex = 15;
+            this.textBox28.Location = new System.Drawing.Point(18, 104);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.ReadOnly = true;
+            this.textBox28.Size = new System.Drawing.Size(262, 32);
+            this.textBox28.TabIndex = 3;
             // 
-            // label38
+            // label41
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(247, 108);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(73, 24);
-            this.label38.TabIndex = 14;
-            this.label38.Text = "المرتب:";
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(295, 104);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(83, 24);
+            this.label41.TabIndex = 2;
+            this.label41.Text = "الخسائر:";
             // 
-            // button16
+            // textBox29
             // 
-            this.button16.Location = new System.Drawing.Point(114, 187);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(101, 44);
-            this.button16.TabIndex = 13;
-            this.button16.Text = "تقبيض";
-            this.button16.UseVisualStyleBackColor = true;
+            this.textBox29.Location = new System.Drawing.Point(18, 163);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.ReadOnly = true;
+            this.textBox29.Size = new System.Drawing.Size(262, 32);
+            this.textBox29.TabIndex = 5;
             // 
-            // label39
+            // label42
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(247, 61);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(113, 24);
-            this.label39.TabIndex = 5;
-            this.label39.Text = "أسم العامل:";
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(286, 171);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(120, 24);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "صافى الأرباح:";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(8, 328);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(969, 303);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(6, 31);
+            this.chart2.Name = "chart2";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(508, 223);
+            this.chart2.TabIndex = 1;
+            this.chart2.Text = "chart2";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Location = new System.Drawing.Point(991, 61);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(279, 28);
+            this.dateTimePicker3.TabIndex = 4;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(1276, 65);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(56, 24);
+            this.label43.TabIndex = 5;
+            this.label43.Text = "اليوم:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(1276, 120);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(68, 24);
+            this.label44.TabIndex = 6;
+            this.label44.Text = "الشهر:";
+            // 
+            // dateTimePickerAnalyticsMonthley
+            // 
+            this.dateTimePickerAnalyticsMonthley.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerAnalyticsMonthley.Location = new System.Drawing.Point(991, 116);
+            this.dateTimePickerAnalyticsMonthley.Name = "dateTimePickerAnalyticsMonthley";
+            this.dateTimePickerAnalyticsMonthley.Size = new System.Drawing.Size(279, 28);
+            this.dateTimePickerAnalyticsMonthley.TabIndex = 7;
             // 
             // MainForm
             // 
@@ -1358,6 +1533,8 @@
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabWorkers.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -1369,8 +1546,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
+            this.tabAnalytics.ResumeLayout(false);
+            this.tabAnalytics.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1497,5 +1679,19 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAnalyticsMonthley;
     }
 }
