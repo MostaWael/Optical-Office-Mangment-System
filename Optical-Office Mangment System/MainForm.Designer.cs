@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBox43 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCustomersNames = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCustomers = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -58,23 +61,23 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCustomerPayMoney = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCustomerMoney = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCustomersNamesInfoBills = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabSuppliers = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -169,6 +172,21 @@
             this.tabPageReportUpload = new System.Windows.Forms.TabPage();
             this.button17 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.textBox41 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.button20 = new System.Windows.Forms.Button();
+            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
@@ -189,14 +207,36 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.GlassType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTimeCustomerAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTimeSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaidSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemainSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTimeWorkerAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeaonWorker = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalaryRemain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WareHoussGlassType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WareHoussGlassCyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WareHoussGlassSph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WareHoussGlassTypeQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabCustomers.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -220,9 +260,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPageReportUpload.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -248,10 +290,13 @@
             // 
             // tabBills
             // 
+            this.tabBills.Controls.Add(this.button22);
+            this.tabBills.Controls.Add(this.label58);
+            this.tabBills.Controls.Add(this.textBox43);
             this.tabBills.Controls.Add(this.button2);
             this.tabBills.Controls.Add(this.button1);
             this.tabBills.Controls.Add(this.dataGridView1);
-            this.tabBills.Controls.Add(this.comboBox1);
+            this.tabBills.Controls.Add(this.comboBoxCustomersNames);
             this.tabBills.Controls.Add(this.label1);
             this.tabBills.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabBills.ForeColor = System.Drawing.Color.Black;
@@ -262,6 +307,32 @@
             this.tabBills.TabIndex = 0;
             this.tabBills.Text = "الفواتير";
             this.tabBills.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.ForeColor = System.Drawing.Color.SpringGreen;
+            this.button22.Location = new System.Drawing.Point(79, 46);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(173, 47);
+            this.button22.TabIndex = 7;
+            this.button22.Text = "أضافة";
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(667, 57);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(102, 24);
+            this.label58.TabIndex = 6;
+            this.label58.Text = "كود المنتج:";
+            // 
+            // textBox43
+            // 
+            this.textBox43.Location = new System.Drawing.Point(404, 49);
+            this.textBox43.Name = "textBox43";
+            this.textBox43.Size = new System.Drawing.Size(239, 32);
+            this.textBox43.TabIndex = 5;
             // 
             // button2
             // 
@@ -286,6 +357,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GlassType,
+            this.OpticType,
+            this.Cyl,
+            this.Sph,
+            this.Quantity,
+            this.Price,
+            this.TotalPrice});
             this.dataGridView1.Location = new System.Drawing.Point(6, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -293,14 +372,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(1347, 448);
             this.dataGridView1.TabIndex = 2;
             // 
-            // comboBox1
+            // comboBoxCustomersNames
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(959, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox1.Size = new System.Drawing.Size(241, 32);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxCustomersNames.FormattingEnabled = true;
+            this.comboBoxCustomersNames.Location = new System.Drawing.Point(959, 49);
+            this.comboBoxCustomersNames.Name = "comboBoxCustomersNames";
+            this.comboBoxCustomersNames.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBoxCustomersNames.Size = new System.Drawing.Size(241, 32);
+            this.comboBoxCustomersNames.TabIndex = 1;
             // 
             // label1
             // 
@@ -315,7 +394,7 @@
             // 
             this.tabCustomers.Controls.Add(this.groupBox4);
             this.tabCustomers.Controls.Add(this.groupBox3);
-            this.tabCustomers.Controls.Add(this.groupBox2);
+            this.tabCustomers.Controls.Add(this.groupBox);
             this.tabCustomers.Controls.Add(this.groupBox1);
             this.tabCustomers.Location = new System.Drawing.Point(4, 33);
             this.tabCustomers.Name = "tabCustomers";
@@ -407,7 +486,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.comboBox4);
+            this.groupBox3.Controls.Add(this.comboBoxCustomerPayMoney);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(50, 25);
             this.groupBox3.Name = "groupBox3";
@@ -473,13 +552,13 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "الأجمالى:";
             // 
-            // comboBox4
+            // comboBoxCustomerPayMoney
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(22, 45);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(263, 32);
-            this.comboBox4.TabIndex = 5;
+            this.comboBoxCustomerPayMoney.FormattingEnabled = true;
+            this.comboBoxCustomerPayMoney.Location = new System.Drawing.Point(22, 45);
+            this.comboBoxCustomerPayMoney.Name = "comboBoxCustomerPayMoney";
+            this.comboBoxCustomerPayMoney.Size = new System.Drawing.Size(263, 32);
+            this.comboBoxCustomerPayMoney.TabIndex = 5;
             // 
             // label7
             // 
@@ -490,22 +569,22 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "العميل:";
             // 
-            // groupBox2
+            // groupBox
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dataGridView3);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(451, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(399, 624);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "أستعلام عن الحساب";
+            this.groupBox.Controls.Add(this.button4);
+            this.groupBox.Controls.Add(this.label6);
+            this.groupBox.Controls.Add(this.dateTimePicker2);
+            this.groupBox.Controls.Add(this.dataGridView3);
+            this.groupBox.Controls.Add(this.textBox1);
+            this.groupBox.Controls.Add(this.label5);
+            this.groupBox.Controls.Add(this.comboBoxCustomerMoney);
+            this.groupBox.Controls.Add(this.label4);
+            this.groupBox.Location = new System.Drawing.Point(451, 25);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(399, 624);
+            this.groupBox.TabIndex = 1;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "أستعلام عن الحساب";
             // 
             // button4
             // 
@@ -536,17 +615,23 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DateTimeCustomerAccount,
+            this.Bill,
+            this.Paid,
+            this.Remain});
             this.dataGridView3.Location = new System.Drawing.Point(33, 194);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 26;
-            this.dataGridView3.Size = new System.Drawing.Size(320, 352);
+            this.dataGridView3.Size = new System.Drawing.Size(349, 352);
             this.dataGridView3.TabIndex = 6;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(145, 108);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(151, 32);
             this.textBox1.TabIndex = 5;
             // 
@@ -559,13 +644,13 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "الأجمالى:";
             // 
-            // comboBox3
+            // comboBoxCustomerMoney
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(49, 61);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(263, 32);
-            this.comboBox3.TabIndex = 3;
+            this.comboBoxCustomerMoney.FormattingEnabled = true;
+            this.comboBoxCustomerMoney.Location = new System.Drawing.Point(49, 61);
+            this.comboBoxCustomerMoney.Name = "comboBoxCustomerMoney";
+            this.comboBoxCustomerMoney.Size = new System.Drawing.Size(263, 32);
+            this.comboBoxCustomerMoney.TabIndex = 3;
             // 
             // label4
             // 
@@ -582,7 +667,7 @@
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBoxCustomersNamesInfoBills);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(893, 25);
             this.groupBox1.Name = "groupBox1";
@@ -593,7 +678,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(132, 564);
+            this.button3.Location = new System.Drawing.Point(153, 564);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 44);
             this.button3.TabIndex = 5;
@@ -603,11 +688,14 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(69, 155);
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DateTime,
+            this.Total});
+            this.dataGridView2.Location = new System.Drawing.Point(53, 155);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowHeadersWidth = 45;
             this.dataGridView2.RowTemplate.Height = 26;
-            this.dataGridView2.Size = new System.Drawing.Size(279, 391);
+            this.dataGridView2.Size = new System.Drawing.Size(295, 391);
             this.dataGridView2.TabIndex = 4;
             // 
             // label3
@@ -627,13 +715,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(279, 28);
             this.dateTimePicker1.TabIndex = 2;
             // 
-            // comboBox2
+            // comboBoxCustomersNamesInfoBills
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(69, 61);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(263, 32);
-            this.comboBox2.TabIndex = 1;
+            this.comboBoxCustomersNamesInfoBills.FormattingEnabled = true;
+            this.comboBoxCustomersNamesInfoBills.Location = new System.Drawing.Point(69, 61);
+            this.comboBoxCustomersNamesInfoBills.Name = "comboBoxCustomersNamesInfoBills";
+            this.comboBoxCustomersNamesInfoBills.Size = new System.Drawing.Size(263, 32);
+            this.comboBoxCustomersNamesInfoBills.TabIndex = 1;
             // 
             // label2
             // 
@@ -830,6 +918,10 @@
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DateTimeSupportAccount,
+            this.PaidSupportAccount,
+            this.RemainSupportAccount});
             this.dataGridView4.Location = new System.Drawing.Point(33, 166);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
@@ -1237,6 +1329,10 @@
             // dataGridView5
             // 
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DateTimeWorkerAccount,
+            this.LeaonWorker,
+            this.SalaryRemain});
             this.dataGridView5.Location = new System.Drawing.Point(33, 166);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowHeadersWidth = 51;
@@ -1274,9 +1370,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(318, 61);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 24);
+            this.label25.Size = new System.Drawing.Size(68, 24);
             this.label25.TabIndex = 2;
-            this.label25.Text = "المورد:";
+            this.label25.Text = "العامل:";
             // 
             // groupBox8
             // 
@@ -1403,16 +1499,16 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea21.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea21);
+            legend21.Name = "Legend1";
+            this.chart1.Legends.Add(legend21);
             this.chart1.Location = new System.Drawing.Point(8, 328);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series21.ChartArea = "ChartArea1";
+            series21.Legend = "Legend1";
+            series21.Name = "Series1";
+            this.chart1.Series.Add(series21);
             this.chart1.Size = new System.Drawing.Size(969, 303);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1495,17 +1591,17 @@
             // 
             // chart2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            chartArea22.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea22);
+            legend22.Name = "Legend1";
+            this.chart2.Legends.Add(legend22);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
+            series22.ChartArea = "ChartArea1";
+            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series22.Legend = "Legend1";
+            series22.Name = "Series1";
+            this.chart2.Series.Add(series22);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -1531,6 +1627,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox19);
+            this.tabPage1.Controls.Add(this.groupBox18);
             this.tabPage1.Controls.Add(this.dataGridView6);
             this.tabPage1.Controls.Add(this.groupBox17);
             this.tabPage1.Controls.Add(this.groupBox16);
@@ -1541,6 +1639,149 @@
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "المخزن";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.textBox41);
+            this.groupBox19.Controls.Add(this.label56);
+            this.groupBox19.Controls.Add(this.button21);
+            this.groupBox19.Controls.Add(this.textBox42);
+            this.groupBox19.Controls.Add(this.label57);
+            this.groupBox19.Location = new System.Drawing.Point(270, 476);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(537, 194);
+            this.groupBox19.TabIndex = 7;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "تعديل اسعار";
+            // 
+            // textBox41
+            // 
+            this.textBox41.Location = new System.Drawing.Point(14, 51);
+            this.textBox41.Name = "textBox41";
+            this.textBox41.Size = new System.Drawing.Size(107, 32);
+            this.textBox41.TabIndex = 6;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(127, 59);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(145, 24);
+            this.label56.TabIndex = 5;
+            this.label56.Text = "السعر الأضافى :";
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(216, 141);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(103, 42);
+            this.button21.TabIndex = 4;
+            this.button21.Text = "تعديل";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // textBox42
+            // 
+            this.textBox42.Location = new System.Drawing.Point(280, 51);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.Size = new System.Drawing.Size(107, 32);
+            this.textBox42.TabIndex = 3;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(393, 59);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(138, 24);
+            this.label57.TabIndex = 2;
+            this.label57.Text = "القيمة الأضافية:";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.textBox40);
+            this.groupBox18.Controls.Add(this.label55);
+            this.groupBox18.Controls.Add(this.button20);
+            this.groupBox18.Controls.Add(this.textBox38);
+            this.groupBox18.Controls.Add(this.label53);
+            this.groupBox18.Controls.Add(this.textBox39);
+            this.groupBox18.Controls.Add(this.label54);
+            this.groupBox18.Location = new System.Drawing.Point(270, 265);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(537, 201);
+            this.groupBox18.TabIndex = 3;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "تعديل اسعار";
+            // 
+            // textBox40
+            // 
+            this.textBox40.Location = new System.Drawing.Point(65, 83);
+            this.textBox40.Name = "textBox40";
+            this.textBox40.Size = new System.Drawing.Size(107, 32);
+            this.textBox40.TabIndex = 6;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(178, 91);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(145, 24);
+            this.label55.TabIndex = 5;
+            this.label55.Text = "السعر الأضافى :";
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(216, 141);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(103, 42);
+            this.button20.TabIndex = 4;
+            this.button20.Text = "تعديل";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // textBox38
+            // 
+            this.textBox38.Location = new System.Drawing.Point(349, 83);
+            this.textBox38.Name = "textBox38";
+            this.textBox38.Size = new System.Drawing.Size(107, 32);
+            this.textBox38.TabIndex = 3;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(462, 91);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(67, 24);
+            this.label53.TabIndex = 2;
+            this.label53.Text = "السعر:";
+            // 
+            // textBox39
+            // 
+            this.textBox39.Location = new System.Drawing.Point(162, 31);
+            this.textBox39.Name = "textBox39";
+            this.textBox39.Size = new System.Drawing.Size(294, 32);
+            this.textBox39.TabIndex = 1;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(462, 34);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(57, 24);
+            this.label54.TabIndex = 0;
+            this.label54.Text = "الكود:";
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.WareHoussGlassType,
+            this.WareHoussGlassCyl,
+            this.WareHoussGlassSph,
+            this.WareHoussGlassTypeQuantity});
+            this.dataGridView6.Location = new System.Drawing.Point(813, 265);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersWidth = 51;
+            this.dataGridView6.RowTemplate.Height = 26;
+            this.dataGridView6.Size = new System.Drawing.Size(538, 400);
+            this.dataGridView6.TabIndex = 2;
             // 
             // groupBox17
             // 
@@ -1724,15 +1965,170 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
-            // dataGridView6
+            // GlassType
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(8, 265);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersWidth = 51;
-            this.dataGridView6.RowTemplate.Height = 26;
-            this.dataGridView6.Size = new System.Drawing.Size(1343, 400);
-            this.dataGridView6.TabIndex = 2;
+            this.GlassType.HeaderText = "نوع الشمبر";
+            this.GlassType.Items.AddRange(new object[] {
+            "هاف",
+            "فريمليس",
+            "عادى"});
+            this.GlassType.MinimumWidth = 6;
+            this.GlassType.Name = "GlassType";
+            this.GlassType.Width = 125;
+            // 
+            // OpticType
+            // 
+            this.OpticType.HeaderText = "نوع العدسة";
+            this.OpticType.MinimumWidth = 6;
+            this.OpticType.Name = "OpticType";
+            this.OpticType.Width = 125;
+            // 
+            // Cyl
+            // 
+            this.Cyl.HeaderText = "Cyl";
+            this.Cyl.MinimumWidth = 6;
+            this.Cyl.Name = "Cyl";
+            this.Cyl.Width = 125;
+            // 
+            // Sph
+            // 
+            this.Sph.HeaderText = "Sph";
+            this.Sph.MinimumWidth = 6;
+            this.Sph.Name = "Sph";
+            this.Sph.Width = 125;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "الكمية";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 125;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "السعر";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.HeaderText = "السعر الأجمالى";
+            this.TotalPrice.MinimumWidth = 6;
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.Width = 125;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "الأجمالى";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.Width = 125;
+            // 
+            // DateTime
+            // 
+            this.DateTime.HeaderText = "التاريخ";
+            this.DateTime.MinimumWidth = 6;
+            this.DateTime.Name = "DateTime";
+            this.DateTime.Width = 125;
+            // 
+            // DateTimeCustomerAccount
+            // 
+            this.DateTimeCustomerAccount.HeaderText = "التاريخ";
+            this.DateTimeCustomerAccount.MinimumWidth = 6;
+            this.DateTimeCustomerAccount.Name = "DateTimeCustomerAccount";
+            this.DateTimeCustomerAccount.Width = 125;
+            // 
+            // Bill
+            // 
+            this.Bill.HeaderText = "الفاتورة";
+            this.Bill.MinimumWidth = 6;
+            this.Bill.Name = "Bill";
+            this.Bill.Width = 125;
+            // 
+            // Paid
+            // 
+            this.Paid.HeaderText = "المدفوع";
+            this.Paid.MinimumWidth = 6;
+            this.Paid.Name = "Paid";
+            this.Paid.Width = 125;
+            // 
+            // Remain
+            // 
+            this.Remain.HeaderText = "الباقى";
+            this.Remain.MinimumWidth = 6;
+            this.Remain.Name = "Remain";
+            this.Remain.Width = 125;
+            // 
+            // DateTimeSupportAccount
+            // 
+            this.DateTimeSupportAccount.HeaderText = "التاريخ";
+            this.DateTimeSupportAccount.MinimumWidth = 6;
+            this.DateTimeSupportAccount.Name = "DateTimeSupportAccount";
+            this.DateTimeSupportAccount.Width = 125;
+            // 
+            // PaidSupportAccount
+            // 
+            this.PaidSupportAccount.HeaderText = "المدفوع";
+            this.PaidSupportAccount.MinimumWidth = 6;
+            this.PaidSupportAccount.Name = "PaidSupportAccount";
+            this.PaidSupportAccount.Width = 125;
+            // 
+            // RemainSupportAccount
+            // 
+            this.RemainSupportAccount.HeaderText = "الباقى";
+            this.RemainSupportAccount.MinimumWidth = 6;
+            this.RemainSupportAccount.Name = "RemainSupportAccount";
+            this.RemainSupportAccount.Width = 125;
+            // 
+            // DateTimeWorkerAccount
+            // 
+            this.DateTimeWorkerAccount.HeaderText = "التاريخ";
+            this.DateTimeWorkerAccount.MinimumWidth = 6;
+            this.DateTimeWorkerAccount.Name = "DateTimeWorkerAccount";
+            this.DateTimeWorkerAccount.Width = 125;
+            // 
+            // LeaonWorker
+            // 
+            this.LeaonWorker.HeaderText = "الأستلاف";
+            this.LeaonWorker.MinimumWidth = 6;
+            this.LeaonWorker.Name = "LeaonWorker";
+            this.LeaonWorker.Width = 125;
+            // 
+            // SalaryRemain
+            // 
+            this.SalaryRemain.HeaderText = "الباقى";
+            this.SalaryRemain.MinimumWidth = 6;
+            this.SalaryRemain.Name = "SalaryRemain";
+            this.SalaryRemain.Width = 125;
+            // 
+            // WareHoussGlassType
+            // 
+            this.WareHoussGlassType.HeaderText = "توع العدسة";
+            this.WareHoussGlassType.MinimumWidth = 6;
+            this.WareHoussGlassType.Name = "WareHoussGlassType";
+            this.WareHoussGlassType.Width = 125;
+            // 
+            // WareHoussGlassCyl
+            // 
+            this.WareHoussGlassCyl.HeaderText = "Cyl";
+            this.WareHoussGlassCyl.MinimumWidth = 6;
+            this.WareHoussGlassCyl.Name = "WareHoussGlassCyl";
+            this.WareHoussGlassCyl.Width = 125;
+            // 
+            // WareHoussGlassSph
+            // 
+            this.WareHoussGlassSph.HeaderText = "Sph";
+            this.WareHoussGlassSph.MinimumWidth = 6;
+            this.WareHoussGlassSph.Name = "WareHoussGlassSph";
+            this.WareHoussGlassSph.Width = 125;
+            // 
+            // WareHoussGlassTypeQuantity
+            // 
+            this.WareHoussGlassTypeQuantity.HeaderText = "الكمية";
+            this.WareHoussGlassTypeQuantity.MinimumWidth = 6;
+            this.WareHoussGlassTypeQuantity.Name = "WareHoussGlassTypeQuantity";
+            this.WareHoussGlassTypeQuantity.Width = 125;
             // 
             // MainForm
             // 
@@ -1752,8 +2148,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1789,11 +2185,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.tabPageReportUpload.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1807,7 +2207,7 @@
         private System.Windows.Forms.TabPage tabWorkers;
         private System.Windows.Forms.TabPage tabAnalytics;
         private System.Windows.Forms.TabPage tabPageReportUpload;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCustomersNames;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
@@ -1815,12 +2215,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxCustomersNamesInfoBills;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.ComboBox comboBoxCustomerMoney;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -1831,7 +2231,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxCustomerPayMoney;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox4;
@@ -1956,5 +2356,45 @@
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.TextBox textBox41;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.DataGridViewComboBoxColumn GlassType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OpticType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cyl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sph;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeCustomerAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Remain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeSupportAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaidSupportAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RemainSupportAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeWorkerAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LeaonWorker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SalaryRemain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WareHoussGlassType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WareHoussGlassCyl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WareHoussGlassSph;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WareHoussGlassTypeQuantity;
     }
 }

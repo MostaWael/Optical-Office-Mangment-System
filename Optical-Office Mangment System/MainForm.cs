@@ -15,8 +15,18 @@ namespace Optical_Office_Mangment_System
         public MainForm()
         {
             InitializeComponent();
+            //load the customers name to combo box
+            LoadDataIntowCustomerComboBoxName();
             this.dateTimePickerAnalyticsMonthley.Format = DateTimePickerFormat.Custom;
             this.dateTimePickerAnalyticsMonthley.CustomFormat = "MMMM yyyy";
+        }
+
+        private void LoadDataIntowCustomerComboBoxName()
+        {
+            comboBoxCustomersNames.Items.AddRange(new object[] { "مصطفى" , "خالد", "على", "وائل" });
+            comboBoxCustomersNamesInfoBills.Items.AddRange(new object[] { "مصطفى", "خالد", "على", "وائل" });
+            comboBoxCustomerMoney.Items.AddRange(new object[] { "مصطفى", "خالد", "على", "وائل" });
+            comboBoxCustomerPayMoney.Items.AddRange(new object[] { "مصطفى", "خالد", "على", "وائل" });
         }
     }
 }
