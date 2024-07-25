@@ -10,12 +10,14 @@ namespace Optical_Office_Mangment_System.Models
     internal class CustomerPayments
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set;}
         
-        public DateTime PaymentDate { get; set; }
-        public decimal PaidTotal { get; set; }
+        public DateTime PaymentDate { get; set;}
+        public decimal PaidTotal { get; set;}
         public decimal Remain { get; set;}
-        public string BillNumber { get; set; }
+        public string BillNumber { get; set;}
         public string BillState { get; set;}
+    
+        public Customers Customer { get; set;}
     }
 }

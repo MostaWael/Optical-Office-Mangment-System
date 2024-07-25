@@ -13,5 +13,7 @@ namespace Optical_Office_Mangment_System.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Money { get; set; }
+    
+        public List<SuppliersPayment> Payments { get; set; }
     }
 }

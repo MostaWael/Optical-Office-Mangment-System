@@ -15,6 +15,8 @@ namespace Optical_Office_Mangment_System.Models
         public string PhoneNumber { get; set; }
         public string ComapnyName { get; set; }
 
+        public List<CustomerPayments> CustomerPayments { get; set; }
+        public List<Bill> Bills { get; set; }
     }
 
 }
