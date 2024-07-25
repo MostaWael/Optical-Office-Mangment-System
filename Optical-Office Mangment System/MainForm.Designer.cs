@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.button22 = new System.Windows.Forms.Button();
@@ -42,6 +42,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GlassType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceManfuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxCustomersNames = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCustomers = new System.Windows.Forms.TabPage();
@@ -68,6 +76,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.DateTimeCustomerAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCustomerMoney = new System.Windows.Forms.ComboBox();
@@ -75,6 +87,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCustomersNamesInfoBills = new System.Windows.Forms.ComboBox();
@@ -99,6 +113,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.DateTimeSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaidSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemainSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -142,6 +159,9 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.DateTimeWorkerAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeaonWorker = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalaryRemain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -187,6 +207,10 @@
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.WareHoussGlassType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WareHoussGlassCyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WareHoussGlassSph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WareHoussGlassTypeQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
@@ -207,29 +231,6 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.GlassType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sph = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTimeCustomerAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTimeSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaidSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RemainSupportAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTimeWorkerAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeaonWorker = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalaryRemain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WareHoussGlassType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WareHoussGlassCyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WareHoussGlassSph = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WareHoussGlassTypeQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -362,8 +363,9 @@
             this.OpticType,
             this.Cyl,
             this.Sph,
-            this.Quantity,
+            this.PriceManfuc,
             this.Price,
+            this.Quantity,
             this.TotalPrice});
             this.dataGridView1.Location = new System.Drawing.Point(6, 115);
             this.dataGridView1.Name = "dataGridView1";
@@ -371,6 +373,69 @@
             this.dataGridView1.RowTemplate.Height = 26;
             this.dataGridView1.Size = new System.Drawing.Size(1347, 448);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // GlassType
+            // 
+            this.GlassType.HeaderText = "نوع الشمبر";
+            this.GlassType.Items.AddRange(new object[] {
+            "هاف",
+            "الأنتى",
+            "فريمليس",
+            "عادى",
+            "الباى فوكل",
+            "المالتى فوكل"});
+            this.GlassType.MinimumWidth = 6;
+            this.GlassType.Name = "GlassType";
+            this.GlassType.Width = 125;
+            // 
+            // OpticType
+            // 
+            this.OpticType.HeaderText = "نوع العدسة";
+            this.OpticType.MinimumWidth = 6;
+            this.OpticType.Name = "OpticType";
+            this.OpticType.Width = 125;
+            // 
+            // Cyl
+            // 
+            this.Cyl.HeaderText = "Cyl";
+            this.Cyl.MinimumWidth = 6;
+            this.Cyl.Name = "Cyl";
+            this.Cyl.Width = 125;
+            // 
+            // Sph
+            // 
+            this.Sph.HeaderText = "Sph";
+            this.Sph.MinimumWidth = 6;
+            this.Sph.Name = "Sph";
+            this.Sph.Width = 125;
+            // 
+            // PriceManfuc
+            // 
+            this.PriceManfuc.HeaderText = "سعر التركيب";
+            this.PriceManfuc.MinimumWidth = 6;
+            this.PriceManfuc.Name = "PriceManfuc";
+            this.PriceManfuc.Width = 125;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "السعر";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "الكمية";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 125;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.HeaderText = "السعر الأجمالى";
+            this.TotalPrice.MinimumWidth = 6;
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.Width = 125;
             // 
             // comboBoxCustomersNames
             // 
@@ -627,6 +692,34 @@
             this.dataGridView3.Size = new System.Drawing.Size(349, 352);
             this.dataGridView3.TabIndex = 6;
             // 
+            // DateTimeCustomerAccount
+            // 
+            this.DateTimeCustomerAccount.HeaderText = "التاريخ";
+            this.DateTimeCustomerAccount.MinimumWidth = 6;
+            this.DateTimeCustomerAccount.Name = "DateTimeCustomerAccount";
+            this.DateTimeCustomerAccount.Width = 125;
+            // 
+            // Bill
+            // 
+            this.Bill.HeaderText = "الفاتورة";
+            this.Bill.MinimumWidth = 6;
+            this.Bill.Name = "Bill";
+            this.Bill.Width = 125;
+            // 
+            // Paid
+            // 
+            this.Paid.HeaderText = "المدفوع";
+            this.Paid.MinimumWidth = 6;
+            this.Paid.Name = "Paid";
+            this.Paid.Width = 125;
+            // 
+            // Remain
+            // 
+            this.Remain.HeaderText = "الباقى";
+            this.Remain.MinimumWidth = 6;
+            this.Remain.Name = "Remain";
+            this.Remain.Width = 125;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(145, 108);
@@ -697,6 +790,20 @@
             this.dataGridView2.RowTemplate.Height = 26;
             this.dataGridView2.Size = new System.Drawing.Size(295, 391);
             this.dataGridView2.TabIndex = 4;
+            // 
+            // DateTime
+            // 
+            this.DateTime.HeaderText = "التاريخ";
+            this.DateTime.MinimumWidth = 6;
+            this.DateTime.Name = "DateTime";
+            this.DateTime.Width = 125;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "الأجمالى";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.Width = 125;
             // 
             // label3
             // 
@@ -929,10 +1036,32 @@
             this.dataGridView4.Size = new System.Drawing.Size(320, 380);
             this.dataGridView4.TabIndex = 6;
             // 
+            // DateTimeSupportAccount
+            // 
+            this.DateTimeSupportAccount.HeaderText = "التاريخ";
+            this.DateTimeSupportAccount.MinimumWidth = 6;
+            this.DateTimeSupportAccount.Name = "DateTimeSupportAccount";
+            this.DateTimeSupportAccount.Width = 125;
+            // 
+            // PaidSupportAccount
+            // 
+            this.PaidSupportAccount.HeaderText = "المدفوع";
+            this.PaidSupportAccount.MinimumWidth = 6;
+            this.PaidSupportAccount.Name = "PaidSupportAccount";
+            this.PaidSupportAccount.Width = 125;
+            // 
+            // RemainSupportAccount
+            // 
+            this.RemainSupportAccount.HeaderText = "الباقى";
+            this.RemainSupportAccount.MinimumWidth = 6;
+            this.RemainSupportAccount.Name = "RemainSupportAccount";
+            this.RemainSupportAccount.Width = 125;
+            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(145, 108);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(151, 32);
             this.textBox8.TabIndex = 5;
             // 
@@ -1340,6 +1469,27 @@
             this.dataGridView5.Size = new System.Drawing.Size(346, 168);
             this.dataGridView5.TabIndex = 6;
             // 
+            // DateTimeWorkerAccount
+            // 
+            this.DateTimeWorkerAccount.HeaderText = "التاريخ";
+            this.DateTimeWorkerAccount.MinimumWidth = 6;
+            this.DateTimeWorkerAccount.Name = "DateTimeWorkerAccount";
+            this.DateTimeWorkerAccount.Width = 125;
+            // 
+            // LeaonWorker
+            // 
+            this.LeaonWorker.HeaderText = "الأستلاف";
+            this.LeaonWorker.MinimumWidth = 6;
+            this.LeaonWorker.Name = "LeaonWorker";
+            this.LeaonWorker.Width = 125;
+            // 
+            // SalaryRemain
+            // 
+            this.SalaryRemain.HeaderText = "الباقى";
+            this.SalaryRemain.MinimumWidth = 6;
+            this.SalaryRemain.Name = "SalaryRemain";
+            this.SalaryRemain.Width = 125;
+            // 
             // textBox16
             // 
             this.textBox16.Location = new System.Drawing.Point(145, 108);
@@ -1499,16 +1649,16 @@
             // 
             // chart1
             // 
-            chartArea21.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea21);
-            legend21.Name = "Legend1";
-            this.chart1.Legends.Add(legend21);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(8, 328);
             this.chart1.Name = "chart1";
-            series21.ChartArea = "ChartArea1";
-            series21.Legend = "Legend1";
-            series21.Name = "Series1";
-            this.chart1.Series.Add(series21);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(969, 303);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1591,17 +1741,17 @@
             // 
             // chart2
             // 
-            chartArea22.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea22);
-            legend22.Name = "Legend1";
-            this.chart2.Legends.Add(legend22);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series22.Legend = "Legend1";
-            series22.Name = "Series1";
-            this.chart2.Series.Add(series22);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -1618,7 +1768,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(557, 293);
+            this.button17.Location = new System.Drawing.Point(578, 279);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(227, 89);
             this.button17.TabIndex = 0;
@@ -1782,6 +1932,34 @@
             this.dataGridView6.RowTemplate.Height = 26;
             this.dataGridView6.Size = new System.Drawing.Size(538, 400);
             this.dataGridView6.TabIndex = 2;
+            // 
+            // WareHoussGlassType
+            // 
+            this.WareHoussGlassType.HeaderText = "توع العدسة";
+            this.WareHoussGlassType.MinimumWidth = 6;
+            this.WareHoussGlassType.Name = "WareHoussGlassType";
+            this.WareHoussGlassType.Width = 125;
+            // 
+            // WareHoussGlassCyl
+            // 
+            this.WareHoussGlassCyl.HeaderText = "Cyl";
+            this.WareHoussGlassCyl.MinimumWidth = 6;
+            this.WareHoussGlassCyl.Name = "WareHoussGlassCyl";
+            this.WareHoussGlassCyl.Width = 125;
+            // 
+            // WareHoussGlassSph
+            // 
+            this.WareHoussGlassSph.HeaderText = "Sph";
+            this.WareHoussGlassSph.MinimumWidth = 6;
+            this.WareHoussGlassSph.Name = "WareHoussGlassSph";
+            this.WareHoussGlassSph.Width = 125;
+            // 
+            // WareHoussGlassTypeQuantity
+            // 
+            this.WareHoussGlassTypeQuantity.HeaderText = "الكمية";
+            this.WareHoussGlassTypeQuantity.MinimumWidth = 6;
+            this.WareHoussGlassTypeQuantity.Name = "WareHoussGlassTypeQuantity";
+            this.WareHoussGlassTypeQuantity.Width = 125;
             // 
             // groupBox17
             // 
@@ -1964,171 +2142,6 @@
             this.label45.Size = new System.Drawing.Size(57, 24);
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
-            // 
-            // GlassType
-            // 
-            this.GlassType.HeaderText = "نوع الشمبر";
-            this.GlassType.Items.AddRange(new object[] {
-            "هاف",
-            "فريمليس",
-            "عادى"});
-            this.GlassType.MinimumWidth = 6;
-            this.GlassType.Name = "GlassType";
-            this.GlassType.Width = 125;
-            // 
-            // OpticType
-            // 
-            this.OpticType.HeaderText = "نوع العدسة";
-            this.OpticType.MinimumWidth = 6;
-            this.OpticType.Name = "OpticType";
-            this.OpticType.Width = 125;
-            // 
-            // Cyl
-            // 
-            this.Cyl.HeaderText = "Cyl";
-            this.Cyl.MinimumWidth = 6;
-            this.Cyl.Name = "Cyl";
-            this.Cyl.Width = 125;
-            // 
-            // Sph
-            // 
-            this.Sph.HeaderText = "Sph";
-            this.Sph.MinimumWidth = 6;
-            this.Sph.Name = "Sph";
-            this.Sph.Width = 125;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "الكمية";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "السعر";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.Width = 125;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.HeaderText = "السعر الأجمالى";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Width = 125;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "الأجمالى";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            this.Total.Width = 125;
-            // 
-            // DateTime
-            // 
-            this.DateTime.HeaderText = "التاريخ";
-            this.DateTime.MinimumWidth = 6;
-            this.DateTime.Name = "DateTime";
-            this.DateTime.Width = 125;
-            // 
-            // DateTimeCustomerAccount
-            // 
-            this.DateTimeCustomerAccount.HeaderText = "التاريخ";
-            this.DateTimeCustomerAccount.MinimumWidth = 6;
-            this.DateTimeCustomerAccount.Name = "DateTimeCustomerAccount";
-            this.DateTimeCustomerAccount.Width = 125;
-            // 
-            // Bill
-            // 
-            this.Bill.HeaderText = "الفاتورة";
-            this.Bill.MinimumWidth = 6;
-            this.Bill.Name = "Bill";
-            this.Bill.Width = 125;
-            // 
-            // Paid
-            // 
-            this.Paid.HeaderText = "المدفوع";
-            this.Paid.MinimumWidth = 6;
-            this.Paid.Name = "Paid";
-            this.Paid.Width = 125;
-            // 
-            // Remain
-            // 
-            this.Remain.HeaderText = "الباقى";
-            this.Remain.MinimumWidth = 6;
-            this.Remain.Name = "Remain";
-            this.Remain.Width = 125;
-            // 
-            // DateTimeSupportAccount
-            // 
-            this.DateTimeSupportAccount.HeaderText = "التاريخ";
-            this.DateTimeSupportAccount.MinimumWidth = 6;
-            this.DateTimeSupportAccount.Name = "DateTimeSupportAccount";
-            this.DateTimeSupportAccount.Width = 125;
-            // 
-            // PaidSupportAccount
-            // 
-            this.PaidSupportAccount.HeaderText = "المدفوع";
-            this.PaidSupportAccount.MinimumWidth = 6;
-            this.PaidSupportAccount.Name = "PaidSupportAccount";
-            this.PaidSupportAccount.Width = 125;
-            // 
-            // RemainSupportAccount
-            // 
-            this.RemainSupportAccount.HeaderText = "الباقى";
-            this.RemainSupportAccount.MinimumWidth = 6;
-            this.RemainSupportAccount.Name = "RemainSupportAccount";
-            this.RemainSupportAccount.Width = 125;
-            // 
-            // DateTimeWorkerAccount
-            // 
-            this.DateTimeWorkerAccount.HeaderText = "التاريخ";
-            this.DateTimeWorkerAccount.MinimumWidth = 6;
-            this.DateTimeWorkerAccount.Name = "DateTimeWorkerAccount";
-            this.DateTimeWorkerAccount.Width = 125;
-            // 
-            // LeaonWorker
-            // 
-            this.LeaonWorker.HeaderText = "الأستلاف";
-            this.LeaonWorker.MinimumWidth = 6;
-            this.LeaonWorker.Name = "LeaonWorker";
-            this.LeaonWorker.Width = 125;
-            // 
-            // SalaryRemain
-            // 
-            this.SalaryRemain.HeaderText = "الباقى";
-            this.SalaryRemain.MinimumWidth = 6;
-            this.SalaryRemain.Name = "SalaryRemain";
-            this.SalaryRemain.Width = 125;
-            // 
-            // WareHoussGlassType
-            // 
-            this.WareHoussGlassType.HeaderText = "توع العدسة";
-            this.WareHoussGlassType.MinimumWidth = 6;
-            this.WareHoussGlassType.Name = "WareHoussGlassType";
-            this.WareHoussGlassType.Width = 125;
-            // 
-            // WareHoussGlassCyl
-            // 
-            this.WareHoussGlassCyl.HeaderText = "Cyl";
-            this.WareHoussGlassCyl.MinimumWidth = 6;
-            this.WareHoussGlassCyl.Name = "WareHoussGlassCyl";
-            this.WareHoussGlassCyl.Width = 125;
-            // 
-            // WareHoussGlassSph
-            // 
-            this.WareHoussGlassSph.HeaderText = "Sph";
-            this.WareHoussGlassSph.MinimumWidth = 6;
-            this.WareHoussGlassSph.Name = "WareHoussGlassSph";
-            this.WareHoussGlassSph.Width = 125;
-            // 
-            // WareHoussGlassTypeQuantity
-            // 
-            this.WareHoussGlassTypeQuantity.HeaderText = "الكمية";
-            this.WareHoussGlassTypeQuantity.MinimumWidth = 6;
-            this.WareHoussGlassTypeQuantity.Name = "WareHoussGlassTypeQuantity";
-            this.WareHoussGlassTypeQuantity.Width = 125;
             // 
             // MainForm
             // 
@@ -2373,13 +2386,6 @@
         private System.Windows.Forms.TextBox textBox43;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.DataGridViewComboBoxColumn GlassType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OpticType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cyl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sph;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeCustomerAccount;
@@ -2396,5 +2402,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WareHoussGlassCyl;
         private System.Windows.Forms.DataGridViewTextBoxColumn WareHoussGlassSph;
         private System.Windows.Forms.DataGridViewTextBoxColumn WareHoussGlassTypeQuantity;
+        private System.Windows.Forms.DataGridViewComboBoxColumn GlassType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OpticType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cyl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sph;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceManfuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
     }
 }
