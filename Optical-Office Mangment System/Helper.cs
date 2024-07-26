@@ -18,5 +18,10 @@ namespace Optical_Office_Mangment_System
         {
             MessageBox.Show("مينفعش يكون فيه مكان فاضى", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        public static void ZeroValueWarning()
+        {
+            MessageBox.Show("مينفعش قيمة المرتب تبقى ب صفر", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,5 +22,20 @@ namespace Optical_Office_Mangment_System.Models
         public DbSet<Suppliers> Suppliers { get; set; }
         public DbSet<SuppliersPayment> SuppliersPayment { get; set; }
         public DbSet<Workers> Workers { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Optics>()
+                .HasMany(o => o.Workers)
+                .WithMany(w => w.Optics)
+                .Map(m =>
+                {
+                    m.ToTable("DestroyedOptics");
+                    m.MapLeftKey("Optics_Code");
+                    m.MapRightKey("Workers_Id");
+                });
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

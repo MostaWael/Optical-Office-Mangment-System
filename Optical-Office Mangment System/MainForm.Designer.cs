@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.button22 = new System.Windows.Forms.Button();
@@ -94,6 +94,14 @@
             this.comboBoxCustomersNamesInfoBills = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabSuppliers = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -167,6 +175,7 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownWorkerSalary = new System.Windows.Forms.NumericUpDown();
             this.label26 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.textBoxWorkerPhoneNumber = new System.Windows.Forms.TextBox();
@@ -211,18 +220,16 @@
             this.WareHoussGlassSph = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WareHoussGlassTypeQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
-            this.textBox36 = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.textBoxGlassesSignAddSection = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.textBoxCylAddSection = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.button19 = new System.Windows.Forms.Button();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.textBoxSphAddSection = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.textBoxGlassTypeCode = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.button18 = new System.Windows.Forms.Button();
@@ -230,15 +237,10 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.numericUpDownWorkerSalary = new System.Windows.Forms.NumericUpDown();
+            this.label61 = new System.Windows.Forms.Label();
+            this.numericUpDownAddTypePriceSell = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAddTypePriceBuy = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAddTypeQuantity = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -250,6 +252,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabSuppliers.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -262,6 +265,7 @@
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).BeginInit();
             this.tabAnalytics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox15.SuspendLayout();
@@ -274,8 +278,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceBuy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypeQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -862,6 +867,81 @@
             this.tabSuppliers.TabIndex = 2;
             this.tabSuppliers.Text = "الموردين";
             this.tabSuppliers.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button23);
+            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.label59);
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.label60);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label62);
+            this.groupBox2.Location = new System.Drawing.Point(133, 22);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(391, 241);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "اضافة مستحق";
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(152, 166);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(101, 44);
+            this.button23.TabIndex = 12;
+            this.button23.Text = "أضافة";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(128, 118);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(151, 32);
+            this.textBox5.TabIndex = 11;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(285, 118);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(91, 24);
+            this.label59.TabIndex = 10;
+            this.label59.Text = "الأجمالى:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(128, 80);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(151, 32);
+            this.textBox6.TabIndex = 9;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(285, 80);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(71, 24);
+            this.label60.TabIndex = 8;
+            this.label60.Text = "المضاف";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 42);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(263, 32);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(291, 45);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(71, 24);
+            this.label62.TabIndex = 4;
+            this.label62.Text = "العميل:";
             // 
             // groupBox7
             // 
@@ -1555,6 +1635,18 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "أضافة عامل";
             // 
+            // numericUpDownWorkerSalary
+            // 
+            this.numericUpDownWorkerSalary.Location = new System.Drawing.Point(38, 151);
+            this.numericUpDownWorkerSalary.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownWorkerSalary.Name = "numericUpDownWorkerSalary";
+            this.numericUpDownWorkerSalary.Size = new System.Drawing.Size(203, 32);
+            this.numericUpDownWorkerSalary.TabIndex = 15;
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1658,16 +1750,16 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(8, 328);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(969, 303);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1750,17 +1842,17 @@
             // 
             // chart2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            chartArea6.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart2.Legends.Add(legend6);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart2.Series.Add(series6);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -1972,18 +2064,20 @@
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.textBox37);
+            this.groupBox17.Controls.Add(this.numericUpDownAddTypeQuantity);
+            this.groupBox17.Controls.Add(this.numericUpDownAddTypePriceBuy);
+            this.groupBox17.Controls.Add(this.numericUpDownAddTypePriceSell);
+            this.groupBox17.Controls.Add(this.label61);
             this.groupBox17.Controls.Add(this.label52);
-            this.groupBox17.Controls.Add(this.textBox36);
             this.groupBox17.Controls.Add(this.label51);
-            this.groupBox17.Controls.Add(this.textBox35);
+            this.groupBox17.Controls.Add(this.textBoxGlassesSignAddSection);
             this.groupBox17.Controls.Add(this.label50);
-            this.groupBox17.Controls.Add(this.textBox34);
+            this.groupBox17.Controls.Add(this.textBoxCylAddSection);
             this.groupBox17.Controls.Add(this.label49);
             this.groupBox17.Controls.Add(this.button19);
-            this.groupBox17.Controls.Add(this.textBox32);
+            this.groupBox17.Controls.Add(this.textBoxSphAddSection);
             this.groupBox17.Controls.Add(this.label47);
-            this.groupBox17.Controls.Add(this.textBox33);
+            this.groupBox17.Controls.Add(this.textBoxGlassTypeCode);
             this.groupBox17.Controls.Add(this.label48);
             this.groupBox17.Location = new System.Drawing.Point(8, 28);
             this.groupBox17.Name = "groupBox17";
@@ -1992,44 +2086,30 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "أضافة نوع عدسات";
             // 
-            // textBox37
-            // 
-            this.textBox37.Location = new System.Drawing.Point(316, 136);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(85, 32);
-            this.textBox37.TabIndex = 13;
-            // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(407, 136);
+            this.label52.Location = new System.Drawing.Point(361, 174);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(114, 24);
             this.label52.TabIndex = 12;
             this.label52.Text = "سعر الشراء:";
             // 
-            // textBox36
-            // 
-            this.textBox36.Location = new System.Drawing.Point(536, 133);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(85, 32);
-            this.textBox36.TabIndex = 11;
-            // 
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(627, 136);
+            this.label51.Location = new System.Drawing.Point(649, 174);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(98, 24);
             this.label51.TabIndex = 10;
             this.label51.Text = "سعر البيع:";
             // 
-            // textBox35
+            // textBoxGlassesSignAddSection
             // 
-            this.textBox35.Location = new System.Drawing.Point(536, 79);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(107, 32);
-            this.textBox35.TabIndex = 9;
+            this.textBoxGlassesSignAddSection.Location = new System.Drawing.Point(536, 79);
+            this.textBoxGlassesSignAddSection.Name = "textBoxGlassesSignAddSection";
+            this.textBoxGlassesSignAddSection.Size = new System.Drawing.Size(107, 32);
+            this.textBoxGlassesSignAddSection.TabIndex = 9;
             // 
             // label50
             // 
@@ -2040,12 +2120,13 @@
             this.label50.TabIndex = 8;
             this.label50.Text = "الرمز:";
             // 
-            // textBox34
+            // textBoxCylAddSection
             // 
-            this.textBox34.Location = new System.Drawing.Point(215, 76);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(107, 32);
-            this.textBox34.TabIndex = 7;
+            this.textBoxCylAddSection.Location = new System.Drawing.Point(215, 76);
+            this.textBoxCylAddSection.Name = "textBoxCylAddSection";
+            this.textBoxCylAddSection.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxCylAddSection.Size = new System.Drawing.Size(107, 32);
+            this.textBoxCylAddSection.TabIndex = 7;
             // 
             // label49
             // 
@@ -2064,13 +2145,15 @@
             this.button19.TabIndex = 4;
             this.button19.Text = "أضافة";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
-            // textBox32
+            // textBoxSphAddSection
             // 
-            this.textBox32.Location = new System.Drawing.Point(215, 36);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(107, 32);
-            this.textBox32.TabIndex = 3;
+            this.textBoxSphAddSection.Location = new System.Drawing.Point(215, 36);
+            this.textBoxSphAddSection.Name = "textBoxSphAddSection";
+            this.textBoxSphAddSection.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxSphAddSection.Size = new System.Drawing.Size(107, 32);
+            this.textBoxSphAddSection.TabIndex = 3;
             // 
             // label47
             // 
@@ -2081,12 +2164,12 @@
             this.label47.TabIndex = 2;
             this.label47.Text = ":Sph";
             // 
-            // textBox33
+            // textBoxGlassTypeCode
             // 
-            this.textBox33.Location = new System.Drawing.Point(440, 31);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(203, 32);
-            this.textBox33.TabIndex = 1;
+            this.textBoxGlassTypeCode.Location = new System.Drawing.Point(440, 31);
+            this.textBoxGlassTypeCode.Name = "textBoxGlassTypeCode";
+            this.textBoxGlassTypeCode.Size = new System.Drawing.Size(203, 32);
+            this.textBoxGlassTypeCode.TabIndex = 1;
             // 
             // label48
             // 
@@ -2152,92 +2235,50 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
-            // groupBox2
+            // label61
             // 
-            this.groupBox2.Controls.Add(this.button23);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label59);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.label60);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label62);
-            this.groupBox2.Location = new System.Drawing.Point(133, 22);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(391, 241);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "اضافة مستحق";
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(649, 133);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(69, 24);
+            this.label61.TabIndex = 14;
+            this.label61.Text = "الكمية:";
             // 
-            // button23
+            // numericUpDownAddTypePriceSell
             // 
-            this.button23.Location = new System.Drawing.Point(152, 166);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(101, 44);
-            this.button23.TabIndex = 12;
-            this.button23.Text = "أضافة";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(128, 118);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(151, 32);
-            this.textBox5.TabIndex = 11;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(285, 118);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(91, 24);
-            this.label59.TabIndex = 10;
-            this.label59.Text = "الأجمالى:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(128, 80);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(151, 32);
-            this.textBox6.TabIndex = 9;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(285, 80);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(71, 24);
-            this.label60.TabIndex = 8;
-            this.label60.Text = "المضاف";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(263, 32);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(291, 45);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(71, 24);
-            this.label62.TabIndex = 4;
-            this.label62.Text = "العميل:";
-            // 
-            // numericUpDownWorkerSalary
-            // 
-            this.numericUpDownWorkerSalary.Location = new System.Drawing.Point(38, 151);
-            this.numericUpDownWorkerSalary.Maximum = new decimal(new int[] {
+            this.numericUpDownAddTypePriceSell.Location = new System.Drawing.Point(509, 175);
+            this.numericUpDownAddTypePriceSell.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDownWorkerSalary.Name = "numericUpDownWorkerSalary";
-            this.numericUpDownWorkerSalary.Size = new System.Drawing.Size(203, 32);
-            this.numericUpDownWorkerSalary.TabIndex = 15;
+            this.numericUpDownAddTypePriceSell.Name = "numericUpDownAddTypePriceSell";
+            this.numericUpDownAddTypePriceSell.Size = new System.Drawing.Size(134, 32);
+            this.numericUpDownAddTypePriceSell.TabIndex = 16;
+            // 
+            // numericUpDownAddTypePriceBuy
+            // 
+            this.numericUpDownAddTypePriceBuy.Location = new System.Drawing.Point(230, 175);
+            this.numericUpDownAddTypePriceBuy.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownAddTypePriceBuy.Name = "numericUpDownAddTypePriceBuy";
+            this.numericUpDownAddTypePriceBuy.Size = new System.Drawing.Size(134, 32);
+            this.numericUpDownAddTypePriceBuy.TabIndex = 17;
+            // 
+            // numericUpDownAddTypeQuantity
+            // 
+            this.numericUpDownAddTypeQuantity.Location = new System.Drawing.Point(509, 131);
+            this.numericUpDownAddTypeQuantity.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownAddTypeQuantity.Name = "numericUpDownAddTypeQuantity";
+            this.numericUpDownAddTypeQuantity.Size = new System.Drawing.Size(134, 32);
+            this.numericUpDownAddTypeQuantity.TabIndex = 18;
             // 
             // MainForm
             // 
@@ -2264,6 +2305,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabSuppliers.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -2285,6 +2328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).EndInit();
             this.tabAnalytics.ResumeLayout(false);
             this.tabAnalytics.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -2303,9 +2347,9 @@
             this.groupBox17.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceBuy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypeQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2454,17 +2498,15 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox textBoxSphAddSection;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBoxGlassTypeCode;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox textBoxGlassesSignAddSection;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.TextBox textBoxCylAddSection;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.GroupBox groupBox18;
@@ -2517,5 +2559,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.NumericUpDown numericUpDownWorkerSalary;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.NumericUpDown numericUpDownAddTypePriceBuy;
+        private System.Windows.Forms.NumericUpDown numericUpDownAddTypePriceSell;
+        private System.Windows.Forms.NumericUpDown numericUpDownAddTypeQuantity;
     }
 }

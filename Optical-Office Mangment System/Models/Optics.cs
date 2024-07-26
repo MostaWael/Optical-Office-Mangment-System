@@ -19,7 +19,8 @@ namespace Optical_Office_Mangment_System.Models
 
         public decimal PriceSell { get; set; }
         public decimal PriceBuy { get; set;}
+
+        public List<Workers> Workers { get; set; }
         
-        public Workers Worker { get; set; }
     }
 }

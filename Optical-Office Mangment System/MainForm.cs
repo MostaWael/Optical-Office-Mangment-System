@@ -72,6 +72,70 @@ namespace Optical_Office_Mangment_System
         {
             string WorkerName = textBoxWorkerName.Text,
                 WorkerPhoneNumber = textBoxWorkerPhoneNumber.Text;
+            decimal WorkerSalary = numericUpDownWorkerSalary.Value;
+
+            if(WorkerSalary == 0 )
+            {
+                Helper.ZeroValueWarning();
+                return;
+            }
+            if(WorkerName == string.Empty || WorkerPhoneNumber == string.Empty)
+            {
+                Helper.EmptyBoxWarning();
+                return;
+            }
+            context.Workers.Add(new Workers { 
+                Name = WorkerName , 
+                PhoneNumber= WorkerPhoneNumber,
+                Salary= WorkerSalary
+            });
+
+            context.SaveChanges();
+            Helper.AddSuccess();
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            string GlaassTypeCode = textBoxGlassTypeCode.Text,
+                Sph = textBoxSphAddSection.Text,
+                Cyl = textBoxCylAddSection.Text,
+                Sign = textBoxGlassesSignAddSection.Text;
+
+            decimal PriceSell = numericUpDownAddTypePriceBuy.Value,
+                PriceBuy = numericUpDownAddTypePriceBuy.Value;
+            int Quantity = (int)numericUpDownAddTypeQuantity.Value;
+
+            if (GlaassTypeCode == string.Empty || 
+                Sph == string.Empty || 
+                Cyl == string.Empty ||
+                Sign == string.Empty)
+            {
+                Helper.EmptyBoxWarning();
+                return;
+            }
+            if(PriceSell == 0 || 
+                PriceBuy == 0 ||
+                Quantity == 0)
+            {
+                Helper.ZeroValueWarning();
+                return;
+            }
+
+            context.Optics.Add(new Optics
+            {
+                Code = GlaassTypeCode,
+                Cyl = Cyl,
+                Sph= Sph,
+                PriceBuy= PriceBuy,
+                PriceSell= PriceSell,
+                Quantity=Quantity,
+                Type = Sign
+            });
+
+            context.SaveChanges();
+            Helper.AddSuccess();
+
         }
     }
 }

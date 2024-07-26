@@ -82,6 +82,14 @@
     <Compile Include="Migrations\202407260914599_add-phonenumber-supplier.Designer.cs">
       <DependentUpon>202407260914599_add-phonenumber-supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407261206506_remove-worker-id-from-optics.cs" />
+    <Compile Include="Migrations\202407261206506_remove-worker-id-from-optics.Designer.cs">
+      <DependentUpon>202407261206506_remove-worker-id-from-optics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407261317239_last-update-using-fluent-api.cs" />
+    <Compile Include="Migrations\202407261317239_last-update-using-fluent-api.Designer.cs">
+      <DependentUpon>202407261317239_last-update-using-fluent-api.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\BillIteam.cs" />
@@ -109,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407260914599_add-phonenumber-supplier.resx">
       <DependentUpon>202407260914599_add-phonenumber-supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407261206506_remove-worker-id-from-optics.resx">
+      <DependentUpon>202407261206506_remove-worker-id-from-optics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407261317239_last-update-using-fluent-api.resx">
+      <DependentUpon>202407261317239_last-update-using-fluent-api.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

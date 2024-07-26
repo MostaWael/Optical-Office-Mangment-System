@@ -15,7 +15,7 @@ namespace Optical_Office_Mangment_System.Models
         public string PhoneNumber { get; set; }
 
         public decimal Salary { get; set; }
-        public decimal loses { get; set; }
+        public decimal loses { get; set; } = 0;
 
         public List<Optics> Optics { get; set; }
         public List<Borrowers> Borrowers { get; set; }
