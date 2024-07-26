@@ -12,6 +12,8 @@ namespace Optical_Office_Mangment_System.Models
         [Key]
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
         public string PhoneNumber { get; set; }
         public string ComapnyName { get; set; }
 

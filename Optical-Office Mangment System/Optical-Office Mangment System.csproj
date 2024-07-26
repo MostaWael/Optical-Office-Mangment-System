@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper.cs" />
     <Compile Include="Login Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,14 @@
     <Compile Include="Migrations\202407251456032_init.cs" />
     <Compile Include="Migrations\202407251456032_init.Designer.cs">
       <DependentUpon>202407251456032_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407260832432_add-name-customer.cs" />
+    <Compile Include="Migrations\202407260832432_add-name-customer.Designer.cs">
+      <DependentUpon>202407260832432_add-name-customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407260914599_add-phonenumber-supplier.cs" />
+    <Compile Include="Migrations\202407260914599_add-phonenumber-supplier.Designer.cs">
+      <DependentUpon>202407260914599_add-phonenumber-supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -94,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407251456032_init.resx">
       <DependentUpon>202407251456032_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407260832432_add-name-customer.resx">
+      <DependentUpon>202407260832432_add-name-customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407260914599_add-phonenumber-supplier.resx">
+      <DependentUpon>202407260914599_add-phonenumber-supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

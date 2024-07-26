@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.button22 = new System.Windows.Forms.Button();
@@ -55,11 +55,11 @@
             this.tabCustomers = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxCompanyName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerNumber = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -106,9 +106,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxSupplierPhoneNumber = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -167,12 +167,11 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBoxWorkerPhoneNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBoxWorkerName = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.tabAnalytics = new System.Windows.Forms.TabPage();
             this.dateTimePickerAnalyticsMonthley = new System.Windows.Forms.DateTimePicker();
@@ -231,6 +230,15 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.numericUpDownWorkerSalary = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -266,6 +274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -472,11 +482,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.textBoxCompanyName);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.textBox6);
+            this.groupBox4.Controls.Add(this.textBoxCustomerNumber);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.textBoxCustomerName);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Location = new System.Drawing.Point(50, 351);
             this.groupBox4.Name = "groupBox4";
@@ -493,13 +503,14 @@
             this.button6.TabIndex = 13;
             this.button6.Text = "أضافة";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBox7
+            // textBoxCompanyName
             // 
-            this.textBox7.Location = new System.Drawing.Point(22, 167);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(203, 32);
-            this.textBox7.TabIndex = 12;
+            this.textBoxCompanyName.Location = new System.Drawing.Point(22, 167);
+            this.textBoxCompanyName.Name = "textBoxCompanyName";
+            this.textBoxCompanyName.Size = new System.Drawing.Size(203, 32);
+            this.textBoxCompanyName.TabIndex = 12;
             // 
             // label13
             // 
@@ -510,12 +521,12 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "أسم المنشئة:";
             // 
-            // textBox6
+            // textBoxCustomerNumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(22, 109);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 32);
-            this.textBox6.TabIndex = 10;
+            this.textBoxCustomerNumber.Location = new System.Drawing.Point(22, 109);
+            this.textBoxCustomerNumber.Name = "textBoxCustomerNumber";
+            this.textBoxCustomerNumber.Size = new System.Drawing.Size(203, 32);
+            this.textBoxCustomerNumber.TabIndex = 10;
             // 
             // label12
             // 
@@ -526,12 +537,12 @@
             this.label12.TabIndex = 9;
             this.label12.Text = "رقم التليفون:";
             // 
-            // textBox5
+            // textBoxCustomerName
             // 
-            this.textBox5.Location = new System.Drawing.Point(22, 54);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(203, 32);
-            this.textBox5.TabIndex = 8;
+            this.textBoxCustomerName.Location = new System.Drawing.Point(22, 54);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(203, 32);
+            this.textBoxCustomerName.TabIndex = 8;
             // 
             // label11
             // 
@@ -841,6 +852,7 @@
             // 
             // tabSuppliers
             // 
+            this.tabSuppliers.Controls.Add(this.groupBox2);
             this.tabSuppliers.Controls.Add(this.groupBox7);
             this.tabSuppliers.Controls.Add(this.groupBox6);
             this.tabSuppliers.Controls.Add(this.groupBox5);
@@ -882,6 +894,7 @@
             // 
             this.textBox9.Location = new System.Drawing.Point(125, 161);
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(151, 32);
             this.textBox9.TabIndex = 11;
             // 
@@ -914,6 +927,7 @@
             // 
             this.textBox13.Location = new System.Drawing.Point(125, 85);
             this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(151, 32);
             this.textBox13.TabIndex = 7;
             // 
@@ -946,9 +960,9 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.button8);
-            this.groupBox6.Controls.Add(this.textBox10);
+            this.groupBox6.Controls.Add(this.textBoxSupplierPhoneNumber);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.textBox11);
+            this.groupBox6.Controls.Add(this.textBoxSupplierName);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Location = new System.Drawing.Point(530, 22);
             this.groupBox6.Name = "groupBox6";
@@ -965,13 +979,14 @@
             this.button8.TabIndex = 13;
             this.button8.Text = "أضافة";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // textBox10
+            // textBoxSupplierPhoneNumber
             // 
-            this.textBox10.Location = new System.Drawing.Point(38, 108);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(203, 32);
-            this.textBox10.TabIndex = 10;
+            this.textBoxSupplierPhoneNumber.Location = new System.Drawing.Point(38, 108);
+            this.textBoxSupplierPhoneNumber.Name = "textBoxSupplierPhoneNumber";
+            this.textBoxSupplierPhoneNumber.Size = new System.Drawing.Size(203, 32);
+            this.textBoxSupplierPhoneNumber.TabIndex = 10;
             // 
             // label18
             // 
@@ -982,12 +997,12 @@
             this.label18.TabIndex = 9;
             this.label18.Text = "رقم التليفون:";
             // 
-            // textBox11
+            // textBoxSupplierName
             // 
-            this.textBox11.Location = new System.Drawing.Point(38, 53);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(203, 32);
-            this.textBox11.TabIndex = 8;
+            this.textBoxSupplierName.Location = new System.Drawing.Point(38, 53);
+            this.textBoxSupplierName.Name = "textBoxSupplierName";
+            this.textBoxSupplierName.Size = new System.Drawing.Size(203, 32);
+            this.textBoxSupplierName.TabIndex = 8;
             // 
             // label19
             // 
@@ -1265,7 +1280,7 @@
             this.groupBox11.Controls.Add(this.label30);
             this.groupBox11.Controls.Add(this.button14);
             this.groupBox11.Controls.Add(this.label32);
-            this.groupBox11.Location = new System.Drawing.Point(479, 23);
+            this.groupBox11.Location = new System.Drawing.Point(479, 22);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(391, 316);
             this.groupBox11.TabIndex = 16;
@@ -1526,31 +1541,24 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox17);
+            this.groupBox8.Controls.Add(this.numericUpDownWorkerSalary);
             this.groupBox8.Controls.Add(this.label26);
             this.groupBox8.Controls.Add(this.button10);
-            this.groupBox8.Controls.Add(this.textBox14);
+            this.groupBox8.Controls.Add(this.textBoxWorkerPhoneNumber);
             this.groupBox8.Controls.Add(this.label14);
-            this.groupBox8.Controls.Add(this.textBox15);
+            this.groupBox8.Controls.Add(this.textBoxWorkerName);
             this.groupBox8.Controls.Add(this.label23);
             this.groupBox8.Location = new System.Drawing.Point(950, 23);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(391, 291);
+            this.groupBox8.Size = new System.Drawing.Size(391, 270);
             this.groupBox8.TabIndex = 5;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "أضافة عامل";
             // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(38, 166);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(203, 32);
-            this.textBox17.TabIndex = 15;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(247, 174);
+            this.label26.Location = new System.Drawing.Point(247, 151);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(73, 24);
             this.label26.TabIndex = 14;
@@ -1558,35 +1566,36 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(140, 228);
+            this.button10.Location = new System.Drawing.Point(140, 200);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(101, 44);
             this.button10.TabIndex = 13;
             this.button10.Text = "أضافة";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // textBox14
+            // textBoxWorkerPhoneNumber
             // 
-            this.textBox14.Location = new System.Drawing.Point(38, 108);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(203, 32);
-            this.textBox14.TabIndex = 10;
+            this.textBoxWorkerPhoneNumber.Location = new System.Drawing.Point(38, 99);
+            this.textBoxWorkerPhoneNumber.Name = "textBoxWorkerPhoneNumber";
+            this.textBoxWorkerPhoneNumber.Size = new System.Drawing.Size(203, 32);
+            this.textBoxWorkerPhoneNumber.TabIndex = 10;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(247, 116);
+            this.label14.Location = new System.Drawing.Point(247, 107);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(116, 24);
             this.label14.TabIndex = 9;
             this.label14.Text = "رقم التليفون:";
             // 
-            // textBox15
+            // textBoxWorkerName
             // 
-            this.textBox15.Location = new System.Drawing.Point(38, 53);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(203, 32);
-            this.textBox15.TabIndex = 8;
+            this.textBoxWorkerName.Location = new System.Drawing.Point(38, 53);
+            this.textBoxWorkerName.Name = "textBoxWorkerName";
+            this.textBoxWorkerName.Size = new System.Drawing.Size(203, 32);
+            this.textBoxWorkerName.TabIndex = 8;
             // 
             // label23
             // 
@@ -1649,16 +1658,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(8, 328);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(969, 303);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1741,17 +1750,17 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -2143,6 +2152,93 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button23);
+            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.label59);
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.label60);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label62);
+            this.groupBox2.Location = new System.Drawing.Point(133, 22);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(391, 241);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "اضافة مستحق";
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(152, 166);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(101, 44);
+            this.button23.TabIndex = 12;
+            this.button23.Text = "أضافة";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(128, 118);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(151, 32);
+            this.textBox5.TabIndex = 11;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(285, 118);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(91, 24);
+            this.label59.TabIndex = 10;
+            this.label59.Text = "الأجمالى:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(128, 80);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(151, 32);
+            this.textBox6.TabIndex = 9;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(285, 80);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(71, 24);
+            this.label60.TabIndex = 8;
+            this.label60.Text = "المضاف";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 42);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(263, 32);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(291, 45);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(71, 24);
+            this.label62.TabIndex = 4;
+            this.label62.Text = "العميل:";
+            // 
+            // numericUpDownWorkerSalary
+            // 
+            this.numericUpDownWorkerSalary.Location = new System.Drawing.Point(38, 151);
+            this.numericUpDownWorkerSalary.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownWorkerSalary.Name = "numericUpDownWorkerSalary";
+            this.numericUpDownWorkerSalary.Size = new System.Drawing.Size(203, 32);
+            this.numericUpDownWorkerSalary.TabIndex = 15;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2207,6 +2303,9 @@
             this.groupBox17.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2253,11 +2352,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxCompanyName;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxCustomerNumber;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxCustomerName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button7;
@@ -2268,9 +2367,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxSupplierPhoneNumber;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBoxSupplierName;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button9;
@@ -2292,9 +2391,9 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBoxWorkerPhoneNumber;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBoxWorkerName;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button button13;
@@ -2305,7 +2404,6 @@
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TextBox textBox23;
@@ -2410,5 +2508,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.NumericUpDown numericUpDownWorkerSalary;
     }
 }
