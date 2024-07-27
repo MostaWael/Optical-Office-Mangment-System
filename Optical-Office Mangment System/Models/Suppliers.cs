@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Optical_Office_Mangment_System.Models
 {
-    internal class Suppliers
+    public class Suppliers
     {
         [Key]
         public int Id { get; set; }

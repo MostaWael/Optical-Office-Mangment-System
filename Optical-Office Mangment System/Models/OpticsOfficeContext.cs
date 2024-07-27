@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Optical_Office_Mangment_System.Models
 {
-    internal class OpticsOfficeContext : DbContext
+    public class OpticsOfficeContext : DbContext
     {
         public OpticsOfficeContext() : base("Data source=DESKTOP-AR1U854;Initial catalog=OpticsOffice;Integrated security= true ; TrustServerCertificate=True;") 
         { }
@@ -23,17 +23,30 @@ namespace Optical_Office_Mangment_System.Models
         public DbSet<SuppliersPayment> SuppliersPayment { get; set; }
         public DbSet<Workers> Workers { get; set; }
 
+        public DbSet<DestroyedOptics> DestroyedOptics { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Optics>()
-                .HasMany(o => o.Workers)
-                .WithMany(w => w.Optics)
-                .Map(m =>
-                {
-                    m.ToTable("DestroyedOptics");
-                    m.MapLeftKey("Optics_Code");
-                    m.MapRightKey("Workers_Id");
-                });
+            //modelBuilder.Entity<Optics>()
+            //    .HasMany(o => o.Workers)
+            //    .WithMany(w => w.Optics)
+            //    .Map(m =>
+            //    {
+            //        m.ToTable("DestroyedOptics");
+            //        m.MapLeftKey("Optics_Code");
+            //        m.MapRightKey("Workers_Id");
+            //    });
+
+            modelBuilder.Entity<DestroyedOptics>()
+                .HasRequired(d => d.Workers)
+                .WithMany(w => w.DestroyedOptics)
+                .HasForeignKey(d => d.Workers_Id);
+
+            modelBuilder.Entity<DestroyedOptics>()
+                .HasRequired(d => d.Optics)
+                .WithMany(o => o.DestroyedOptics)
+                .HasForeignKey(d => d.Optics_Id);
+                //.WillCascadeOnDelete(true); //Cascade will delete The Optics when deleted fromthe database
 
             base.OnModelCreating(modelBuilder);
         }

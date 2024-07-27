@@ -70,25 +70,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202407251456032_init.cs" />
-    <Compile Include="Migrations\202407251456032_init.Designer.cs">
-      <DependentUpon>202407251456032_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407260832432_add-name-customer.cs" />
-    <Compile Include="Migrations\202407260832432_add-name-customer.Designer.cs">
-      <DependentUpon>202407260832432_add-name-customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407260914599_add-phonenumber-supplier.cs" />
-    <Compile Include="Migrations\202407260914599_add-phonenumber-supplier.Designer.cs">
-      <DependentUpon>202407260914599_add-phonenumber-supplier.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407261206506_remove-worker-id-from-optics.cs" />
-    <Compile Include="Migrations\202407261206506_remove-worker-id-from-optics.Designer.cs">
-      <DependentUpon>202407261206506_remove-worker-id-from-optics.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202407261317239_last-update-using-fluent-api.cs" />
-    <Compile Include="Migrations\202407261317239_last-update-using-fluent-api.Designer.cs">
-      <DependentUpon>202407261317239_last-update-using-fluent-api.cs</DependentUpon>
+    <Compile Include="Migrations\202407270010522_fix-m-to-m-relation.cs" />
+    <Compile Include="Migrations\202407270010522_fix-m-to-m-relation.Designer.cs">
+      <DependentUpon>202407270010522_fix-m-to-m-relation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -96,6 +80,7 @@
     <Compile Include="Models\Borrowers.cs" />
     <Compile Include="Models\CustomerPayments.cs" />
     <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\DestroyedOptics.cs" />
     <Compile Include="Models\Optics.cs" />
     <Compile Include="Models\OpticsOfficeContext.cs" />
     <Compile Include="Models\Suppliers.cs" />
@@ -109,20 +94,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407251456032_init.resx">
-      <DependentUpon>202407251456032_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407260832432_add-name-customer.resx">
-      <DependentUpon>202407260832432_add-name-customer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407260914599_add-phonenumber-supplier.resx">
-      <DependentUpon>202407260914599_add-phonenumber-supplier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407261206506_remove-worker-id-from-optics.resx">
-      <DependentUpon>202407261206506_remove-worker-id-from-optics.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202407261317239_last-update-using-fluent-api.resx">
-      <DependentUpon>202407261317239_last-update-using-fluent-api.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202407270010522_fix-m-to-m-relation.resx">
+      <DependentUpon>202407270010522_fix-m-to-m-relation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

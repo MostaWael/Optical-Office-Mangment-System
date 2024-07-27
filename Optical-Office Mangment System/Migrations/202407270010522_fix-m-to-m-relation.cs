@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class fixmtomrelation : DbMigration
     {
         public override void Up()
         {
@@ -26,6 +26,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                         PhoneNumber = c.String(),
                         ComapnyName = c.String(),
                     })
@@ -56,30 +57,42 @@
                         PriceManfcture = c.Decimal(nullable: false, precision: 18, scale: 2),
                         TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Bill_Id = c.Int(),
-                        optic_Code = c.String(maxLength: 128),
+                        optic_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Bills", t => t.Bill_Id)
-                .ForeignKey("dbo.Optics", t => t.optic_Code)
+                .ForeignKey("dbo.Optics", t => t.optic_Id)
                 .Index(t => t.Bill_Id)
-                .Index(t => t.optic_Code);
+                .Index(t => t.optic_Id);
             
             CreateTable(
                 "dbo.Optics",
                 c => new
                     {
-                        Code = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
+                        Code = c.String(),
                         Type = c.String(),
                         Sph = c.String(),
                         Cyl = c.String(),
                         Quantity = c.Int(nullable: false),
                         PriceSell = c.Decimal(nullable: false, precision: 18, scale: 2),
                         PriceBuy = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Worker_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Code)
-                .ForeignKey("dbo.Workers", t => t.Worker_Id)
-                .Index(t => t.Worker_Id);
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.DestroyedOptics",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Optics_Id = c.Int(nullable: false),
+                        Workers_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Optics", t => t.Optics_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Workers", t => t.Workers_Id, cascadeDelete: true)
+                .Index(t => t.Optics_Id)
+                .Index(t => t.Workers_Id);
             
             CreateTable(
                 "dbo.Workers",
@@ -112,6 +125,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        PhoneNumber = c.String(),
                         Money = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.Id);
@@ -134,16 +148,18 @@
         public override void Down()
         {
             DropForeignKey("dbo.SuppliersPayments", "Supplier_Id", "dbo.Suppliers");
-            DropForeignKey("dbo.BillIteams", "optic_Code", "dbo.Optics");
-            DropForeignKey("dbo.Optics", "Worker_Id", "dbo.Workers");
+            DropForeignKey("dbo.BillIteams", "optic_Id", "dbo.Optics");
+            DropForeignKey("dbo.DestroyedOptics", "Workers_Id", "dbo.Workers");
             DropForeignKey("dbo.Borrowers", "Workers_Id", "dbo.Workers");
+            DropForeignKey("dbo.DestroyedOptics", "Optics_Id", "dbo.Optics");
             DropForeignKey("dbo.BillIteams", "Bill_Id", "dbo.Bills");
             DropForeignKey("dbo.CustomerPayments", "Customer_Id", "dbo.Customers");
             DropForeignKey("dbo.Bills", "Customer_Id", "dbo.Customers");
             DropIndex("dbo.SuppliersPayments", new[] { "Supplier_Id" });
             DropIndex("dbo.Borrowers", new[] { "Workers_Id" });
-            DropIndex("dbo.Optics", new[] { "Worker_Id" });
-            DropIndex("dbo.BillIteams", new[] { "optic_Code" });
+            DropIndex("dbo.DestroyedOptics", new[] { "Workers_Id" });
+            DropIndex("dbo.DestroyedOptics", new[] { "Optics_Id" });
+            DropIndex("dbo.BillIteams", new[] { "optic_Id" });
             DropIndex("dbo.BillIteams", new[] { "Bill_Id" });
             DropIndex("dbo.CustomerPayments", new[] { "Customer_Id" });
             DropIndex("dbo.Bills", new[] { "Customer_Id" });
@@ -151,6 +167,7 @@
             DropTable("dbo.Suppliers");
             DropTable("dbo.Borrowers");
             DropTable("dbo.Workers");
+            DropTable("dbo.DestroyedOptics");
             DropTable("dbo.Optics");
             DropTable("dbo.BillIteams");
             DropTable("dbo.CustomerPayments");

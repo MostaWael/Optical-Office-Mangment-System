@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Optical_Office_Mangment_System.Models
 {
-    internal class Optics
+    public  class Optics
     {
         [Key]
+        public int Id { get; set; }
         public string Code { get; set; }
         public string Type { get; set; }
         public string Sph { get; set; }
@@ -20,7 +21,7 @@ namespace Optical_Office_Mangment_System.Models
         public decimal PriceSell { get; set; }
         public decimal PriceBuy { get; set;}
 
-        public List<Workers> Workers { get; set; }
+        public List<DestroyedOptics> DestroyedOptics { get; set; }
         
     }
 }

@@ -7,13 +7,13 @@ namespace Optical_Office_Mangment_System.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class addphonenumbersupplier : IMigrationMetadata
+    public sealed partial class fixmtomrelation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addphonenumbersupplier));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fixmtomrelation));
         
         string IMigrationMetadata.Id
         {
-            get { return "202407260914599_add-phonenumber-supplier"; }
+            get { return "202407270010522_fix-m-to-m-relation"; }
         }
         
         string IMigrationMetadata.Source
