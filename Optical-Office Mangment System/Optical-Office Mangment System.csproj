@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202407270010522_fix-m-to-m-relation.Designer.cs">
       <DependentUpon>202407270010522_fix-m-to-m-relation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407271647065_before-disaster.cs" />
+    <Compile Include="Migrations\202407271647065_before-disaster.Designer.cs">
+      <DependentUpon>202407271647065_before-disaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407282144522_fix-borrow-list-intilization.cs" />
+    <Compile Include="Migrations\202407282144522_fix-borrow-list-intilization.Designer.cs">
+      <DependentUpon>202407282144522_fix-borrow-list-intilization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\BillIteam.cs" />
@@ -96,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407270010522_fix-m-to-m-relation.resx">
       <DependentUpon>202407270010522_fix-m-to-m-relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407271647065_before-disaster.resx">
+      <DependentUpon>202407271647065_before-disaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407282144522_fix-borrow-list-intilization.resx">
+      <DependentUpon>202407282144522_fix-borrow-list-intilization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

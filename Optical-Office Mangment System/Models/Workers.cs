@@ -17,7 +17,7 @@ namespace Optical_Office_Mangment_System.Models
         public decimal Salary { get; set; }
         public decimal loses { get; set; } = 0;
 
-        public List<DestroyedOptics> DestroyedOptics { get; set; } 
-        public List<Borrowers> Borrowers { get; set; }
+        public List<DestroyedOptics> DestroyedOptics { get; set; } = new List<DestroyedOptics>();
+        public List<Borrowers> Borrowers { get; set; } = new List<Borrowers>();
     }
 }

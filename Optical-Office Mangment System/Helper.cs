@@ -23,5 +23,26 @@ namespace Optical_Office_Mangment_System
         {
             MessageBox.Show("مينفعش قيمة المرتب تبقى ب صفر", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        public static void NotExistInDataBase()
+        {
+            MessageBox.Show("غير موجود فى قاعدة البيانات", "خطاء", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void UpdatedSuccessfully()
+        {
+            MessageBox.Show("تمت التعديل بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        public static void DeletedSuccessfully()
+        {
+            MessageBox.Show("تمت الحذف بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void BorrowSuccessed()
+        {
+            MessageBox.Show("تم الأستلاف بنجاح", "أستلاف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

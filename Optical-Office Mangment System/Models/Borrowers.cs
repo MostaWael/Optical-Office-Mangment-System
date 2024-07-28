@@ -13,7 +13,8 @@ namespace Optical_Office_Mangment_System.Models
         [Key]
         public int Id { get; set; }
         public decimal cost { get; set; }
-        public DateTime BorrowTime { get; set; }
+        public decimal remain { get; set; }
+        public DateTime BorrowTime { get; set; } = DateTime.Now;
         
         public Workers Workers { get; set; }
     }
