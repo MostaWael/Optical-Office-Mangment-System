@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Optical_Office_Mangment_System
     {
         private OpticsOfficeContext context;
         private Workers BorrowWorkerObject;
+        private Workers DestroyedWorker;
+
         public MainForm()
         {
             InitializeComponent();
@@ -159,7 +162,7 @@ namespace Optical_Office_Mangment_System
             {
                 using (var context1 = new OpticsOfficeContext())
                 {
-                    return context1.Workers.FirstOrDefault(w => w.Name == workerName);
+                    return context1.Workers.Include(w => w.Borrowers).FirstOrDefault(w => w.Name == workerName);
                 }
             });
         }
@@ -221,20 +224,21 @@ namespace Optical_Office_Mangment_System
             context.Workers.Attach(worker);
             await Task.Run(() =>
             {
+                context.Borrowers.RemoveRange(worker.Borrowers); 
                 context.Workers.Remove(worker);
                 context.SaveChanges();
             });
 
             Helper.DeletedSuccessfully();
             LoadDataIntoWorkersComboBox();
+            textBoxRemoveOrEditWorkerPhoneNumber.Clear();
+            numericUpDownRemoveOrEditSalary.Value = 0;
 
         }
 
         //button Bowrroing
         private async void button14_Click(object sender, EventArgs e)
         {
-            string WorkerName = comboBoxRemoveOrEditWorker.SelectedItem.ToString();
-
             
             context.Workers.Attach(BorrowWorkerObject);
 
@@ -247,8 +251,10 @@ namespace Optical_Office_Mangment_System
                 });
 
                 BorrowWorkerObject.Salary = BorrowWorkerObject.Salary - numericUpDownBorrowingAmount.Value;
-
                 context.SaveChanges();
+
+                context.Entry(BorrowWorkerObject).State = EntityState.Detached;
+
             });
 
             Helper.BorrowSuccessed();
@@ -268,12 +274,54 @@ namespace Optical_Office_Mangment_System
 
         private async void comboBoxBorrowWorkersName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string WorkerName = comboBoxRemoveOrEditWorker.SelectedItem.ToString();
+            string WorkerName = comboBoxBorrowWorkersName.SelectedItem.ToString();
 
             BorrowWorkerObject = await GetWorkerAsync(WorkerName);
 
             textBoxSalaryBorrow.Text = BorrowWorkerObject.Salary.ToString();
             textBoxBorrowRemain.Text = (BorrowWorkerObject.Salary - numericUpDownBorrowingAmount.Value).ToString();
+        }
+
+        private async void comboBoxInfoAboutWorkerAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string workerName = comboBoxInfoAboutWorkerAccount.SelectedItem.ToString();
+            var worker = await GetWorkerAsync(workerName);
+
+            textBoxSalaryTotalInWorkerAccount.Text = worker.Salary.ToString();
+
+            foreach ( var Borrow in worker.Borrowers)
+            {
+                dataGridViewWorkerAccountInformative.Rows.Add(Borrow.BorrowTime.ToString("dd/MM/yyyy"), Borrow.cost, Borrow.remain);
+            }
+
+        }
+
+        private async void comboBoxAddDestroyedObjectWorkerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string WorkerName = comboBoxAddDestroyedObjectWorkerName.SelectedItem.ToString();
+            DestroyedWorker = await GetWorkerAsync(WorkerName);
+
+            numericUpDownDestroyedValue.Value = 0;
+            textBoxRemainDestroyed.Text = DestroyedWorker.Salary.ToString();
+
+        }
+
+        private void numericUpDownDestroyedValue_ValueChanged(object sender, EventArgs e)
+        {
+            textBoxRemainDestroyed.Text = (DestroyedWorker.Salary - numericUpDownDestroyedValue.Value).ToString();
+        }
+
+        //Add Destroyed Object
+        private void button15_Click(object sender, EventArgs e)
+        {
+            context.Workers.Attach(DestroyedWorker);
+
+            DestroyedWorker.loses += numericUpDownDestroyedValue.Value;
+            context.SaveChanges();
+
+            context.Entry(DestroyedWorker).State = EntityState.Detached;
+
+            Helper.DestroyedAdded();
         }
     }
 }

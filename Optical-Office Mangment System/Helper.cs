@@ -44,5 +44,10 @@ namespace Optical_Office_Mangment_System
         {
             MessageBox.Show("تم الأستلاف بنجاح", "أستلاف", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        public static void DestroyedAdded()
+        {
+            MessageBox.Show("تم أضافة هالك بنجاح","أضافة هالك",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
     }
 }
