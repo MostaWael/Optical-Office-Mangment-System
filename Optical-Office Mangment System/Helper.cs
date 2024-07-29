@@ -55,5 +55,10 @@ namespace Optical_Office_Mangment_System
             MessageBox.Show("تم الدفع بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+        public static void NoMoneyExixt()
+        {
+            MessageBox.Show("خطاء فى عملية الدفع","فشل",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        }
     }
 }

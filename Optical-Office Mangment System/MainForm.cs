@@ -127,13 +127,21 @@ namespace Optical_Office_Mangment_System
 
             var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == name);
 
-            Supplier.Money -= numericUpDownSupplierPayAmount.Value;
+            if(Supplier.Money > 0)
+            {
+                Supplier.Money -= numericUpDownSupplierPayAmount.Value;
 
-            Supplier.Payments.Add(new SuppliersPayment { cost = numericUpDownSupplierPayAmount.Value, remain = Supplier.Money });
+                Supplier.Payments.Add(new SuppliersPayment { cost = numericUpDownSupplierPayAmount.Value, remain = Supplier.Money });
 
-            context.SaveChanges();
+                context.SaveChanges();
 
-            Helper.PaySuccessed();
+                Helper.PaySuccessed();
+            }
+            else
+            {
+                Helper.NoMoneyExixt();
+            }
+
         }
 
         private void numericUpDownSupplierPayAmount_ValueChanged(object sender, EventArgs e)
@@ -150,6 +158,19 @@ namespace Optical_Office_Mangment_System
             var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == name);
             
             textBoxSupplierPayTotal.Text = Supplier.Money.ToString();
+        }
+
+        //PaymentsSupplier
+        private void comboBoxShowPaymentSuppliers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewSupplierInfoPay.Rows.Clear();
+            string supplierName = comboBoxShowPaymentSuppliers.Text;
+            var supplier = context.Suppliers.Include(s => s.Payments).FirstOrDefault(s=>s.Name == supplierName);
+        
+            foreach(var payment in supplier.Payments)
+            {
+                dataGridViewSupplierInfoPay.Rows.Add(payment.PaymentTime.ToString("dd/MM/yyyy"), payment.cost, payment.remain);
+            }
         }
 
         #endregion
@@ -492,6 +513,7 @@ namespace Optical_Office_Mangment_System
 
             Helper.DeletedSuccessfully();
         }
+
 
 
 
