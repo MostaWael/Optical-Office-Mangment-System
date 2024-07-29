@@ -49,5 +49,11 @@ namespace Optical_Office_Mangment_System
         {
             MessageBox.Show("تم أضافة هالك بنجاح","أضافة هالك",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+
+        public static void PaySuccessed()
+        {
+            MessageBox.Show("تم الدفع بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

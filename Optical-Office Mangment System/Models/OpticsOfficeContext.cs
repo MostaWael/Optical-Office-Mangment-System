@@ -25,6 +25,8 @@ namespace Optical_Office_Mangment_System.Models
 
         public DbSet<DestroyedOptics> DestroyedOptics { get; set; }
 
+        public DbSet<GlassesType> GlassesTypes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Optics>()

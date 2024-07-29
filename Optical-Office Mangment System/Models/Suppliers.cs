@@ -15,6 +15,6 @@ namespace Optical_Office_Mangment_System.Models
         public string PhoneNumber { get; set; }
         public decimal Money { get; set; } = decimal.Zero;
     
-        public List<SuppliersPayment> Payments { get; set; }
+        public List<SuppliersPayment> Payments { get; set; } = new List<SuppliersPayment>();
     }
 }

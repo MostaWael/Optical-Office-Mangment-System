@@ -82,10 +82,23 @@
     <Compile Include="Migrations\202407282144522_fix-borrow-list-intilization.Designer.cs">
       <DependentUpon>202407282144522_fix-borrow-list-intilization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407291147389_add-glasses-type.cs" />
+    <Compile Include="Migrations\202407291147389_add-glasses-type.Designer.cs">
+      <DependentUpon>202407291147389_add-glasses-type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407291443355_add-remain-to-supplierPayment.cs" />
+    <Compile Include="Migrations\202407291443355_add-remain-to-supplierPayment.Designer.cs">
+      <DependentUpon>202407291443355_add-remain-to-supplierPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407291448408_fix-time-in-supplierPayment.cs" />
+    <Compile Include="Migrations\202407291448408_fix-time-in-supplierPayment.Designer.cs">
+      <DependentUpon>202407291448408_fix-time-in-supplierPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\BillIteam.cs" />
     <Compile Include="Models\Borrowers.cs" />
+    <Compile Include="Models\GlassesType.cs" />
     <Compile Include="Models\CustomerPayments.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\DestroyedOptics.cs" />
@@ -110,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407282144522_fix-borrow-list-intilization.resx">
       <DependentUpon>202407282144522_fix-borrow-list-intilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407291147389_add-glasses-type.resx">
+      <DependentUpon>202407291147389_add-glasses-type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407291443355_add-remain-to-supplierPayment.resx">
+      <DependentUpon>202407291443355_add-remain-to-supplierPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407291448408_fix-time-in-supplierPayment.resx">
+      <DependentUpon>202407291448408_fix-time-in-supplierPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

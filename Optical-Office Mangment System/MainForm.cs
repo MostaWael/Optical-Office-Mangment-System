@@ -24,11 +24,15 @@ namespace Optical_Office_Mangment_System
             //load the customers name to combo box
             context = new OpticsOfficeContext();
             LoadDataIntowCustomerComboBoxName();
+            loadDataIntoSuppliersNameComboBox();
             //Load Workers DataInto the Workers ComboBox
             LoadDataIntoWorkersComboBox();
+            loadDataIntoGlassTypeComboBox();
             this.dateTimePickerAnalyticsMonthley.Format = DateTimePickerFormat.Custom;
             this.dateTimePickerAnalyticsMonthley.CustomFormat = "MMMM yyyy";
         }
+
+        #region LoadDataFunctions
 
         private void LoadDataIntoWorkersComboBox()
         {
@@ -42,47 +46,116 @@ namespace Optical_Office_Mangment_System
 
         private void LoadDataIntowCustomerComboBoxName()
         {
-            comboBoxCustomersNames.Items.AddRange(new object[] { "مصطفى" , "خالد", "على", "وائل" });
-            comboBoxCustomersNamesInfoBills.Items.AddRange(new object[] { "مصطفى", "خالد", "على", "وائل" });
-            comboBoxCustomerMoney.Items.AddRange(new object[] { "مصطفى", "خالد", "على", "وائل" });
-            comboBoxCustomerPayMoney.Items.AddRange(new object[] { "مصطفى", "خالد", "على", "وائل" });
+            var CustomersNames = context.Customers.Select(x => x.Name).ToList();
+            comboBoxCustomersNames.DataSource = CustomersNames;
+            comboBoxCustomersNamesInfoBills.DataSource = CustomersNames;
+            comboBoxCustomerMoney.DataSource = CustomersNames;
+            comboBoxCustomerPayMoney.DataSource = CustomersNames;
         }
 
-        private  void button6_Click(object sender, EventArgs e)
+        //Load Name Type Into the ComboBox
+
+        private void loadDataIntoGlassTypeComboBox()
         {
-            //Validate The Data
-            string CustomerName = textBoxCustomerName.Text , CustomerNumber = textBoxCustomerNumber.Text , CompanyName = textBoxCompanyName.Text;
-            if (CustomerName == string.Empty || CustomerNumber == string.Empty || CompanyName == string.Empty)
-            {
-                Helper.EmptyBoxWarning();
-            }
-            else
-            {
-                
-                context.Customers.Add(new Customers { Name = CustomerName , ComapnyName = CompanyName , PhoneNumber = CustomerNumber });
-                context.SaveChanges();
-
-                Helper.AddSuccess();
-            }
-
+            var TypesNameList = context.GlassesTypes.Select(g => g.Name).ToList();
+            comboBoxModifyManfcPrice.DataSource = TypesNameList;
         }
 
+        private void loadDataIntoSuppliersNameComboBox()
+        {
+            var SuppliersName = context.Suppliers.Select(x => x.Name).ToList();
+            comboBoxShowPaymentSuppliers.DataSource = SuppliersName;
+            comboBoxPayToSuppliers.DataSource= SuppliersName;
+            comboBoxShowPaymentSuppliers.DataSource = SuppliersName;
+            comboBoxSupplierAddCost.DataSource = SuppliersName;
+        }
+
+        #endregion
+
+        #region SupplierTab
+
+        //Add Suppliers
         private void button8_Click(object sender, EventArgs e)
         {
             string SupplierName = textBoxSupplierName.Text, SupplierPhoneNumber = textBoxSupplierPhoneNumber.Text;
 
-            if(SupplierName == string.Empty || SupplierPhoneNumber == string.Empty )
+            if (SupplierName == string.Empty || SupplierPhoneNumber == string.Empty)
             {
                 Helper.EmptyBoxWarning();
             }
             else
             {
-                context.Suppliers.Add(new Suppliers {  Name = SupplierName , PhoneNumber = SupplierPhoneNumber });
+                context.Suppliers.Add(new Suppliers { Name = SupplierName, PhoneNumber = SupplierPhoneNumber });
                 context.SaveChanges();
 
                 Helper.AddSuccess();
+
+                loadDataIntoSuppliersNameComboBox();
             }
         }
+
+        //Add Cost Suppliers
+        private void button23_Click(object sender, EventArgs e)
+        {
+            string SuppkierName = comboBoxSupplierAddCost.Text;
+
+            var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == SuppkierName);
+
+            Supplier.Money += numericUpDownSupplierAddedCost.Value;
+
+            context.SaveChanges();
+
+            Helper.AddSuccess();
+
+        }
+
+
+        private void numericUpDownSupplierAddedCost_ValueChanged(object sender, EventArgs e)
+        {
+            string SuppkierName = comboBoxSupplierAddCost.Text;
+
+            var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == SuppkierName);
+
+            textBoxTotalSupplierCost.Text = (numericUpDownSupplierAddedCost.Value + Supplier.Money).ToString();
+
+        }
+
+        //SupplierPay
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string name = comboBoxPayToSuppliers.Text;
+
+            var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == name);
+
+            Supplier.Money -= numericUpDownSupplierPayAmount.Value;
+
+            Supplier.Payments.Add(new SuppliersPayment { cost = numericUpDownSupplierPayAmount.Value, remain = Supplier.Money });
+
+            context.SaveChanges();
+
+            Helper.PaySuccessed();
+        }
+
+        private void numericUpDownSupplierPayAmount_ValueChanged(object sender, EventArgs e)
+        {
+            string name = comboBoxPayToSuppliers.Text;
+            var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == name);
+
+            textBoxRemainSupplierPayment.Text = (Supplier.Money - numericUpDownSupplierPayAmount.Value).ToString();
+        }
+
+        private void comboBoxPayToSuppliers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = comboBoxPayToSuppliers.Text;
+            var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == name);
+            
+            textBoxSupplierPayTotal.Text = Supplier.Money.ToString();
+        }
+
+        #endregion
+
+
+        #region WorkerTab
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -90,69 +163,27 @@ namespace Optical_Office_Mangment_System
                 WorkerPhoneNumber = textBoxWorkerPhoneNumber.Text;
             decimal WorkerSalary = numericUpDownWorkerSalary.Value;
 
-            if(WorkerSalary == 0 )
+            if (WorkerSalary == 0)
             {
                 Helper.ZeroValueWarning();
                 return;
             }
-            if(WorkerName == string.Empty || WorkerPhoneNumber == string.Empty)
+            if (WorkerName == string.Empty || WorkerPhoneNumber == string.Empty)
             {
                 Helper.EmptyBoxWarning();
                 return;
             }
-            context.Workers.Add(new Workers { 
-                Name = WorkerName , 
-                PhoneNumber= WorkerPhoneNumber,
-                Salary= WorkerSalary
+            context.Workers.Add(new Workers
+            {
+                Name = WorkerName,
+                PhoneNumber = WorkerPhoneNumber,
+                Salary = WorkerSalary
             });
 
             context.SaveChanges();
             Helper.AddSuccess();
 
             LoadDataIntoWorkersComboBox();
-
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            string GlaassTypeCode = textBoxGlassTypeCode.Text,
-                Sph = textBoxSphAddSection.Text,
-                Cyl = textBoxCylAddSection.Text,
-                Sign = textBoxGlassesSignAddSection.Text;
-
-            decimal PriceSell = numericUpDownAddTypePriceBuy.Value,
-                PriceBuy = numericUpDownAddTypePriceBuy.Value;
-            int Quantity = (int)numericUpDownAddTypeQuantity.Value;
-
-            if (GlaassTypeCode == string.Empty || 
-                Sph == string.Empty || 
-                Cyl == string.Empty ||
-                Sign == string.Empty)
-            {
-                Helper.EmptyBoxWarning();
-                return;
-            }
-            if(PriceSell == 0 || 
-                PriceBuy == 0 ||
-                Quantity == 0)
-            {
-                Helper.ZeroValueWarning();
-                return;
-            }
-
-            context.Optics.Add(new Optics
-            {
-                Code = GlaassTypeCode,
-                Cyl = Cyl,
-                Sph= Sph,
-                PriceBuy= PriceBuy,
-                PriceSell= PriceSell,
-                Quantity=Quantity,
-                Type = Sign
-            });
-
-            context.SaveChanges();
-            Helper.AddSuccess();
 
         }
 
@@ -224,7 +255,7 @@ namespace Optical_Office_Mangment_System
             context.Workers.Attach(worker);
             await Task.Run(() =>
             {
-                context.Borrowers.RemoveRange(worker.Borrowers); 
+                context.Borrowers.RemoveRange(worker.Borrowers);
                 context.Workers.Remove(worker);
                 context.SaveChanges();
             });
@@ -239,7 +270,7 @@ namespace Optical_Office_Mangment_System
         //button Bowrroing
         private async void button14_Click(object sender, EventArgs e)
         {
-            
+
             context.Workers.Attach(BorrowWorkerObject);
 
             await Task.Run(() =>
@@ -265,11 +296,11 @@ namespace Optical_Office_Mangment_System
         private void numericUpDownBorrowingAmount_ValueChanged(object sender, EventArgs e)
         {
             //var worker = await GetWorkerAsync(WorkerName);
-            
+
             textBoxSalaryBorrow.Text = BorrowWorkerObject.Salary.ToString();
             textBoxBorrowRemain.Text = (BorrowWorkerObject.Salary - numericUpDownBorrowingAmount.Value).ToString();
 
-           
+
         }
 
         private async void comboBoxBorrowWorkersName_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,12 +315,13 @@ namespace Optical_Office_Mangment_System
 
         private async void comboBoxInfoAboutWorkerAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridViewWorkerAccountInformative.Rows.Clear();
             string workerName = comboBoxInfoAboutWorkerAccount.SelectedItem.ToString();
             var worker = await GetWorkerAsync(workerName);
 
             textBoxSalaryTotalInWorkerAccount.Text = worker.Salary.ToString();
 
-            foreach ( var Borrow in worker.Borrowers)
+            foreach (var Borrow in worker.Borrowers)
             {
                 dataGridViewWorkerAccountInformative.Rows.Add(Borrow.BorrowTime.ToString("dd/MM/yyyy"), Borrow.cost, Borrow.remain);
             }
@@ -323,5 +355,150 @@ namespace Optical_Office_Mangment_System
 
             Helper.DestroyedAdded();
         }
+
+        private async void comboBoxPaymentSalaryWorkerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string WorkerName = comboBoxPaymentSalaryWorkerName.Text;
+
+            var worker = await GetWorkerAsync(WorkerName);
+            textBoxPaymentSalary.Text = worker.Salary.ToString();
+            textBoxPaymentSalaryDestroyedCost.Text = worker.loses.ToString();
+        } 
+        #endregion
+
+        #region Customer Tab
+
+        //Customer Pay
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Add Customer
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Validate The Data
+            string CustomerName = textBoxCustomerName.Text, CustomerNumber = textBoxCustomerNumber.Text, CompanyName = textBoxCompanyName.Text;
+            if (CustomerName == string.Empty || CustomerNumber == string.Empty || CompanyName == string.Empty)
+            {
+                Helper.EmptyBoxWarning();
+            }
+            else
+            {
+
+                context.Customers.Add(new Customers { Name = CustomerName, ComapnyName = CompanyName, PhoneNumber = CustomerNumber });
+                context.SaveChanges();
+
+                Helper.AddSuccess();
+            }
+
+        }
+        #endregion
+
+        #region WareHouse
+
+
+        //Add GlassType
+        private void button19_Click(object sender, EventArgs e)
+        {
+            string GlaassTypeCode = textBoxGlassTypeCode.Text,
+                Sph = textBoxSphAddSection.Text,
+                Cyl = textBoxCylAddSection.Text,
+                Sign = textBoxGlassesSignAddSection.Text;
+
+            decimal PriceSell = numericUpDownAddTypePriceBuy.Value,
+                PriceBuy = numericUpDownAddTypePriceBuy.Value;
+            int Quantity = (int)numericUpDownAddTypeQuantity.Value;
+
+            if (GlaassTypeCode == string.Empty ||
+                Sph == string.Empty ||
+                Cyl == string.Empty ||
+                Sign == string.Empty)
+            {
+                Helper.EmptyBoxWarning();
+                return;
+            }
+            if (PriceSell == 0 ||
+                PriceBuy == 0 ||
+                Quantity == 0)
+            {
+                Helper.ZeroValueWarning();
+                return;
+            }
+
+            context.Optics.Add(new Optics
+            {
+                Code = GlaassTypeCode,
+                Cyl = Cyl,
+                Sph = Sph,
+                PriceBuy = PriceBuy,
+                PriceSell = PriceSell,
+                Quantity = Quantity,
+                Type = Sign
+            });
+
+            context.SaveChanges();
+            Helper.AddSuccess();
+
+        }
+
+
+        //Add Manfacture Price
+        private void button24_Click(object sender, EventArgs e)
+        {
+            string name = textBoxGlassType.Text;
+            decimal price = numericUpDownGlassTypePrice.Value;
+
+            context.GlassesTypes.Add(new GlassesType { Name = name, ManfacuturePrice = price });
+            context.SaveChanges();
+            Helper.AddSuccess();
+        }
+
+        //Modifiy Manfacturer Price
+        private void button25_Click(object sender, EventArgs e)
+        {
+            string TypeName = comboBoxModifyManfcPrice.Text;
+            var Type = context.GlassesTypes.FirstOrDefault(g => g.Name == TypeName);
+
+            decimal price = numericUpDownModifyManfcPrice.Value;
+
+            Type.ManfacuturePrice = price;
+
+            context.SaveChanges();
+            Helper.UpdatedSuccessfully();
+            numericUpDownModifyManfcPrice.Value = 0;
+
+
+        }
+
+
+        //Change The ManfcPrice
+        private void comboBoxModifyManfcPrice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string TypeName = comboBoxModifyManfcPrice.Text;
+            var Type = context.GlassesTypes.FirstOrDefault(g => g.Name == TypeName);
+
+            numericUpDownModifyManfcPrice.Value = Type.ManfacuturePrice;
+        }
+
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            string TypeName = comboBoxModifyManfcPrice.Text;
+            var Type = context.GlassesTypes.FirstOrDefault(g => g.Name == TypeName);
+
+            context.GlassesTypes.Remove(Type);
+            context.SaveChanges();
+
+            Helper.DeletedSuccessfully();
+        }
+
+
+
+
+
+        #endregion
+
+
     }
 }
