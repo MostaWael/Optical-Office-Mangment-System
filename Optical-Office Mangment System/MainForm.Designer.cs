@@ -62,12 +62,12 @@
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownCustomerPayAmount = new System.Windows.Forms.NumericUpDown();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerPaymentRemain = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerPayTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxCustomerPayMoney = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -228,7 +228,7 @@
             this.label53 = new System.Windows.Forms.Label();
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOpticsView = new System.Windows.Forms.DataGridView();
             this.WareHoussGlassType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WareHoussGlassCyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WareHoussGlassSph = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -250,10 +250,10 @@
             this.textBoxGlassTypeCode = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownGlassesType = new System.Windows.Forms.NumericUpDown();
             this.button18 = new System.Windows.Forms.Button();
-            this.textBox31 = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBoxAddGlassesCodeCount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
@@ -261,6 +261,7 @@
             this.tabCustomers.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomerPayAmount)).BeginInit();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -298,12 +299,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyManfcPrice)).BeginInit();
             this.groupBox19.SuspendLayout();
             this.groupBox18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpticsView)).BeginInit();
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypeQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceBuy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
             this.groupBox16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -585,12 +587,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.numericUpDownCustomerPayAmount);
             this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.textBoxCustomerPaymentRemain);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBoxCustomerPayTotal);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.comboBoxCustomerPayMoney);
             this.groupBox3.Controls.Add(this.label7);
@@ -600,6 +602,19 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "دفع حساب";
+            // 
+            // numericUpDownCustomerPayAmount
+            // 
+            this.numericUpDownCustomerPayAmount.Location = new System.Drawing.Point(68, 125);
+            this.numericUpDownCustomerPayAmount.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownCustomerPayAmount.Name = "numericUpDownCustomerPayAmount";
+            this.numericUpDownCustomerPayAmount.Size = new System.Drawing.Size(193, 32);
+            this.numericUpDownCustomerPayAmount.TabIndex = 16;
+            this.numericUpDownCustomerPayAmount.ValueChanged += new System.EventHandler(this.numericUpDownCustomerPayAmount_ValueChanged);
             // 
             // button5
             // 
@@ -611,12 +626,13 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox4
+            // textBoxCustomerPaymentRemain
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 163);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(151, 32);
-            this.textBox4.TabIndex = 11;
+            this.textBoxCustomerPaymentRemain.Location = new System.Drawing.Point(110, 163);
+            this.textBoxCustomerPaymentRemain.Name = "textBoxCustomerPaymentRemain";
+            this.textBoxCustomerPaymentRemain.ReadOnly = true;
+            this.textBoxCustomerPaymentRemain.Size = new System.Drawing.Size(151, 32);
+            this.textBoxCustomerPaymentRemain.TabIndex = 11;
             // 
             // label10
             // 
@@ -627,13 +643,6 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "الباقى:";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(110, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 32);
-            this.textBox3.TabIndex = 9;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -643,12 +652,13 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "المدفوع:";
             // 
-            // textBox2
+            // textBoxCustomerPayTotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 87);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 32);
-            this.textBox2.TabIndex = 7;
+            this.textBoxCustomerPayTotal.Location = new System.Drawing.Point(110, 87);
+            this.textBoxCustomerPayTotal.Name = "textBoxCustomerPayTotal";
+            this.textBoxCustomerPayTotal.ReadOnly = true;
+            this.textBoxCustomerPayTotal.Size = new System.Drawing.Size(151, 32);
+            this.textBoxCustomerPayTotal.TabIndex = 7;
             // 
             // label8
             // 
@@ -666,6 +676,7 @@
             this.comboBoxCustomerPayMoney.Name = "comboBoxCustomerPayMoney";
             this.comboBoxCustomerPayMoney.Size = new System.Drawing.Size(263, 32);
             this.comboBoxCustomerPayMoney.TabIndex = 5;
+            this.comboBoxCustomerPayMoney.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomerPayMoney_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -1966,7 +1977,7 @@
             this.tabPage1.Controls.Add(this.groupBoxManfacturePrice);
             this.tabPage1.Controls.Add(this.groupBox19);
             this.tabPage1.Controls.Add(this.groupBox18);
-            this.tabPage1.Controls.Add(this.dataGridView6);
+            this.tabPage1.Controls.Add(this.dataGridViewOpticsView);
             this.tabPage1.Controls.Add(this.groupBox17);
             this.tabPage1.Controls.Add(this.groupBox16);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
@@ -2240,20 +2251,20 @@
             this.label54.TabIndex = 0;
             this.label54.Text = "الكود:";
             // 
-            // dataGridView6
+            // dataGridViewOpticsView
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewOpticsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOpticsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.WareHoussGlassType,
             this.WareHoussGlassCyl,
             this.WareHoussGlassSph,
             this.WareHoussGlassTypeQuantity});
-            this.dataGridView6.Location = new System.Drawing.Point(813, 265);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersWidth = 51;
-            this.dataGridView6.RowTemplate.Height = 26;
-            this.dataGridView6.Size = new System.Drawing.Size(538, 400);
-            this.dataGridView6.TabIndex = 2;
+            this.dataGridViewOpticsView.Location = new System.Drawing.Point(813, 265);
+            this.dataGridViewOpticsView.Name = "dataGridViewOpticsView";
+            this.dataGridViewOpticsView.RowHeadersWidth = 51;
+            this.dataGridViewOpticsView.RowTemplate.Height = 26;
+            this.dataGridViewOpticsView.Size = new System.Drawing.Size(538, 400);
+            this.dataGridViewOpticsView.TabIndex = 2;
             // 
             // WareHoussGlassType
             // 
@@ -2448,10 +2459,10 @@
             // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.numericUpDownGlassesType);
             this.groupBox16.Controls.Add(this.button18);
-            this.groupBox16.Controls.Add(this.textBox31);
             this.groupBox16.Controls.Add(this.label46);
-            this.groupBox16.Controls.Add(this.textBox30);
+            this.groupBox16.Controls.Add(this.textBoxAddGlassesCodeCount);
             this.groupBox16.Controls.Add(this.label45);
             this.groupBox16.Location = new System.Drawing.Point(813, 28);
             this.groupBox16.Name = "groupBox16";
@@ -2459,6 +2470,18 @@
             this.groupBox16.TabIndex = 0;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "أضافة عدسات";
+            // 
+            // numericUpDownGlassesType
+            // 
+            this.numericUpDownGlassesType.Location = new System.Drawing.Point(253, 79);
+            this.numericUpDownGlassesType.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownGlassesType.Name = "numericUpDownGlassesType";
+            this.numericUpDownGlassesType.Size = new System.Drawing.Size(203, 32);
+            this.numericUpDownGlassesType.TabIndex = 17;
             // 
             // button18
             // 
@@ -2468,13 +2491,7 @@
             this.button18.TabIndex = 4;
             this.button18.Text = "أضافة";
             this.button18.UseVisualStyleBackColor = true;
-            // 
-            // textBox31
-            // 
-            this.textBox31.Location = new System.Drawing.Point(349, 83);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(107, 32);
-            this.textBox31.TabIndex = 3;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // label46
             // 
@@ -2485,12 +2502,12 @@
             this.label46.TabIndex = 2;
             this.label46.Text = "الكمية:";
             // 
-            // textBox30
+            // textBoxAddGlassesCodeCount
             // 
-            this.textBox30.Location = new System.Drawing.Point(162, 31);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(294, 32);
-            this.textBox30.TabIndex = 1;
+            this.textBoxAddGlassesCodeCount.Location = new System.Drawing.Point(162, 31);
+            this.textBoxAddGlassesCodeCount.Name = "textBoxAddGlassesCodeCount";
+            this.textBoxAddGlassesCodeCount.Size = new System.Drawing.Size(294, 32);
+            this.textBoxAddGlassesCodeCount.TabIndex = 1;
             // 
             // label45
             // 
@@ -2510,6 +2527,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabBills.ResumeLayout(false);
             this.tabBills.PerformLayout();
@@ -2519,6 +2537,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomerPayAmount)).EndInit();
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -2574,7 +2593,7 @@
             this.groupBox19.PerformLayout();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpticsView)).EndInit();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypeQuantity)).EndInit();
@@ -2582,6 +2601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).EndInit();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2617,14 +2637,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCustomerPayTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBoxCustomerPayMoney;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxCustomerPaymentRemain;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button6;
@@ -2721,8 +2740,7 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox textBoxAddGlassesCodeCount;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.GroupBox groupBox17;
@@ -2737,7 +2755,7 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox textBoxCylAddSection;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView dataGridViewOpticsView;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.TextBox textBox38;
@@ -2809,5 +2827,7 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.NumericUpDown numericUpDownSupplierAddedCost;
         private System.Windows.Forms.NumericUpDown numericUpDownSupplierPayAmount;
+        private System.Windows.Forms.NumericUpDown numericUpDownCustomerPayAmount;
+        private System.Windows.Forms.NumericUpDown numericUpDownGlassesType;
     }
 }

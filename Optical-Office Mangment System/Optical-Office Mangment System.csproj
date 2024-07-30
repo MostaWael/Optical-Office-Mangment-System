@@ -94,6 +94,14 @@
     <Compile Include="Migrations\202407291448408_fix-time-in-supplierPayment.Designer.cs">
       <DependentUpon>202407291448408_fix-time-in-supplierPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407301959325_add-cost-to-customer.cs" />
+    <Compile Include="Migrations\202407301959325_add-cost-to-customer.Designer.cs">
+      <DependentUpon>202407301959325_add-cost-to-customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407302037554_fix-bill-number-to-int.cs" />
+    <Compile Include="Migrations\202407302037554_fix-bill-number-to-int.Designer.cs">
+      <DependentUpon>202407302037554_fix-bill-number-to-int.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\BillIteam.cs" />
@@ -132,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407291448408_fix-time-in-supplierPayment.resx">
       <DependentUpon>202407291448408_fix-time-in-supplierPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407301959325_add-cost-to-customer.resx">
+      <DependentUpon>202407301959325_add-cost-to-customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407302037554_fix-bill-number-to-int.resx">
+      <DependentUpon>202407302037554_fix-bill-number-to-int.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

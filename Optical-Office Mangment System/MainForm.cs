@@ -384,15 +384,70 @@ namespace Optical_Office_Mangment_System
             var worker = await GetWorkerAsync(WorkerName);
             textBoxPaymentSalary.Text = worker.Salary.ToString();
             textBoxPaymentSalaryDestroyedCost.Text = worker.loses.ToString();
-        } 
+        }
         #endregion
 
         #region Customer Tab
 
+        //Select Cuatomer for Pay
+        private void comboBoxCustomerPayMoney_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string CustomerName = comboBoxCustomerPayMoney.Text;
+            var customer = context.Customers.FirstOrDefault(x => x.Name == CustomerName);
+
+            int lastBillNumber;
+
+            if (customer.Bills.LastOrDefault() == null)
+            {
+                Helper.NoBillsForThisCustomer();
+                return;
+            }
+            else
+            {
+                lastBillNumber = customer.Bills.LastOrDefault().Number;
+            }
+
+
+
+            if (customer.Bills.Count == 0 || customer.Bills[lastBillNumber].TotalCost == 0 || customer.Bills == null)
+            {
+                Helper.NoBillsForThisCustomer();
+                return;
+            }
+
+            textBoxCustomerPayTotal.Text = customer.TotalCost.ToString();
+            
+        }
+
+        //Set Payment Amount
+        private void numericUpDownCustomerPayAmount_ValueChanged(object sender, EventArgs e)
+        {
+            string CustomerName = comboBoxCustomerPayMoney.Text;
+            var customer = context.Customers.FirstOrDefault(x => x.Name == CustomerName);
+
+            textBoxCustomerPaymentRemain.Text = (customer.TotalCost - numericUpDownCustomerPayAmount.Value).ToString();
+        }
+
         //Customer Pay
         private void button5_Click(object sender, EventArgs e)
         {
+            string CustomerName = comboBoxCustomerPayMoney.Text;
+            var customer = context.Customers.FirstOrDefault(x => x.Name == CustomerName);
 
+            customer.TotalCost -= numericUpDownCustomerPayAmount.Value;
+
+            int lastBillNumber = customer.Bills.LastOrDefault().Number;
+
+            string BillStateValue = (customer.TotalCost > 0) ? "باقى منها" : "مكتملة";
+
+            customer.CustomerPayments.Add(
+                new CustomerPayments { 
+                    BillNumber = customer.Bills[lastBillNumber].Number, 
+                    PaidTotal = numericUpDownCustomerPayAmount.Value, 
+                    Remain = customer.TotalCost, 
+                    BillState = BillStateValue
+                });
+            context.SaveChanges();
         }
 
         //Add Customer
@@ -517,10 +572,41 @@ namespace Optical_Office_Mangment_System
 
 
 
+        //Add GlassesType in WareHous
+        private void button18_Click(object sender, EventArgs e)
+        {
+            string Code = textBoxAddGlassesCodeCount.Text;
+
+            var optic = context.Optics.FirstOrDefault(opt => opt.Code == Code);
+
+            if(optic == null)
+            {
+                Helper.OpticDoesNotExist();
+            }
+            else
+            {
+                optic.Quantity += (int)numericUpDownGlassesType.Value;
+            }
+
+            context.SaveChanges();
+
+            Helper.AddSuccess();
+        }
+
+
 
 
         #endregion
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            dataGridViewOpticsView.Rows.Clear();
+            var Optics = context.Optics.ToList();
 
+            foreach ( var opt in Optics )
+            {
+                dataGridViewOpticsView.Rows.Add(opt.Type,opt.Cyl,opt.Sph,opt.Quantity);
+            }
+        }
     }
 }

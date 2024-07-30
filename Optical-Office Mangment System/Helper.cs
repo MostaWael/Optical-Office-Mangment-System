@@ -60,5 +60,15 @@ namespace Optical_Office_Mangment_System
         {
             MessageBox.Show("خطاء فى عملية الدفع","فشل",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
+
+        public static void NoBillsForThisCustomer()
+        {
+            MessageBox.Show("لا يوجد فواتير لهذا العميل", "خطاء", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public static void OpticDoesNotExist()
+        {
+            MessageBox.Show("هذا النوع غير موجود يرجى أضافته", "خطاء", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
