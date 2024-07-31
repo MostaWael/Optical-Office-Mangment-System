@@ -43,6 +43,17 @@ namespace Optical_Office_Mangment_System
             comboBoxInfoAboutWorkerAccount.DataSource = WorkersName;
             comboBoxPaymentSalaryWorkerName.DataSource= WorkersName;
         }
+        
+        private void LoadDataIntoOpticsGridView()
+        {
+            dataGridViewOpticsView.Rows.Clear();
+            var Optics = context.Optics.OrderBy(op => op.Cyl).ToList();
+
+            foreach (var opt in Optics)
+            {
+                dataGridViewOpticsView.Rows.Add(opt.Type, opt.Cyl, opt.Sph, opt.Quantity);
+            }
+        }
 
         private void LoadDataIntowCustomerComboBoxName()
         {
@@ -515,6 +526,7 @@ namespace Optical_Office_Mangment_System
 
             context.SaveChanges();
             Helper.AddSuccess();
+            LoadDataIntoOpticsGridView();
 
         }
 
@@ -591,22 +603,23 @@ namespace Optical_Office_Mangment_System
             context.SaveChanges();
 
             Helper.AddSuccess();
+            LoadDataIntoOpticsGridView();
         }
 
 
+        //Modify The GlassesPrice
+        private void button20_Click(object sender, EventArgs e)
+        {
 
+        }
 
         #endregion
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            dataGridViewOpticsView.Rows.Clear();
-            var Optics = context.Optics.ToList();
-
-            foreach ( var opt in Optics )
-            {
-                dataGridViewOpticsView.Rows.Add(opt.Type,opt.Cyl,opt.Sph,opt.Quantity);
-            }
+            LoadDataIntoOpticsGridView();
         }
+
+
     }
 }

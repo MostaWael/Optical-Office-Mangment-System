@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.button22 = new System.Windows.Forms.Button();
@@ -1845,16 +1845,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(8, 328);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(925, 303);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1937,17 +1937,17 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -2218,6 +2218,7 @@
             this.button20.TabIndex = 4;
             this.button20.Text = "تعديل";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // textBox38
             // 
@@ -2261,6 +2262,8 @@
             this.WareHoussGlassTypeQuantity});
             this.dataGridViewOpticsView.Location = new System.Drawing.Point(813, 265);
             this.dataGridViewOpticsView.Name = "dataGridViewOpticsView";
+            this.dataGridViewOpticsView.ReadOnly = true;
+            this.dataGridViewOpticsView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridViewOpticsView.RowHeadersWidth = 51;
             this.dataGridViewOpticsView.RowTemplate.Height = 26;
             this.dataGridViewOpticsView.Size = new System.Drawing.Size(538, 400);
@@ -2271,6 +2274,7 @@
             this.WareHoussGlassType.HeaderText = "توع العدسة";
             this.WareHoussGlassType.MinimumWidth = 6;
             this.WareHoussGlassType.Name = "WareHoussGlassType";
+            this.WareHoussGlassType.ReadOnly = true;
             this.WareHoussGlassType.Width = 125;
             // 
             // WareHoussGlassCyl
@@ -2278,6 +2282,7 @@
             this.WareHoussGlassCyl.HeaderText = "Cyl";
             this.WareHoussGlassCyl.MinimumWidth = 6;
             this.WareHoussGlassCyl.Name = "WareHoussGlassCyl";
+            this.WareHoussGlassCyl.ReadOnly = true;
             this.WareHoussGlassCyl.Width = 125;
             // 
             // WareHoussGlassSph
@@ -2285,6 +2290,7 @@
             this.WareHoussGlassSph.HeaderText = "Sph";
             this.WareHoussGlassSph.MinimumWidth = 6;
             this.WareHoussGlassSph.Name = "WareHoussGlassSph";
+            this.WareHoussGlassSph.ReadOnly = true;
             this.WareHoussGlassSph.Width = 125;
             // 
             // WareHoussGlassTypeQuantity
@@ -2292,6 +2298,7 @@
             this.WareHoussGlassTypeQuantity.HeaderText = "الكمية";
             this.WareHoussGlassTypeQuantity.MinimumWidth = 6;
             this.WareHoussGlassTypeQuantity.Name = "WareHoussGlassTypeQuantity";
+            this.WareHoussGlassTypeQuantity.ReadOnly = true;
             this.WareHoussGlassTypeQuantity.Width = 125;
             // 
             // groupBox17
