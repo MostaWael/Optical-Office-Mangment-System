@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.button22 = new System.Windows.Forms.Button();
@@ -221,12 +221,11 @@
             this.textBox42 = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.button20 = new System.Windows.Forms.Button();
-            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.textBoxModifyPriceOptic = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
-            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.textBoxModifiyOpticsPriceCode = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.dataGridViewOpticsView = new System.Windows.Forms.DataGridView();
             this.WareHoussGlassType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -255,6 +254,8 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBoxAddGlassesCodeCount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
+            this.numericUpDownModifyTheOpticPrice = new System.Windows.Forms.NumericUpDown();
+            this.buttonSearchToModifyOpticCode = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -306,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyTheOpticPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1845,17 +1847,17 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(8, 328);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(8, 305);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(925, 303);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(969, 326);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -1937,17 +1939,17 @@
             // 
             // chart2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -2161,6 +2163,7 @@
             this.button21.TabIndex = 4;
             this.button21.Text = "تعديل";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // textBox42
             // 
@@ -2180,12 +2183,13 @@
             // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.textBox40);
+            this.groupBox18.Controls.Add(this.buttonSearchToModifyOpticCode);
+            this.groupBox18.Controls.Add(this.numericUpDownModifyTheOpticPrice);
             this.groupBox18.Controls.Add(this.label55);
             this.groupBox18.Controls.Add(this.button20);
-            this.groupBox18.Controls.Add(this.textBox38);
+            this.groupBox18.Controls.Add(this.textBoxModifyPriceOptic);
             this.groupBox18.Controls.Add(this.label53);
-            this.groupBox18.Controls.Add(this.textBox39);
+            this.groupBox18.Controls.Add(this.textBoxModifiyOpticsPriceCode);
             this.groupBox18.Controls.Add(this.label54);
             this.groupBox18.Location = new System.Drawing.Point(270, 265);
             this.groupBox18.Name = "groupBox18";
@@ -2193,13 +2197,6 @@
             this.groupBox18.TabIndex = 3;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "تعديل اسعار";
-            // 
-            // textBox40
-            // 
-            this.textBox40.Location = new System.Drawing.Point(65, 83);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(107, 32);
-            this.textBox40.TabIndex = 6;
             // 
             // label55
             // 
@@ -2220,12 +2217,13 @@
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
-            // textBox38
+            // textBoxModifyPriceOptic
             // 
-            this.textBox38.Location = new System.Drawing.Point(349, 83);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(107, 32);
-            this.textBox38.TabIndex = 3;
+            this.textBoxModifyPriceOptic.Location = new System.Drawing.Point(349, 83);
+            this.textBoxModifyPriceOptic.Name = "textBoxModifyPriceOptic";
+            this.textBoxModifyPriceOptic.ReadOnly = true;
+            this.textBoxModifyPriceOptic.Size = new System.Drawing.Size(107, 32);
+            this.textBoxModifyPriceOptic.TabIndex = 3;
             // 
             // label53
             // 
@@ -2236,12 +2234,12 @@
             this.label53.TabIndex = 2;
             this.label53.Text = "السعر:";
             // 
-            // textBox39
+            // textBoxModifiyOpticsPriceCode
             // 
-            this.textBox39.Location = new System.Drawing.Point(162, 31);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(294, 32);
-            this.textBox39.TabIndex = 1;
+            this.textBoxModifiyOpticsPriceCode.Location = new System.Drawing.Point(162, 31);
+            this.textBoxModifiyOpticsPriceCode.Name = "textBoxModifiyOpticsPriceCode";
+            this.textBoxModifiyOpticsPriceCode.Size = new System.Drawing.Size(294, 32);
+            this.textBoxModifiyOpticsPriceCode.TabIndex = 1;
             // 
             // label54
             // 
@@ -2260,13 +2258,13 @@
             this.WareHoussGlassCyl,
             this.WareHoussGlassSph,
             this.WareHoussGlassTypeQuantity});
-            this.dataGridViewOpticsView.Location = new System.Drawing.Point(813, 265);
+            this.dataGridViewOpticsView.Location = new System.Drawing.Point(813, 276);
             this.dataGridViewOpticsView.Name = "dataGridViewOpticsView";
             this.dataGridViewOpticsView.ReadOnly = true;
             this.dataGridViewOpticsView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridViewOpticsView.RowHeadersWidth = 51;
             this.dataGridViewOpticsView.RowTemplate.Height = 26;
-            this.dataGridViewOpticsView.Size = new System.Drawing.Size(538, 400);
+            this.dataGridViewOpticsView.Size = new System.Drawing.Size(538, 389);
             this.dataGridViewOpticsView.TabIndex = 2;
             // 
             // WareHoussGlassType
@@ -2525,6 +2523,28 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
+            // numericUpDownModifyTheOpticPrice
+            // 
+            this.numericUpDownModifyTheOpticPrice.Location = new System.Drawing.Point(38, 89);
+            this.numericUpDownModifyTheOpticPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownModifyTheOpticPrice.Name = "numericUpDownModifyTheOpticPrice";
+            this.numericUpDownModifyTheOpticPrice.Size = new System.Drawing.Size(134, 32);
+            this.numericUpDownModifyTheOpticPrice.TabIndex = 18;
+            // 
+            // buttonSearchToModifyOpticCode
+            // 
+            this.buttonSearchToModifyOpticCode.Location = new System.Drawing.Point(38, 25);
+            this.buttonSearchToModifyOpticCode.Name = "buttonSearchToModifyOpticCode";
+            this.buttonSearchToModifyOpticCode.Size = new System.Drawing.Size(103, 42);
+            this.buttonSearchToModifyOpticCode.TabIndex = 19;
+            this.buttonSearchToModifyOpticCode.Text = "بحث";
+            this.buttonSearchToModifyOpticCode.UseVisualStyleBackColor = true;
+            this.buttonSearchToModifyOpticCode.Click += new System.EventHandler(this.buttonSearchToModifyOpticCode_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2609,6 +2629,7 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyTheOpticPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2765,11 +2786,10 @@
         private System.Windows.Forms.DataGridView dataGridViewOpticsView;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.TextBox textBoxModifyPriceOptic;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox textBoxModifiyOpticsPriceCode;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox textBox40;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.TextBox textBox41;
@@ -2836,5 +2856,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSupplierPayAmount;
         private System.Windows.Forms.NumericUpDown numericUpDownCustomerPayAmount;
         private System.Windows.Forms.NumericUpDown numericUpDownGlassesType;
+        private System.Windows.Forms.NumericUpDown numericUpDownModifyTheOpticPrice;
+        private System.Windows.Forms.Button buttonSearchToModifyOpticCode;
     }
 }

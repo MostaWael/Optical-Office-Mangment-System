@@ -610,6 +610,29 @@ namespace Optical_Office_Mangment_System
         //Modify The GlassesPrice
         private void button20_Click(object sender, EventArgs e)
         {
+            string Code = textBoxModifiyOpticsPriceCode.Text;
+
+            var optic = context.Optics.FirstOrDefault(opt => opt.Code == Code);
+
+            optic.PriceSell += numericUpDownModifyTheOpticPrice.Value;
+
+            context.SaveChanges();
+            Helper.UpdatedSuccessfully();
+        }
+
+        //Search For The Type You will modify
+        private void buttonSearchToModifyOpticCode_Click(object sender, EventArgs e)
+        {
+            string Code = textBoxModifiyOpticsPriceCode.Text;
+
+            var optic = context.Optics.FirstOrDefault(opt => opt.Code == Code);
+
+            textBoxModifyPriceOptic.Text = optic.PriceSell.ToString();
+        }
+
+        //Modify Collection of prices to a collection of prices
+        private void button21_Click(object sender, EventArgs e)
+        {
 
         }
 
