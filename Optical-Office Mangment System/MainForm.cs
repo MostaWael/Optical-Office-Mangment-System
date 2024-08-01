@@ -643,6 +643,93 @@ namespace Optical_Office_Mangment_System
             LoadDataIntoOpticsGridView();
         }
 
+        #region BillsTab
+        private void buttonAddIteamToBill_Click(object sender, EventArgs e)
+        {
+            //string code = textBoxBillOpticCode.Text;
+
+            //var optic = context.Optics.FirstOrDefault(opt => opt.Code == code);
+
+            //var glassType = context.GlassesTypes.Select(p => p.Name).ToList();
+
+            //var GlassType = (DataGridViewComboBoxColumn)dataGridViewRunTimeBills.Columns["GlassType"];
+
+            //GlassType.DataSource = glassType;
+
+            //dataGridViewRunTimeBills.Rows.Add(
+            //    glassType.FirstOrDefault(),
+            //    optic.Type,
+            //    optic.Cyl,
+            //    optic.Sph,
+            //    optic.PriceSell,
+            //    1,
+            //    optic.PriceSell
+            //    );
+
+            //dataGridViewRunTimeBills.Refresh();
+
+            // Setup the DataGridViewComboBoxColumn
+            // Ensure the DataGridViewComboBoxColumn is set up properly
+            // Ensure the DataGridViewComboBoxColumn is set up properly
+            var glassTypeColumn = new DataGridViewComboBoxColumn
+            {
+                Name = "GlassType",
+                HeaderText = "Glass Type",
+                DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox
+            };
+
+            // Add the column to the DataGridView if it's not already added
+            if (!dataGridViewRunTimeBills.Columns.Contains("GlassType"))
+            {
+                dataGridViewRunTimeBills.Columns.Add(glassTypeColumn);
+            }
+
+            // Fetch the list of glass types from the database
+            var glassTypeList = context.GlassesTypes.Select(p => p.Name).ToList();
+
+            // Set the DataSource for the combo box column
+            ((DataGridViewComboBoxColumn)dataGridViewRunTimeBills.Columns["GlassType"]).DataSource = glassTypeList;
+
+            string code = textBoxBillOpticCode.Text;
+            var optic = context.Optics.FirstOrDefault(opt => opt.Code == code);
+
+            if (optic != null)
+            {
+                // Add a new row
+                int rowIndex = dataGridViewRunTimeBills.Rows.Add();
+
+                // Access the newly added row
+                var newRow = dataGridViewRunTimeBills.Rows[rowIndex];
+
+                // Set the value for the combo box cell in the new row
+                newRow.Cells["GlassType"].Value = glassTypeList.FirstOrDefault(); // Set a default value or appropriate value from the list
+
+                // Set other values for the row
+                newRow.Cells["OpticType"].Value = optic.Type;
+                newRow.Cells["Cyl"].Value = optic.Cyl;
+                newRow.Cells["Sph"].Value = optic.Sph;
+                newRow.Cells["PriceManfuc"].Value = 10;
+                newRow.Cells["Price"].Value = optic.PriceSell;
+                newRow.Cells["Quantity"].Value = 1;
+                newRow.Cells["TotalPrice"].Value = optic.PriceSell;
+            }
+            else
+            {
+                MessageBox.Show("No optic found with the given code.");
+            }
+
+            // Refresh the DataGridView to ensure it updates properly
+            dataGridViewRunTimeBills.Refresh();
+
+
+
+        }
+
+        //Select Manfc Price
+
+
+        #endregion
+
 
     }
 }

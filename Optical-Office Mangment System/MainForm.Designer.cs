@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
-            this.button22 = new System.Windows.Forms.Button();
+            this.buttonAddIteamToBill = new System.Windows.Forms.Button();
             this.label58 = new System.Windows.Forms.Label();
-            this.textBox43 = new System.Windows.Forms.TextBox();
+            this.textBoxBillOpticCode = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRunTimeBills = new System.Windows.Forms.DataGridView();
             this.GlassType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -221,6 +221,8 @@
             this.textBox42 = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.buttonSearchToModifyOpticCode = new System.Windows.Forms.Button();
+            this.numericUpDownModifyTheOpticPrice = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.button20 = new System.Windows.Forms.Button();
             this.textBoxModifyPriceOptic = new System.Windows.Forms.TextBox();
@@ -254,11 +256,9 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBoxAddGlassesCodeCount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.numericUpDownModifyTheOpticPrice = new System.Windows.Forms.NumericUpDown();
-            this.buttonSearchToModifyOpticCode = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRunTimeBills)).BeginInit();
             this.tabCustomers.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -300,6 +300,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyManfcPrice)).BeginInit();
             this.groupBox19.SuspendLayout();
             this.groupBox18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyTheOpticPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpticsView)).BeginInit();
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypeQuantity)).BeginInit();
@@ -307,7 +308,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyTheOpticPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -333,12 +333,12 @@
             // 
             // tabBills
             // 
-            this.tabBills.Controls.Add(this.button22);
+            this.tabBills.Controls.Add(this.buttonAddIteamToBill);
             this.tabBills.Controls.Add(this.label58);
-            this.tabBills.Controls.Add(this.textBox43);
+            this.tabBills.Controls.Add(this.textBoxBillOpticCode);
             this.tabBills.Controls.Add(this.button2);
             this.tabBills.Controls.Add(this.button1);
-            this.tabBills.Controls.Add(this.dataGridView1);
+            this.tabBills.Controls.Add(this.dataGridViewRunTimeBills);
             this.tabBills.Controls.Add(this.comboBoxCustomersNames);
             this.tabBills.Controls.Add(this.label1);
             this.tabBills.Cursor = System.Windows.Forms.Cursors.Default;
@@ -351,31 +351,32 @@
             this.tabBills.Text = "الفواتير";
             this.tabBills.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // buttonAddIteamToBill
             // 
-            this.button22.ForeColor = System.Drawing.Color.SpringGreen;
-            this.button22.Location = new System.Drawing.Point(79, 46);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(173, 47);
-            this.button22.TabIndex = 7;
-            this.button22.Text = "أضافة";
-            this.button22.UseVisualStyleBackColor = true;
+            this.buttonAddIteamToBill.ForeColor = System.Drawing.Color.SpringGreen;
+            this.buttonAddIteamToBill.Location = new System.Drawing.Point(76, 41);
+            this.buttonAddIteamToBill.Name = "buttonAddIteamToBill";
+            this.buttonAddIteamToBill.Size = new System.Drawing.Size(173, 47);
+            this.buttonAddIteamToBill.TabIndex = 7;
+            this.buttonAddIteamToBill.Text = "أضافة";
+            this.buttonAddIteamToBill.UseVisualStyleBackColor = true;
+            this.buttonAddIteamToBill.Click += new System.EventHandler(this.buttonAddIteamToBill_Click);
             // 
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(667, 57);
+            this.label58.Location = new System.Drawing.Point(670, 52);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(102, 24);
             this.label58.TabIndex = 6;
             this.label58.Text = "كود المنتج:";
             // 
-            // textBox43
+            // textBoxBillOpticCode
             // 
-            this.textBox43.Location = new System.Drawing.Point(404, 49);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(239, 32);
-            this.textBox43.TabIndex = 5;
+            this.textBoxBillOpticCode.Location = new System.Drawing.Point(425, 49);
+            this.textBoxBillOpticCode.Name = "textBoxBillOpticCode";
+            this.textBoxBillOpticCode.Size = new System.Drawing.Size(239, 32);
+            this.textBoxBillOpticCode.TabIndex = 5;
             // 
             // button2
             // 
@@ -397,10 +398,10 @@
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewRunTimeBills
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewRunTimeBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRunTimeBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GlassType,
             this.OpticType,
             this.Cyl,
@@ -409,13 +410,13 @@
             this.Price,
             this.Quantity,
             this.TotalPrice});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 115);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 26;
-            this.dataGridView1.Size = new System.Drawing.Size(1347, 448);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewRunTimeBills.Location = new System.Drawing.Point(6, 115);
+            this.dataGridViewRunTimeBills.Name = "dataGridViewRunTimeBills";
+            this.dataGridViewRunTimeBills.ReadOnly = true;
+            this.dataGridViewRunTimeBills.RowHeadersWidth = 51;
+            this.dataGridViewRunTimeBills.RowTemplate.Height = 26;
+            this.dataGridViewRunTimeBills.Size = new System.Drawing.Size(1347, 448);
+            this.dataGridViewRunTimeBills.TabIndex = 2;
             // 
             // GlassType
             // 
@@ -484,7 +485,7 @@
             // comboBoxCustomersNames
             // 
             this.comboBoxCustomersNames.FormattingEnabled = true;
-            this.comboBoxCustomersNames.Location = new System.Drawing.Point(959, 49);
+            this.comboBoxCustomersNames.Location = new System.Drawing.Point(959, 46);
             this.comboBoxCustomersNames.Name = "comboBoxCustomersNames";
             this.comboBoxCustomersNames.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBoxCustomersNames.Size = new System.Drawing.Size(241, 32);
@@ -493,7 +494,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1219, 49);
+            this.label1.Location = new System.Drawing.Point(1206, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 24);
             this.label1.TabIndex = 0;
@@ -1847,16 +1848,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(8, 305);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(969, 326);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1939,17 +1940,17 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -1966,7 +1967,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(578, 279);
+            this.button17.Location = new System.Drawing.Point(579, 257);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(227, 89);
             this.button17.TabIndex = 0;
@@ -2197,6 +2198,28 @@
             this.groupBox18.TabIndex = 3;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "تعديل اسعار";
+            // 
+            // buttonSearchToModifyOpticCode
+            // 
+            this.buttonSearchToModifyOpticCode.Location = new System.Drawing.Point(38, 25);
+            this.buttonSearchToModifyOpticCode.Name = "buttonSearchToModifyOpticCode";
+            this.buttonSearchToModifyOpticCode.Size = new System.Drawing.Size(103, 42);
+            this.buttonSearchToModifyOpticCode.TabIndex = 19;
+            this.buttonSearchToModifyOpticCode.Text = "بحث";
+            this.buttonSearchToModifyOpticCode.UseVisualStyleBackColor = true;
+            this.buttonSearchToModifyOpticCode.Click += new System.EventHandler(this.buttonSearchToModifyOpticCode_Click);
+            // 
+            // numericUpDownModifyTheOpticPrice
+            // 
+            this.numericUpDownModifyTheOpticPrice.Location = new System.Drawing.Point(38, 89);
+            this.numericUpDownModifyTheOpticPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownModifyTheOpticPrice.Name = "numericUpDownModifyTheOpticPrice";
+            this.numericUpDownModifyTheOpticPrice.Size = new System.Drawing.Size(134, 32);
+            this.numericUpDownModifyTheOpticPrice.TabIndex = 18;
             // 
             // label55
             // 
@@ -2523,28 +2546,6 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
-            // numericUpDownModifyTheOpticPrice
-            // 
-            this.numericUpDownModifyTheOpticPrice.Location = new System.Drawing.Point(38, 89);
-            this.numericUpDownModifyTheOpticPrice.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDownModifyTheOpticPrice.Name = "numericUpDownModifyTheOpticPrice";
-            this.numericUpDownModifyTheOpticPrice.Size = new System.Drawing.Size(134, 32);
-            this.numericUpDownModifyTheOpticPrice.TabIndex = 18;
-            // 
-            // buttonSearchToModifyOpticCode
-            // 
-            this.buttonSearchToModifyOpticCode.Location = new System.Drawing.Point(38, 25);
-            this.buttonSearchToModifyOpticCode.Name = "buttonSearchToModifyOpticCode";
-            this.buttonSearchToModifyOpticCode.Size = new System.Drawing.Size(103, 42);
-            this.buttonSearchToModifyOpticCode.TabIndex = 19;
-            this.buttonSearchToModifyOpticCode.Text = "بحث";
-            this.buttonSearchToModifyOpticCode.UseVisualStyleBackColor = true;
-            this.buttonSearchToModifyOpticCode.Click += new System.EventHandler(this.buttonSearchToModifyOpticCode_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2558,7 +2559,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabBills.ResumeLayout(false);
             this.tabBills.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRunTimeBills)).EndInit();
             this.tabCustomers.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -2620,6 +2621,7 @@
             this.groupBox19.PerformLayout();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyTheOpticPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpticsView)).EndInit();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
@@ -2629,7 +2631,6 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModifyTheOpticPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2645,7 +2646,7 @@
         private System.Windows.Forms.TabPage tabPageReportUpload;
         private System.Windows.Forms.ComboBox comboBoxCustomersNames;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewRunTimeBills;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -2797,8 +2798,8 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.TextBox textBox42;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.TextBox textBox43;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.TextBox textBoxBillOpticCode;
+        private System.Windows.Forms.Button buttonAddIteamToBill;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
