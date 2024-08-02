@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -42,14 +43,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewRunTimeBills = new System.Windows.Forms.DataGridView();
-            this.GlassType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sph = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceManfuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxCustomersNames = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCustomers = new System.Windows.Forms.TabPage();
@@ -256,6 +249,17 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBoxAddGlassesCodeCount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
+            this.opticsOfficeDataSet = new Optical_Office_Mangment_System.OpticsOfficeDataSet();
+            this.glassesTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.glassesTypesTableAdapter = new Optical_Office_Mangment_System.OpticsOfficeDataSetTableAdapters.GlassesTypesTableAdapter();
+            this.GlassType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceManfuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRunTimeBills)).BeginInit();
@@ -308,6 +312,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opticsOfficeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glassesTypesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -400,6 +406,7 @@
             // 
             // dataGridViewRunTimeBills
             // 
+            this.dataGridViewRunTimeBills.AllowDrop = true;
             this.dataGridViewRunTimeBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRunTimeBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GlassType,
@@ -410,6 +417,7 @@
             this.Price,
             this.Quantity,
             this.TotalPrice});
+            this.dataGridViewRunTimeBills.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewRunTimeBills.Location = new System.Drawing.Point(6, 115);
             this.dataGridViewRunTimeBills.Name = "dataGridViewRunTimeBills";
             this.dataGridViewRunTimeBills.ReadOnly = true;
@@ -417,70 +425,6 @@
             this.dataGridViewRunTimeBills.RowTemplate.Height = 26;
             this.dataGridViewRunTimeBills.Size = new System.Drawing.Size(1347, 448);
             this.dataGridViewRunTimeBills.TabIndex = 2;
-            // 
-            // GlassType
-            // 
-            this.GlassType.HeaderText = "نوع الشمبر";
-            this.GlassType.MinimumWidth = 6;
-            this.GlassType.Name = "GlassType";
-            this.GlassType.ReadOnly = true;
-            this.GlassType.Width = 125;
-            // 
-            // OpticType
-            // 
-            this.OpticType.HeaderText = "نوع العدسة";
-            this.OpticType.MinimumWidth = 6;
-            this.OpticType.Name = "OpticType";
-            this.OpticType.ReadOnly = true;
-            this.OpticType.Width = 125;
-            // 
-            // Cyl
-            // 
-            this.Cyl.HeaderText = "Cyl";
-            this.Cyl.MinimumWidth = 6;
-            this.Cyl.Name = "Cyl";
-            this.Cyl.ReadOnly = true;
-            this.Cyl.Width = 125;
-            // 
-            // Sph
-            // 
-            this.Sph.HeaderText = "Sph";
-            this.Sph.MinimumWidth = 6;
-            this.Sph.Name = "Sph";
-            this.Sph.ReadOnly = true;
-            this.Sph.Width = 125;
-            // 
-            // PriceManfuc
-            // 
-            this.PriceManfuc.HeaderText = "سعر التركيب";
-            this.PriceManfuc.MinimumWidth = 6;
-            this.PriceManfuc.Name = "PriceManfuc";
-            this.PriceManfuc.ReadOnly = true;
-            this.PriceManfuc.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "السعر";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 125;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "الكمية";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 125;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.HeaderText = "السعر الأجمالى";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 125;
             // 
             // comboBoxCustomersNames
             // 
@@ -2546,6 +2490,86 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
+            // opticsOfficeDataSet
+            // 
+            this.opticsOfficeDataSet.DataSetName = "OpticsOfficeDataSet";
+            this.opticsOfficeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // glassesTypesBindingSource
+            // 
+            this.glassesTypesBindingSource.DataMember = "GlassesTypes";
+            this.glassesTypesBindingSource.DataSource = this.opticsOfficeDataSet;
+            // 
+            // glassesTypesTableAdapter
+            // 
+            this.glassesTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // GlassType
+            // 
+            this.GlassType.DataSource = this.glassesTypesBindingSource;
+            this.GlassType.DropDownWidth = 2;
+            this.GlassType.HeaderText = "نوع الشمبر";
+            this.GlassType.MinimumWidth = 6;
+            this.GlassType.Name = "GlassType";
+            this.GlassType.ReadOnly = true;
+            this.GlassType.Width = 125;
+            // 
+            // OpticType
+            // 
+            this.OpticType.HeaderText = "نوع العدسة";
+            this.OpticType.MinimumWidth = 6;
+            this.OpticType.Name = "OpticType";
+            this.OpticType.ReadOnly = true;
+            this.OpticType.Width = 125;
+            // 
+            // Cyl
+            // 
+            this.Cyl.HeaderText = "Cyl";
+            this.Cyl.MinimumWidth = 6;
+            this.Cyl.Name = "Cyl";
+            this.Cyl.ReadOnly = true;
+            this.Cyl.Width = 125;
+            // 
+            // Sph
+            // 
+            this.Sph.HeaderText = "Sph";
+            this.Sph.MinimumWidth = 6;
+            this.Sph.Name = "Sph";
+            this.Sph.ReadOnly = true;
+            this.Sph.Width = 125;
+            // 
+            // PriceManfuc
+            // 
+            this.PriceManfuc.HeaderText = "سعر التركيب";
+            this.PriceManfuc.MinimumWidth = 6;
+            this.PriceManfuc.Name = "PriceManfuc";
+            this.PriceManfuc.ReadOnly = true;
+            this.PriceManfuc.Width = 125;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "السعر";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 125;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "الكمية";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            this.Quantity.Width = 125;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.HeaderText = "السعر الأجمالى";
+            this.TotalPrice.MinimumWidth = 6;
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 125;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2631,6 +2655,8 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opticsOfficeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glassesTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2843,14 +2869,6 @@
         private System.Windows.Forms.ComboBox comboBoxModifyManfcPrice;
         private System.Windows.Forms.NumericUpDown numericUpDownModifyManfcPrice;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.DataGridViewComboBoxColumn GlassType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OpticType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cyl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sph;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceManfuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.NumericUpDown numericUpDownSupplierAddedCost;
@@ -2859,5 +2877,16 @@
         private System.Windows.Forms.NumericUpDown numericUpDownGlassesType;
         private System.Windows.Forms.NumericUpDown numericUpDownModifyTheOpticPrice;
         private System.Windows.Forms.Button buttonSearchToModifyOpticCode;
+        private OpticsOfficeDataSet opticsOfficeDataSet;
+        private System.Windows.Forms.BindingSource glassesTypesBindingSource;
+        private OpticsOfficeDataSetTableAdapters.GlassesTypesTableAdapter glassesTypesTableAdapter;
+        private System.Windows.Forms.DataGridViewComboBoxColumn GlassType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OpticType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cyl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sph;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceManfuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
     }
 }

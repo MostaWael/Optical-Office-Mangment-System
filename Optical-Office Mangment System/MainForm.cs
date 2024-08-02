@@ -21,6 +21,12 @@ namespace Optical_Office_Mangment_System
         public MainForm()
         {
             InitializeComponent();
+
+            #region BillsGrid
+
+            #endregion
+
+
             //load the customers name to combo box
             context = new OpticsOfficeContext();
             LoadDataIntowCustomerComboBoxName();
@@ -41,9 +47,9 @@ namespace Optical_Office_Mangment_System
             comboBoxAddDestroyedObjectWorkerName.DataSource = WorkersName;
             comboBoxBorrowWorkersName.DataSource = WorkersName;
             comboBoxInfoAboutWorkerAccount.DataSource = WorkersName;
-            comboBoxPaymentSalaryWorkerName.DataSource= WorkersName;
+            comboBoxPaymentSalaryWorkerName.DataSource = WorkersName;
         }
-        
+
         private void LoadDataIntoOpticsGridView()
         {
             dataGridViewOpticsView.Rows.Clear();
@@ -76,7 +82,7 @@ namespace Optical_Office_Mangment_System
         {
             var SuppliersName = context.Suppliers.Select(x => x.Name).ToList();
             comboBoxShowPaymentSuppliers.DataSource = SuppliersName;
-            comboBoxPayToSuppliers.DataSource= SuppliersName;
+            comboBoxPayToSuppliers.DataSource = SuppliersName;
             comboBoxShowPaymentSuppliers.DataSource = SuppliersName;
             comboBoxSupplierAddCost.DataSource = SuppliersName;
         }
@@ -138,7 +144,7 @@ namespace Optical_Office_Mangment_System
 
             var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == name);
 
-            if(Supplier.Money > 0)
+            if (Supplier.Money > 0)
             {
                 Supplier.Money -= numericUpDownSupplierPayAmount.Value;
 
@@ -167,7 +173,7 @@ namespace Optical_Office_Mangment_System
         {
             string name = comboBoxPayToSuppliers.Text;
             var Supplier = context.Suppliers.FirstOrDefault(s => s.Name == name);
-            
+
             textBoxSupplierPayTotal.Text = Supplier.Money.ToString();
         }
 
@@ -176,9 +182,9 @@ namespace Optical_Office_Mangment_System
         {
             dataGridViewSupplierInfoPay.Rows.Clear();
             string supplierName = comboBoxShowPaymentSuppliers.Text;
-            var supplier = context.Suppliers.Include(s => s.Payments).FirstOrDefault(s=>s.Name == supplierName);
-        
-            foreach(var payment in supplier.Payments)
+            var supplier = context.Suppliers.Include(s => s.Payments).FirstOrDefault(s => s.Name == supplierName);
+
+            foreach (var payment in supplier.Payments)
             {
                 dataGridViewSupplierInfoPay.Rows.Add(payment.PaymentTime.ToString("dd/MM/yyyy"), payment.cost, payment.remain);
             }
@@ -427,7 +433,7 @@ namespace Optical_Office_Mangment_System
             }
 
             textBoxCustomerPayTotal.Text = customer.TotalCost.ToString();
-            
+
         }
 
         //Set Payment Amount
@@ -452,10 +458,11 @@ namespace Optical_Office_Mangment_System
             string BillStateValue = (customer.TotalCost > 0) ? "باقى منها" : "مكتملة";
 
             customer.CustomerPayments.Add(
-                new CustomerPayments { 
-                    BillNumber = customer.Bills[lastBillNumber].Number, 
-                    PaidTotal = numericUpDownCustomerPayAmount.Value, 
-                    Remain = customer.TotalCost, 
+                new CustomerPayments
+                {
+                    BillNumber = customer.Bills[lastBillNumber].Number,
+                    PaidTotal = numericUpDownCustomerPayAmount.Value,
+                    Remain = customer.TotalCost,
                     BillState = BillStateValue
                 });
             context.SaveChanges();
@@ -591,7 +598,7 @@ namespace Optical_Office_Mangment_System
 
             var optic = context.Optics.FirstOrDefault(opt => opt.Code == Code);
 
-            if(optic == null)
+            if (optic == null)
             {
                 Helper.OpticDoesNotExist();
             }
@@ -640,58 +647,19 @@ namespace Optical_Office_Mangment_System
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'opticsOfficeDataSet.GlassesTypes' table. You can move, or remove it, as needed.
+            this.glassesTypesTableAdapter.Fill(this.opticsOfficeDataSet.GlassesTypes);
             LoadDataIntoOpticsGridView();
         }
 
         #region BillsTab
         private void buttonAddIteamToBill_Click(object sender, EventArgs e)
         {
-            //string code = textBoxBillOpticCode.Text;
-
-            //var optic = context.Optics.FirstOrDefault(opt => opt.Code == code);
-
-            //var glassType = context.GlassesTypes.Select(p => p.Name).ToList();
-
-            //var GlassType = (DataGridViewComboBoxColumn)dataGridViewRunTimeBills.Columns["GlassType"];
-
-            //GlassType.DataSource = glassType;
-
-            //dataGridViewRunTimeBills.Rows.Add(
-            //    glassType.FirstOrDefault(),
-            //    optic.Type,
-            //    optic.Cyl,
-            //    optic.Sph,
-            //    optic.PriceSell,
-            //    1,
-            //    optic.PriceSell
-            //    );
-
-            //dataGridViewRunTimeBills.Refresh();
-
-            // Setup the DataGridViewComboBoxColumn
-            // Ensure the DataGridViewComboBoxColumn is set up properly
-            // Ensure the DataGridViewComboBoxColumn is set up properly
-            var glassTypeColumn = new DataGridViewComboBoxColumn
-            {
-                Name = "GlassType",
-                HeaderText = "Glass Type",
-                DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox
-            };
-
-            // Add the column to the DataGridView if it's not already added
-            if (!dataGridViewRunTimeBills.Columns.Contains("GlassType"))
-            {
-                dataGridViewRunTimeBills.Columns.Add(glassTypeColumn);
-            }
-
             // Fetch the list of glass types from the database
-            var glassTypeList = context.GlassesTypes.Select(p => p.Name).ToList();
-
-            // Set the DataSource for the combo box column
-            ((DataGridViewComboBoxColumn)dataGridViewRunTimeBills.Columns["GlassType"]).DataSource = glassTypeList;
+            var glassTypeList = context.GlassesTypes.Select(p => p.Name).ToList(); // نوع الشنبر
 
             string code = textBoxBillOpticCode.Text;
-            var optic = context.Optics.FirstOrDefault(opt => opt.Code == code);
+            var optic = context.Optics.FirstOrDefault(opt => opt.Code == code); // العدسة
 
             if (optic != null)
             {
@@ -701,8 +669,15 @@ namespace Optical_Office_Mangment_System
                 // Access the newly added row
                 var newRow = dataGridViewRunTimeBills.Rows[rowIndex];
 
-                // Set the value for the combo box cell in the new row
-                newRow.Cells["GlassType"].Value = glassTypeList.FirstOrDefault(); // Set a default value or appropriate value from the list
+                // تعيين قيمة قائمة المنسدلة للعمود الأول
+                //var comboBoxCell = (DataGridViewComboBoxCell)newRow.Cells["GlassType"];
+                //comboBoxCell.Items.Clear(); // تأكد من مسح العناصر القديمة
+                //comboBoxCell.Items.AddRange(glassTypeList.ToArray());
+
+                
+
+                //// Set a default value or appropriate value from the list
+                //newRow.Cells["GlassType"].Value = glassTypeList.FirstOrDefault();
 
                 // Set other values for the row
                 newRow.Cells["OpticType"].Value = optic.Type;
@@ -720,13 +695,8 @@ namespace Optical_Office_Mangment_System
 
             // Refresh the DataGridView to ensure it updates properly
             dataGridViewRunTimeBills.Refresh();
-
-
-
+            this.glassesTypesTableAdapter.Fill(this.opticsOfficeDataSet.GlassesTypes);
         }
-
-        //Select Manfc Price
-
 
         #endregion
 

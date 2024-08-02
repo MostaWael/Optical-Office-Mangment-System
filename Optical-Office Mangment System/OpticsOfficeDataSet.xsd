@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OpticsOfficeDataSet" targetNamespace="http://tempuri.org/OpticsOfficeDataSet.xsd" xmlns:mstns="http://tempuri.org/OpticsOfficeDataSet.xsd" xmlns="http://tempuri.org/OpticsOfficeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="OpticsOfficeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OpticsOfficeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Optical_Office_Mangment_System.Properties.Settings.GlobalReference.Default.OpticsOfficeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GlassesTypesTableAdapter" GeneratorDataComponentClassName="GlassesTypesTableAdapter" Name="GlassesTypes" UserDataComponentName="GlassesTypesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OpticsOfficeConnectionString (Settings)" DbObjectName="OpticsOffice.dbo.GlassesTypes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name FROM dbo.GlassesTypes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OpticsOfficeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="OpticsOfficeDataSet" msprop:Generator_DataSetName="OpticsOfficeDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GlassesTypes" msprop:Generator_RowEvHandlerName="GlassesTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="GlassesTypesRowDeleted" msprop:Generator_RowDeletingName="GlassesTypesRowDeleting" msprop:Generator_RowEvArgName="GlassesTypesRowChangeEvent" msprop:Generator_TablePropName="GlassesTypes" msprop:Generator_RowChangedName="GlassesTypesRowChanged" msprop:Generator_RowChangingName="GlassesTypesRowChanging" msprop:Generator_TableClassName="GlassesTypesDataTable" msprop:Generator_RowClassName="GlassesTypesRow" msprop:Generator_TableVarName="tableGlassesTypes" msprop:Generator_UserTableName="GlassesTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
