@@ -792,6 +792,7 @@ namespace Optical_Office_Mangment_System
                 optic.PriceSell
                 ))
             {
+                numericUpDowntotalBillCost.Value += (optic.PriceSell + glassType.ManfacuturePrice);
                 return;
             }
 
@@ -808,7 +809,7 @@ namespace Optical_Office_Mangment_System
                 );
 
 
-
+            numericUpDowntotalBillCost.Value += (optic.PriceSell + glassType.ManfacuturePrice);
 
         }
 
@@ -859,6 +860,7 @@ namespace Optical_Office_Mangment_System
             Helper.AddSuccess();
 
             dataGridViewRunTimeBills.Rows.Clear();
+            numericUpDowntotalBillCost.Value = 0;
 
         }
 

@@ -30,12 +30,12 @@ namespace Optical_Office_Mangment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
             this.label67 = new System.Windows.Forms.Label();
@@ -256,6 +256,8 @@ namespace Optical_Office_Mangment_System
             this.label46 = new System.Windows.Forms.Label();
             this.textBoxAddGlassesCodeCount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDowntotalBillCost = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRunTimeBills)).BeginInit();
@@ -308,6 +310,7 @@ namespace Optical_Office_Mangment_System
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntotalBillCost)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -333,6 +336,8 @@ namespace Optical_Office_Mangment_System
             // 
             // tabBills
             // 
+            this.tabBills.Controls.Add(this.numericUpDowntotalBillCost);
+            this.tabBills.Controls.Add(this.label3);
             this.tabBills.Controls.Add(this.label67);
             this.tabBills.Controls.Add(this.comboBoxGlassesTypeBill);
             this.tabBills.Controls.Add(this.dataGridViewRunTimeBills);
@@ -1825,16 +1830,16 @@ namespace Optical_Office_Mangment_System
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(8, 305);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(969, 326);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1917,17 +1922,17 @@ namespace Optical_Office_Mangment_System
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -2523,6 +2528,28 @@ namespace Optical_Office_Mangment_System
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1237, 626);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 24);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "كود المنتج:";
+            // 
+            // numericUpDowntotalBillCost
+            // 
+            this.numericUpDowntotalBillCost.Location = new System.Drawing.Point(1061, 624);
+            this.numericUpDowntotalBillCost.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDowntotalBillCost.Name = "numericUpDowntotalBillCost";
+            this.numericUpDowntotalBillCost.ReadOnly = true;
+            this.numericUpDowntotalBillCost.Size = new System.Drawing.Size(170, 32);
+            this.numericUpDowntotalBillCost.TabIndex = 12;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2608,6 +2635,7 @@ namespace Optical_Office_Mangment_System
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntotalBillCost)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2834,5 +2862,7 @@ namespace Optical_Office_Mangment_System
         private DataGridViewTextBoxColumn Manfc_Price;
         private DataGridViewTextBoxColumn TotalPrice;
         private DataGridViewTextBoxColumn OpticCode;
+        private Label label3;
+        private NumericUpDown numericUpDowntotalBillCost;
     }
 }
