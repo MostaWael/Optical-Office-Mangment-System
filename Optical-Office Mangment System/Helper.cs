@@ -58,17 +58,27 @@ namespace Optical_Office_Mangment_System
 
         public static void NoMoneyExixt()
         {
-            MessageBox.Show("خطاء فى عملية الدفع","فشل",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            MessageBox.Show("خطأ فى عملية الدفع", "فشل",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
 
         public static void NoBillsForThisCustomer()
         {
-            MessageBox.Show("لا يوجد فواتير لهذا العميل", "خطاء", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("لا يوجد فواتير لهذا العميل", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public static void OpticDoesNotExist()
         {
-            MessageBox.Show("هذا النوع غير موجود يرجى أضافته", "خطاء", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("هذا النوع غير موجود يرجى أضافته", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void NoPaymentExist()
+        {
+            MessageBox.Show("لا يوجد مدفوعات", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void BiggerThanRemain()
+        {
+            MessageBox.Show("قوم بأيداع الباقى من الفاتورة أولآ ثم الباقى قم بوضعه مرة أخرى","خطأ" , MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

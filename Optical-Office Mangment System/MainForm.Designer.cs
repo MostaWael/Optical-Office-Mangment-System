@@ -1,4 +1,6 @@
-﻿namespace Optical_Office_Mangment_System
+﻿using System.Windows.Forms;
+
+namespace Optical_Office_Mangment_System
 {
     partial class MainForm
     {
@@ -28,21 +30,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
+            this.label67 = new System.Windows.Forms.Label();
+            this.comboBoxGlassesTypeBill = new System.Windows.Forms.ComboBox();
+            this.dataGridViewRunTimeBills = new System.Windows.Forms.DataGridView();
+            this.GlassesType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpticPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manfc_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpticCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAddIteamToBill = new System.Windows.Forms.Button();
             this.label58 = new System.Windows.Forms.Label();
             this.textBoxBillOpticCode = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewRunTimeBills = new System.Windows.Forms.DataGridView();
             this.comboBoxCustomersNames = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCustomers = new System.Windows.Forms.TabPage();
@@ -66,24 +77,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCustomerAccount = new System.Windows.Forms.DataGridView();
             this.DateTimeCustomerAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerAccountInfo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCustomerMoney = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBillInfo = new System.Windows.Forms.DataGridView();
             this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCustomersNamesInfoBills = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabSuppliers = new System.Windows.Forms.TabPage();
@@ -249,17 +256,6 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBoxAddGlassesCodeCount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.opticsOfficeDataSet = new Optical_Office_Mangment_System.OpticsOfficeDataSet();
-            this.glassesTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glassesTypesTableAdapter = new Optical_Office_Mangment_System.OpticsOfficeDataSetTableAdapters.GlassesTypesTableAdapter();
-            this.GlassType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.OpticType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cyl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sph = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceManfuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRunTimeBills)).BeginInit();
@@ -268,9 +264,9 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomerPayAmount)).BeginInit();
             this.groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomerAccount)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBillInfo)).BeginInit();
             this.tabSuppliers.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSupplierAddedCost)).BeginInit();
@@ -312,8 +308,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opticsOfficeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glassesTypesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -339,12 +333,13 @@
             // 
             // tabBills
             // 
+            this.tabBills.Controls.Add(this.label67);
+            this.tabBills.Controls.Add(this.comboBoxGlassesTypeBill);
+            this.tabBills.Controls.Add(this.dataGridViewRunTimeBills);
             this.tabBills.Controls.Add(this.buttonAddIteamToBill);
             this.tabBills.Controls.Add(this.label58);
             this.tabBills.Controls.Add(this.textBoxBillOpticCode);
-            this.tabBills.Controls.Add(this.button2);
             this.tabBills.Controls.Add(this.button1);
-            this.tabBills.Controls.Add(this.dataGridViewRunTimeBills);
             this.tabBills.Controls.Add(this.comboBoxCustomersNames);
             this.tabBills.Controls.Add(this.label1);
             this.tabBills.Cursor = System.Windows.Forms.Cursors.Default;
@@ -356,6 +351,111 @@
             this.tabBills.TabIndex = 0;
             this.tabBills.Text = "الفواتير";
             this.tabBills.UseVisualStyleBackColor = true;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(1206, 98);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(97, 24);
+            this.label67.TabIndex = 10;
+            this.label67.Text = "نوع الشنبر";
+            // 
+            // comboBoxGlassesTypeBill
+            // 
+            this.comboBoxGlassesTypeBill.FormattingEnabled = true;
+            this.comboBoxGlassesTypeBill.Location = new System.Drawing.Point(959, 95);
+            this.comboBoxGlassesTypeBill.Name = "comboBoxGlassesTypeBill";
+            this.comboBoxGlassesTypeBill.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBoxGlassesTypeBill.Size = new System.Drawing.Size(241, 32);
+            this.comboBoxGlassesTypeBill.TabIndex = 9;
+            // 
+            // dataGridViewRunTimeBills
+            // 
+            this.dataGridViewRunTimeBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewRunTimeBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRunTimeBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GlassesType,
+            this.OpticType,
+            this.Sph,
+            this.Cyl,
+            this.Quantity,
+            this.OpticPrice,
+            this.Manfc_Price,
+            this.TotalPrice,
+            this.OpticCode});
+            this.dataGridViewRunTimeBills.Location = new System.Drawing.Point(8, 157);
+            this.dataGridViewRunTimeBills.Name = "dataGridViewRunTimeBills";
+            this.dataGridViewRunTimeBills.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridViewRunTimeBills.RowHeadersWidth = 51;
+            this.dataGridViewRunTimeBills.RowTemplate.Height = 26;
+            this.dataGridViewRunTimeBills.Size = new System.Drawing.Size(1343, 426);
+            this.dataGridViewRunTimeBills.TabIndex = 8;
+            // 
+            // GlassesType
+            // 
+            this.GlassesType.HeaderText = "نوع الشنبر";
+            this.GlassesType.MinimumWidth = 6;
+            this.GlassesType.Name = "GlassesType";
+            this.GlassesType.ReadOnly = true;
+            this.GlassesType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GlassesType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // OpticType
+            // 
+            this.OpticType.HeaderText = "نوع العدسة";
+            this.OpticType.MinimumWidth = 6;
+            this.OpticType.Name = "OpticType";
+            this.OpticType.ReadOnly = true;
+            // 
+            // Sph
+            // 
+            this.Sph.HeaderText = "Sph";
+            this.Sph.MinimumWidth = 6;
+            this.Sph.Name = "Sph";
+            this.Sph.ReadOnly = true;
+            // 
+            // Cyl
+            // 
+            this.Cyl.HeaderText = "Cyl";
+            this.Cyl.MinimumWidth = 6;
+            this.Cyl.Name = "Cyl";
+            this.Cyl.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "الكمية";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // OpticPrice
+            // 
+            this.OpticPrice.HeaderText = "سعر العدسة";
+            this.OpticPrice.MinimumWidth = 6;
+            this.OpticPrice.Name = "OpticPrice";
+            this.OpticPrice.ReadOnly = true;
+            // 
+            // Manfc_Price
+            // 
+            this.Manfc_Price.HeaderText = "سعر التركيب";
+            this.Manfc_Price.MinimumWidth = 6;
+            this.Manfc_Price.Name = "Manfc_Price";
+            this.Manfc_Price.ReadOnly = true;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.HeaderText = "السعر الأجمالى";
+            this.TotalPrice.MinimumWidth = 6;
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            // 
+            // OpticCode
+            // 
+            this.OpticCode.HeaderText = "Code";
+            this.OpticCode.MinimumWidth = 6;
+            this.OpticCode.Name = "OpticCode";
+            this.OpticCode.Visible = false;
             // 
             // buttonAddIteamToBill
             // 
@@ -384,16 +484,6 @@
             this.textBoxBillOpticCode.Size = new System.Drawing.Size(239, 32);
             this.textBoxBillOpticCode.TabIndex = 5;
             // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(232, 603);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 47);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.SpringGreen;
@@ -403,28 +493,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewRunTimeBills
-            // 
-            this.dataGridViewRunTimeBills.AllowDrop = true;
-            this.dataGridViewRunTimeBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRunTimeBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GlassType,
-            this.OpticType,
-            this.Cyl,
-            this.Sph,
-            this.PriceManfuc,
-            this.Price,
-            this.Quantity,
-            this.TotalPrice});
-            this.dataGridViewRunTimeBills.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridViewRunTimeBills.Location = new System.Drawing.Point(6, 115);
-            this.dataGridViewRunTimeBills.Name = "dataGridViewRunTimeBills";
-            this.dataGridViewRunTimeBills.ReadOnly = true;
-            this.dataGridViewRunTimeBills.RowHeadersWidth = 51;
-            this.dataGridViewRunTimeBills.RowTemplate.Height = 26;
-            this.dataGridViewRunTimeBills.Size = new System.Drawing.Size(1347, 448);
-            this.dataGridViewRunTimeBills.TabIndex = 2;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBoxCustomersNames
             // 
@@ -637,10 +706,8 @@
             // groupBox
             // 
             this.groupBox.Controls.Add(this.button4);
-            this.groupBox.Controls.Add(this.label6);
-            this.groupBox.Controls.Add(this.dateTimePicker2);
-            this.groupBox.Controls.Add(this.dataGridView3);
-            this.groupBox.Controls.Add(this.textBox1);
+            this.groupBox.Controls.Add(this.dataGridViewCustomerAccount);
+            this.groupBox.Controls.Add(this.textBoxCustomerAccountInfo);
             this.groupBox.Controls.Add(this.label5);
             this.groupBox.Controls.Add(this.comboBoxCustomerMoney);
             this.groupBox.Controls.Add(this.label4);
@@ -660,37 +727,20 @@
             this.button4.Text = "طباعة";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // dataGridViewCustomerAccount
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(318, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 24);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "التاريخ:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(33, 155);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(279, 28);
-            this.dateTimePicker2.TabIndex = 7;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCustomerAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomerAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DateTimeCustomerAccount,
             this.Bill,
             this.Paid,
             this.Remain});
-            this.dataGridView3.Location = new System.Drawing.Point(33, 194);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 26;
-            this.dataGridView3.Size = new System.Drawing.Size(349, 352);
-            this.dataGridView3.TabIndex = 6;
+            this.dataGridViewCustomerAccount.Location = new System.Drawing.Point(33, 163);
+            this.dataGridViewCustomerAccount.Name = "dataGridViewCustomerAccount";
+            this.dataGridViewCustomerAccount.RowHeadersWidth = 51;
+            this.dataGridViewCustomerAccount.RowTemplate.Height = 26;
+            this.dataGridViewCustomerAccount.Size = new System.Drawing.Size(349, 383);
+            this.dataGridViewCustomerAccount.TabIndex = 6;
             // 
             // DateTimeCustomerAccount
             // 
@@ -720,13 +770,13 @@
             this.Remain.Name = "Remain";
             this.Remain.Width = 125;
             // 
-            // textBox1
+            // textBoxCustomerAccountInfo
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(151, 32);
-            this.textBox1.TabIndex = 5;
+            this.textBoxCustomerAccountInfo.Location = new System.Drawing.Point(145, 108);
+            this.textBoxCustomerAccountInfo.Name = "textBoxCustomerAccountInfo";
+            this.textBoxCustomerAccountInfo.ReadOnly = true;
+            this.textBoxCustomerAccountInfo.Size = new System.Drawing.Size(151, 32);
+            this.textBoxCustomerAccountInfo.TabIndex = 5;
             // 
             // label5
             // 
@@ -744,6 +794,7 @@
             this.comboBoxCustomerMoney.Name = "comboBoxCustomerMoney";
             this.comboBoxCustomerMoney.Size = new System.Drawing.Size(263, 32);
             this.comboBoxCustomerMoney.TabIndex = 3;
+            this.comboBoxCustomerMoney.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomerMoney_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -757,9 +808,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.dataGridView2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dataGridViewBillInfo);
             this.groupBox1.Controls.Add(this.comboBoxCustomersNamesInfoBills);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(893, 25);
@@ -778,18 +827,18 @@
             this.button3.Text = "طباعة";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataGridViewBillInfo
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewBillInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBillInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DateTime,
             this.Total});
-            this.dataGridView2.Location = new System.Drawing.Point(53, 155);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 45;
-            this.dataGridView2.RowTemplate.Height = 26;
-            this.dataGridView2.Size = new System.Drawing.Size(295, 391);
-            this.dataGridView2.TabIndex = 4;
+            this.dataGridViewBillInfo.Location = new System.Drawing.Point(53, 125);
+            this.dataGridViewBillInfo.Name = "dataGridViewBillInfo";
+            this.dataGridViewBillInfo.RowHeadersWidth = 45;
+            this.dataGridViewBillInfo.RowTemplate.Height = 26;
+            this.dataGridViewBillInfo.Size = new System.Drawing.Size(295, 421);
+            this.dataGridViewBillInfo.TabIndex = 4;
             // 
             // DateTime
             // 
@@ -805,35 +854,19 @@
             this.Total.Name = "Total";
             this.Total.Width = 125;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(338, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "التاريخ:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(53, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(279, 28);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
             // comboBoxCustomersNamesInfoBills
             // 
             this.comboBoxCustomersNamesInfoBills.FormattingEnabled = true;
-            this.comboBoxCustomersNamesInfoBills.Location = new System.Drawing.Point(69, 61);
+            this.comboBoxCustomersNamesInfoBills.Location = new System.Drawing.Point(53, 61);
             this.comboBoxCustomersNamesInfoBills.Name = "comboBoxCustomersNamesInfoBills";
-            this.comboBoxCustomersNamesInfoBills.Size = new System.Drawing.Size(263, 32);
+            this.comboBoxCustomersNamesInfoBills.Size = new System.Drawing.Size(295, 32);
             this.comboBoxCustomersNamesInfoBills.TabIndex = 1;
+            this.comboBoxCustomersNamesInfoBills.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomersNamesInfoBills_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(338, 61);
+            this.label2.Location = new System.Drawing.Point(352, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 24);
             this.label2.TabIndex = 0;
@@ -1792,16 +1825,16 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(8, 305);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(969, 326);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1884,17 +1917,17 @@
             // 
             // chart2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(6, 31);
             this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(508, 223);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
@@ -2490,86 +2523,6 @@
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
-            // opticsOfficeDataSet
-            // 
-            this.opticsOfficeDataSet.DataSetName = "OpticsOfficeDataSet";
-            this.opticsOfficeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // glassesTypesBindingSource
-            // 
-            this.glassesTypesBindingSource.DataMember = "GlassesTypes";
-            this.glassesTypesBindingSource.DataSource = this.opticsOfficeDataSet;
-            // 
-            // glassesTypesTableAdapter
-            // 
-            this.glassesTypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // GlassType
-            // 
-            this.GlassType.DataSource = this.glassesTypesBindingSource;
-            this.GlassType.DropDownWidth = 2;
-            this.GlassType.HeaderText = "نوع الشمبر";
-            this.GlassType.MinimumWidth = 6;
-            this.GlassType.Name = "GlassType";
-            this.GlassType.ReadOnly = true;
-            this.GlassType.Width = 125;
-            // 
-            // OpticType
-            // 
-            this.OpticType.HeaderText = "نوع العدسة";
-            this.OpticType.MinimumWidth = 6;
-            this.OpticType.Name = "OpticType";
-            this.OpticType.ReadOnly = true;
-            this.OpticType.Width = 125;
-            // 
-            // Cyl
-            // 
-            this.Cyl.HeaderText = "Cyl";
-            this.Cyl.MinimumWidth = 6;
-            this.Cyl.Name = "Cyl";
-            this.Cyl.ReadOnly = true;
-            this.Cyl.Width = 125;
-            // 
-            // Sph
-            // 
-            this.Sph.HeaderText = "Sph";
-            this.Sph.MinimumWidth = 6;
-            this.Sph.Name = "Sph";
-            this.Sph.ReadOnly = true;
-            this.Sph.Width = 125;
-            // 
-            // PriceManfuc
-            // 
-            this.PriceManfuc.HeaderText = "سعر التركيب";
-            this.PriceManfuc.MinimumWidth = 6;
-            this.PriceManfuc.Name = "PriceManfuc";
-            this.PriceManfuc.ReadOnly = true;
-            this.PriceManfuc.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "السعر";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 125;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "الكمية";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 125;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.HeaderText = "السعر الأجمالى";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 125;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2592,10 +2545,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCustomerPayAmount)).EndInit();
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomerAccount)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBillInfo)).EndInit();
             this.tabSuppliers.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -2655,8 +2608,6 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opticsOfficeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glassesTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2672,23 +2623,17 @@
         private System.Windows.Forms.TabPage tabPageReportUpload;
         private System.Windows.Forms.ComboBox comboBoxCustomersNames;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridViewRunTimeBills;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBoxCustomersNamesInfoBills;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewBillInfo;
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.ComboBox comboBoxCustomerMoney;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridViewCustomerAccount;
+        private System.Windows.Forms.TextBox textBoxCustomerAccountInfo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -2877,16 +2822,17 @@
         private System.Windows.Forms.NumericUpDown numericUpDownGlassesType;
         private System.Windows.Forms.NumericUpDown numericUpDownModifyTheOpticPrice;
         private System.Windows.Forms.Button buttonSearchToModifyOpticCode;
-        private OpticsOfficeDataSet opticsOfficeDataSet;
-        private System.Windows.Forms.BindingSource glassesTypesBindingSource;
-        private OpticsOfficeDataSetTableAdapters.GlassesTypesTableAdapter glassesTypesTableAdapter;
-        private System.Windows.Forms.DataGridViewComboBoxColumn GlassType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OpticType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cyl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sph;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceManfuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private DataGridView dataGridViewRunTimeBills;
+        private Label label67;
+        private ComboBox comboBoxGlassesTypeBill;
+        private DataGridViewTextBoxColumn GlassesType;
+        private DataGridViewTextBoxColumn OpticType;
+        private DataGridViewTextBoxColumn Sph;
+        private DataGridViewTextBoxColumn Cyl;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn OpticPrice;
+        private DataGridViewTextBoxColumn Manfc_Price;
+        private DataGridViewTextBoxColumn TotalPrice;
+        private DataGridViewTextBoxColumn OpticCode;
     }
 }

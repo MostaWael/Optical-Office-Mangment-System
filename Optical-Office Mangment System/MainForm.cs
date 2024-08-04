@@ -29,6 +29,7 @@ namespace Optical_Office_Mangment_System
 
             //load the customers name to combo box
             context = new OpticsOfficeContext();
+            loadDataIntoGlassTypeBillsComboBox();
             LoadDataIntowCustomerComboBoxName();
             loadDataIntoSuppliersNameComboBox();
             //Load Workers DataInto the Workers ComboBox
@@ -39,6 +40,14 @@ namespace Optical_Office_Mangment_System
         }
 
         #region LoadDataFunctions
+
+
+        private void loadDataIntoGlassTypeBillsComboBox()
+        {
+            var TypesNameList = context.GlassesTypes.Select(g => g.Name).ToList();
+            comboBoxGlassesTypeBill.DataSource = TypesNameList;
+            comboBoxGlassesTypeBill.SelectedIndex = 1;
+        }
 
         private void LoadDataIntoWorkersComboBox()
         {
@@ -410,7 +419,7 @@ namespace Optical_Office_Mangment_System
         private void comboBoxCustomerPayMoney_SelectedIndexChanged(object sender, EventArgs e)
         {
             string CustomerName = comboBoxCustomerPayMoney.Text;
-            var customer = context.Customers.FirstOrDefault(x => x.Name == CustomerName);
+            var customer = context.Customers.Include(c => c.Bills).FirstOrDefault(x => x.Name == CustomerName);
 
             int lastBillNumber;
 
@@ -426,7 +435,7 @@ namespace Optical_Office_Mangment_System
 
 
 
-            if (customer.Bills.Count == 0 || customer.Bills[lastBillNumber].TotalCost == 0 || customer.Bills == null)
+            if (customer.Bills.Count == 0 || customer.Bills[lastBillNumber - 1].TotalCost == 0 || customer.Bills == null)
             {
                 Helper.NoBillsForThisCustomer();
                 return;
@@ -449,23 +458,65 @@ namespace Optical_Office_Mangment_System
         private void button5_Click(object sender, EventArgs e)
         {
             string CustomerName = comboBoxCustomerPayMoney.Text;
-            var customer = context.Customers.FirstOrDefault(x => x.Name == CustomerName);
+            var customer = context.Customers
+                .Include(x => x.Bills)
+                .FirstOrDefault(x => x.Name == CustomerName);
 
+            if (customer == null)
+            {
+                // Handle the case where the customer is not found
+                throw new Exception("Customer not found");
+            }
+
+            // Calculate the amount to be paid
+            decimal paymentAmount = numericUpDownCustomerPayAmount.Value;
+
+            // Find the first bill with a total cost greater than 0
+            var firstBillWithPositiveCost = customer.Bills
+                .OrderBy(b => b.Number) // Ensure the order if you need the first one based on the number
+                .FirstOrDefault(b => b.TotalCost > 0);
+
+            if (firstBillWithPositiveCost == null)
+            {
+                // Handle the case where no bills with a positive cost are found
+                throw new Exception("No bills with positive total cost found");
+            }
+
+            // Adjust the total cost of the bill
+            if (paymentAmount > firstBillWithPositiveCost.TotalCost)
+            {
+                //Bigger Than Remain in Bill
+                Helper.BiggerThanRemain();
+                return;
+                /*
+                paymentAmount -= firstBillWithPositiveCost.TotalCost;
+                firstBillWithPositiveCost.TotalCost = 0;
+                */
+            }
+            else
+            {
+                firstBillWithPositiveCost.TotalCost -= paymentAmount;
+                paymentAmount = 0;
+            }
+
+            // Update the customer's total cost
             customer.TotalCost -= numericUpDownCustomerPayAmount.Value;
 
-            int lastBillNumber = customer.Bills.LastOrDefault().Number;
-
+            // Determine the state of the bill
             string BillStateValue = (customer.TotalCost > 0) ? "باقى منها" : "مكتملة";
 
+            // Add the payment record
             customer.CustomerPayments.Add(
                 new CustomerPayments
                 {
-                    BillNumber = customer.Bills[lastBillNumber].Number,
+                    BillNumber = firstBillWithPositiveCost.Number,
                     PaidTotal = numericUpDownCustomerPayAmount.Value,
-                    Remain = customer.TotalCost,
+                    Remain = firstBillWithPositiveCost.TotalCost,
                     BillState = BillStateValue
                 });
+
             context.SaveChanges();
+            Helper.PaySuccessed();
         }
 
         //Add Customer
@@ -487,6 +538,52 @@ namespace Optical_Office_Mangment_System
             }
 
         }
+
+        //أستعلام فواتير
+        private void comboBoxCustomersNamesInfoBills_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewBillInfo.Rows.Clear();
+
+            string customerName = comboBoxCustomersNamesInfoBills.Text;
+            var bills = context.Customers.FirstOrDefault(c => c.Name == customerName).Bills.ToList();
+
+            foreach(var bill in bills)
+            {
+                dataGridViewBillInfo.Rows.Add(bill.BillTimeCreation.ToString("d/MM/yyyy"),bill.TotalCost);
+            }
+
+        }
+
+        //أستعلام عن حساب
+        private void comboBoxCustomerMoney_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewCustomerAccount.Rows.Clear();
+
+            string customerName = comboBoxCustomerMoney.Text;
+            var customer = context.Customers.Include(c => c.CustomerPayments).FirstOrDefault(c => c.Name == customerName);
+
+            textBoxCustomerAccountInfo.Text = customer.TotalCost.ToString();
+
+            if(customer.CustomerPayments == null || customer.CustomerPayments.Count == 0)
+            {
+                Helper.NoPaymentExist();
+                dataGridViewCustomerAccount.Rows.Clear();
+                return;
+            }
+
+            //Iterate through the payment
+            foreach (var pay in customer.CustomerPayments)
+
+                dataGridViewCustomerAccount.Rows.Add(
+                    pay.PaymentDate.ToString("d/MM/yyyy"),
+                    pay.BillNumber,
+                    pay.PaidTotal,
+                    pay.Remain
+                    );
+        }
+
+
+
         #endregion
 
         #region WareHouse
@@ -648,58 +745,125 @@ namespace Optical_Office_Mangment_System
         private void MainForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'opticsOfficeDataSet.GlassesTypes' table. You can move, or remove it, as needed.
-            this.glassesTypesTableAdapter.Fill(this.opticsOfficeDataSet.GlassesTypes);
             LoadDataIntoOpticsGridView();
         }
+
+
+
+        //check row exixtance
+        private bool DoesRowExist(string GlassType, string OpticType , string Sph, string Cyl, decimal opticPrice)
+        {
+            foreach (DataGridViewRow row in dataGridViewRunTimeBills.Rows)
+            {
+                if (
+                    row.Cells[0].Value != null && row.Cells[0].Value.ToString() == GlassType &&
+                    row.Cells[1].Value != null && row.Cells[1].Value.ToString() == OpticType &&
+                    row.Cells[2].Value != null && row.Cells[2].Value.ToString() == Sph &&
+                    row.Cells[3].Value != null && row.Cells[3].Value.ToString() == Cyl)
+                {
+                    row.Cells[4].Value = (int)row.Cells[4].Value + 1; //QUANTITY
+                    row.Cells[7].Value = (int)row.Cells[4].Value * (opticPrice + (decimal)row.Cells[6].Value);
+
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
 
         #region BillsTab
         private void buttonAddIteamToBill_Click(object sender, EventArgs e)
         {
+
             // Fetch the list of glass types from the database
-            var glassTypeList = context.GlassesTypes.Select(p => p.Name).ToList(); // نوع الشنبر
+            var glassType = context.GlassesTypes.FirstOrDefault(typ => typ.Name == comboBoxGlassesTypeBill.SelectedItem.ToString()); // نوع الشنبر
 
             string code = textBoxBillOpticCode.Text;
             var optic = context.Optics.FirstOrDefault(opt => opt.Code == code); // العدسة
 
-            if (optic != null)
+
+            //If Row already exist
+            if (DoesRowExist(
+                glassType.Name,
+                optic.Type,
+                optic.Sph,
+                optic.Cyl,
+                optic.PriceSell
+                ))
             {
-                // Add a new row
-                int rowIndex = dataGridViewRunTimeBills.Rows.Add();
+                return;
+            }
 
-                // Access the newly added row
-                var newRow = dataGridViewRunTimeBills.Rows[rowIndex];
+            dataGridViewRunTimeBills.Rows.Add(
+                glassType.Name,
+                optic.Type,
+                optic.Sph,
+                optic.Cyl,
+                1,
+                optic.PriceSell,
+                glassType.ManfacuturePrice,
+                (optic.PriceSell + glassType.ManfacuturePrice),
+                code
+                );
 
-                // تعيين قيمة قائمة المنسدلة للعمود الأول
-                //var comboBoxCell = (DataGridViewComboBoxCell)newRow.Cells["GlassType"];
-                //comboBoxCell.Items.Clear(); // تأكد من مسح العناصر القديمة
-                //comboBoxCell.Items.AddRange(glassTypeList.ToArray());
 
-                
 
-                //// Set a default value or appropriate value from the list
-                //newRow.Cells["GlassType"].Value = glassTypeList.FirstOrDefault();
 
-                // Set other values for the row
-                newRow.Cells["OpticType"].Value = optic.Type;
-                newRow.Cells["Cyl"].Value = optic.Cyl;
-                newRow.Cells["Sph"].Value = optic.Sph;
-                newRow.Cells["PriceManfuc"].Value = 10;
-                newRow.Cells["Price"].Value = optic.PriceSell;
-                newRow.Cells["Quantity"].Value = 1;
-                newRow.Cells["TotalPrice"].Value = optic.PriceSell;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string CustomerName = comboBoxCustomersNames.SelectedItem.ToString();
+            var customer = context.Customers.FirstOrDefault(c => c.Name == CustomerName);
+
+            var Bill = new Bill();
+            
+            if(customer.Bills.LastOrDefault() == null)
+            {
+                Bill.Number = 1;
             }
             else
             {
-                MessageBox.Show("No optic found with the given code.");
+                Bill.Number = customer.Bills.LastOrDefault().Number + 1;
             }
 
-            // Refresh the DataGridView to ensure it updates properly
-            dataGridViewRunTimeBills.Refresh();
-            this.glassesTypesTableAdapter.Fill(this.opticsOfficeDataSet.GlassesTypes);
+            decimal TotalCostInBill = 0;
+
+            for (int i = 0; i < dataGridViewRunTimeBills.Rows.Count - 1; i++)
+            {
+                DataGridViewRow row = dataGridViewRunTimeBills.Rows[i];
+
+                string code = row.Cells[8].Value.ToString();
+
+                var Optic = context.Optics.FirstOrDefault(c => c.Code == code);
+                Bill.Iteams.Add(new BillIteam
+                {
+                    optic = Optic,
+                    PriceManfcture = (decimal)row.Cells[6].Value,
+                    TotalPrice = (decimal)row.Cells[7].Value,
+                    Quantity = (int)row.Cells[4].Value,
+                });
+
+                TotalCostInBill += (decimal)row.Cells[7].Value;
+            }
+
+            Bill.TotalCost = TotalCostInBill;
+
+            customer.TotalCost += TotalCostInBill;
+
+            customer.Bills.Add(Bill);
+
+            context.SaveChanges();
+
+            Helper.AddSuccess();
+
+            dataGridViewRunTimeBills.Rows.Clear();
+
         }
 
-        #endregion
 
+        #endregion
 
     }
 }
