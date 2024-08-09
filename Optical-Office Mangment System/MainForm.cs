@@ -1,4 +1,5 @@
-﻿using Optical_Office_Mangment_System.Models;
+﻿using Optical_Office_Mangment_System.DTOs;
+using Optical_Office_Mangment_System.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,9 +7,14 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+
+
 
 namespace Optical_Office_Mangment_System
 {
@@ -35,8 +41,6 @@ namespace Optical_Office_Mangment_System
             //Load Workers DataInto the Workers ComboBox
             LoadDataIntoWorkersComboBox();
             loadDataIntoGlassTypeComboBox();
-            this.dateTimePickerAnalyticsMonthley.Format = DateTimePickerFormat.Custom;
-            this.dateTimePickerAnalyticsMonthley.CustomFormat = "MMMM yyyy";
         }
 
         #region LoadDataFunctions
@@ -423,7 +427,7 @@ namespace Optical_Office_Mangment_System
 
             int lastBillNumber;
 
-            if (customer.Bills.LastOrDefault() == null)
+            if (customer.Bills.LastOrDefault() == null || customer.TotalCost == 0) 
             {
                 Helper.NoBillsForThisCustomer();
                 return;
@@ -846,6 +850,8 @@ namespace Optical_Office_Mangment_System
                     Quantity = (int)row.Cells[4].Value,
                 });
 
+                Optic.Quantity -= (int)row.Cells[4].Value;
+
                 TotalCostInBill += (decimal)row.Cells[7].Value;
             }
 
@@ -863,7 +869,174 @@ namespace Optical_Office_Mangment_System
             numericUpDowntotalBillCost.Value = 0;
 
         }
+        #endregion
 
+        #region UploadReports
+
+        private async void SendReportToAPI(ReportDto reportDto)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    string url = "http://localhost:5147/api/Reports";
+                    string jsonReport = JsonSerializer.Serialize(reportDto);
+                    StringContent content = new StringContent(jsonReport, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync(url, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Report uploaded successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to upload the report. Server returned status: " + response.StatusCode);
+                    }
+                }
+                catch (HttpRequestException)
+                {
+                    MessageBox.Show("No Internet connection found.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            DateTime today = DateTime.Today;
+
+            var payments = GetPaymentsToday();
+            decimal totalPayments = TotalPayments(payments);
+            var DestroyedOptics = GetDestroyedOpticsToday();
+            decimal totalLose = TotalDestroyOptics(DestroyedOptics);
+            var bills = GetBillsToday();
+            decimal TotalBills = GetTotalBills(bills);
+
+            var ReportDto = new ReportDto
+            {
+                Bills = bills,
+                DestroyedOptics = DestroyedOptics,
+                payments = payments,
+                ReportTime = today,
+                PaymentsTotal = totalPayments,
+                LosesTotal = totalLose,
+                BillsTotal = TotalBills,
+            };
+
+            SendReportToAPI(ReportDto);
+        }
+
+        private List<PaymentDto> GetPaymentsToday()
+        {
+            DateTime today = DateTime.Today;
+            var PaymentDtos = new List<PaymentDto>();
+
+            var CustomerPayment = context.CustomerPayments
+                .Where(c => c.PaymentDate == today)
+                .Select(c => new
+                {
+                    PaidTotal = c.PaidTotal,
+                    CustomerName = c.Customer.Name
+                })
+                .ToList();
+
+            foreach (var payment in CustomerPayment)
+            {
+                PaymentDtos.Add(new PaymentDto
+                {
+                    CustomerName = payment.CustomerName,
+                    PaidTotal = payment.PaidTotal
+                });
+            }
+
+            return PaymentDtos;
+        }
+
+        private decimal TotalPayments(List<PaymentDto> payments)
+        {
+            decimal totalPayments = 0;
+            foreach (var payment in payments)
+            {
+                totalPayments += payment.PaidTotal;
+            }
+            return totalPayments;
+        }
+
+        private List<DestroyedOpticDto> GetDestroyedOpticsToday()
+        {
+            DateTime today = DateTime.Today;
+            var DestroyedOptics = context.DestroyedOptics
+                .Where(o => o.PaymentDate == today)
+                .Select(o => new
+                {
+                    WorkerName = o.Workers.Name,
+                    PriceBuy = o.Optics.PriceBuy,
+                })
+                .ToList();
+
+            var DestroyedOpticsDto = new List<DestroyedOpticDto>();
+
+            foreach (var optic in DestroyedOptics)
+            {
+                DestroyedOpticsDto.Add(new DestroyedOpticDto
+                {
+                    WorkerName = optic.WorkerName,
+                    PriceBuy = optic.PriceBuy
+                });
+            }
+
+            return DestroyedOpticsDto;
+        }
+
+        private decimal TotalDestroyOptics(List<DestroyedOpticDto> Optics)
+        {
+            decimal totalLose = 0;
+            foreach (var optic in Optics)
+            {
+                totalLose += optic.PriceBuy;
+            }
+            return totalLose;
+        }
+
+        public List<BillDto> GetBillsToday()
+        {
+            DateTime today = DateTime.Today;
+
+            var bills = context.Bills
+                .Where(b => b.BillTimeCreation == today)
+                .Select(b => new
+                {
+                    billCost = b.TotalCost,
+                    CustomerName = b.Customer.Name
+                })
+                .ToList();
+
+            var BillsToday = new List<BillDto>();
+
+            foreach (var bill in bills)
+            {
+                BillsToday.Add(new BillDto
+                {
+                    CustomerName = bill.CustomerName,
+                    BillCost = bill.billCost
+                });
+            }
+
+            return BillsToday;
+        }
+
+        public decimal GetTotalBills(List<BillDto> Bills)
+        {
+            decimal TotalBills = 0;
+            foreach (var bill in Bills)
+            {
+                TotalBills += bill.BillCost;
+            }
+            return TotalBills;
+        }
 
         #endregion
 

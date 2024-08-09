@@ -30,14 +30,10 @@ namespace Optical_Office_Mangment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabBills = new System.Windows.Forms.TabPage();
+            this.numericUpDowntotalBillCost = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.comboBoxGlassesTypeBill = new System.Windows.Forms.ComboBox();
             this.dataGridViewRunTimeBills = new System.Windows.Forms.DataGridView();
@@ -89,8 +85,6 @@ namespace Optical_Office_Mangment_System
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridViewBillInfo = new System.Windows.Forms.DataGridView();
-            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxCustomersNamesInfoBills = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabSuppliers = new System.Windows.Forms.TabPage();
@@ -183,21 +177,6 @@ namespace Optical_Office_Mangment_System
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxWorkerName = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.tabAnalytics = new System.Windows.Forms.TabPage();
-            this.dateTimePickerAnalyticsMonthley = new System.Windows.Forms.DateTimePicker();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPageReportUpload = new System.Windows.Forms.TabPage();
             this.button17 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -256,10 +235,11 @@ namespace Optical_Office_Mangment_System
             this.label46 = new System.Windows.Forms.Label();
             this.textBoxAddGlassesCodeCount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDowntotalBillCost = new System.Windows.Forms.NumericUpDown();
+            this.DateTimeBillInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabBills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntotalBillCost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRunTimeBills)).BeginInit();
             this.tabCustomers.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -289,11 +269,6 @@ namespace Optical_Office_Mangment_System
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkerAccountInformative)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).BeginInit();
-            this.tabAnalytics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.groupBox15.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPageReportUpload.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxAddManfcturePrice.SuspendLayout();
@@ -310,7 +285,6 @@ namespace Optical_Office_Mangment_System
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddTypePriceSell)).BeginInit();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntotalBillCost)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -319,7 +293,6 @@ namespace Optical_Office_Mangment_System
             this.tabControl1.Controls.Add(this.tabCustomers);
             this.tabControl1.Controls.Add(this.tabSuppliers);
             this.tabControl1.Controls.Add(this.tabWorkers);
-            this.tabControl1.Controls.Add(this.tabAnalytics);
             this.tabControl1.Controls.Add(this.tabPageReportUpload);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -356,6 +329,28 @@ namespace Optical_Office_Mangment_System
             this.tabBills.TabIndex = 0;
             this.tabBills.Text = "الفواتير";
             this.tabBills.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDowntotalBillCost
+            // 
+            this.numericUpDowntotalBillCost.Location = new System.Drawing.Point(1061, 624);
+            this.numericUpDowntotalBillCost.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDowntotalBillCost.Name = "numericUpDowntotalBillCost";
+            this.numericUpDowntotalBillCost.ReadOnly = true;
+            this.numericUpDowntotalBillCost.Size = new System.Drawing.Size(170, 32);
+            this.numericUpDowntotalBillCost.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1237, 626);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 24);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "كود المنتج:";
             // 
             // label67
             // 
@@ -836,7 +831,7 @@ namespace Optical_Office_Mangment_System
             // 
             this.dataGridViewBillInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBillInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DateTime,
+            this.DateTimeBillInfo,
             this.Total});
             this.dataGridViewBillInfo.Location = new System.Drawing.Point(53, 125);
             this.dataGridViewBillInfo.Name = "dataGridViewBillInfo";
@@ -844,20 +839,6 @@ namespace Optical_Office_Mangment_System
             this.dataGridViewBillInfo.RowTemplate.Height = 26;
             this.dataGridViewBillInfo.Size = new System.Drawing.Size(295, 421);
             this.dataGridViewBillInfo.TabIndex = 4;
-            // 
-            // DateTime
-            // 
-            this.DateTime.HeaderText = "التاريخ";
-            this.DateTime.MinimumWidth = 6;
-            this.DateTime.Name = "DateTime";
-            this.DateTime.Width = 125;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "الأجمالى";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            this.Total.Width = 125;
             // 
             // comboBoxCustomersNamesInfoBills
             // 
@@ -1778,165 +1759,6 @@ namespace Optical_Office_Mangment_System
             this.label23.TabIndex = 5;
             this.label23.Text = "أسم العامل:";
             // 
-            // tabAnalytics
-            // 
-            this.tabAnalytics.Controls.Add(this.dateTimePickerAnalyticsMonthley);
-            this.tabAnalytics.Controls.Add(this.label44);
-            this.tabAnalytics.Controls.Add(this.label43);
-            this.tabAnalytics.Controls.Add(this.dateTimePicker3);
-            this.tabAnalytics.Controls.Add(this.chart1);
-            this.tabAnalytics.Controls.Add(this.groupBox15);
-            this.tabAnalytics.Controls.Add(this.groupBox14);
-            this.tabAnalytics.Location = new System.Drawing.Point(4, 33);
-            this.tabAnalytics.Name = "tabAnalytics";
-            this.tabAnalytics.Size = new System.Drawing.Size(1359, 673);
-            this.tabAnalytics.TabIndex = 4;
-            this.tabAnalytics.Text = "التحليلات";
-            this.tabAnalytics.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerAnalyticsMonthley
-            // 
-            this.dateTimePickerAnalyticsMonthley.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerAnalyticsMonthley.Location = new System.Drawing.Point(991, 116);
-            this.dateTimePickerAnalyticsMonthley.Name = "dateTimePickerAnalyticsMonthley";
-            this.dateTimePickerAnalyticsMonthley.Size = new System.Drawing.Size(279, 28);
-            this.dateTimePickerAnalyticsMonthley.TabIndex = 7;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(1276, 120);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(68, 24);
-            this.label44.TabIndex = 6;
-            this.label44.Text = "الشهر:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(1276, 65);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(56, 24);
-            this.label43.TabIndex = 5;
-            this.label43.Text = "اليوم:";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(991, 61);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(279, 28);
-            this.dateTimePicker3.TabIndex = 4;
-            // 
-            // chart1
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(8, 305);
-            this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(969, 326);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.textBox29);
-            this.groupBox15.Controls.Add(this.label42);
-            this.groupBox15.Controls.Add(this.textBox28);
-            this.groupBox15.Controls.Add(this.label41);
-            this.groupBox15.Controls.Add(this.textBox27);
-            this.groupBox15.Controls.Add(this.label40);
-            this.groupBox15.Location = new System.Drawing.Point(559, 30);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(418, 269);
-            this.groupBox15.TabIndex = 3;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "الأرباح";
-            // 
-            // textBox29
-            // 
-            this.textBox29.Location = new System.Drawing.Point(18, 163);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.ReadOnly = true;
-            this.textBox29.Size = new System.Drawing.Size(262, 32);
-            this.textBox29.TabIndex = 5;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(286, 171);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(120, 24);
-            this.label42.TabIndex = 4;
-            this.label42.Text = "صافى الأرباح:";
-            // 
-            // textBox28
-            // 
-            this.textBox28.Location = new System.Drawing.Point(18, 104);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.ReadOnly = true;
-            this.textBox28.Size = new System.Drawing.Size(262, 32);
-            this.textBox28.TabIndex = 3;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(295, 104);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(83, 24);
-            this.label41.TabIndex = 2;
-            this.label41.Text = "الخسائر:";
-            // 
-            // textBox27
-            // 
-            this.textBox27.Location = new System.Drawing.Point(18, 57);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(262, 32);
-            this.textBox27.TabIndex = 1;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(295, 57);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(65, 24);
-            this.label40.TabIndex = 0;
-            this.label40.Text = "الأرباح:";
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.chart2);
-            this.groupBox14.Location = new System.Drawing.Point(8, 30);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(533, 269);
-            this.groupBox14.TabIndex = 2;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "المبيعات";
-            // 
-            // chart2
-            // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
-            this.chart2.Location = new System.Drawing.Point(6, 31);
-            this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
-            this.chart2.Size = new System.Drawing.Size(508, 223);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
-            // 
             // tabPageReportUpload
             // 
             this.tabPageReportUpload.Controls.Add(this.button17);
@@ -1955,6 +1777,7 @@ namespace Optical_Office_Mangment_System
             this.button17.TabIndex = 0;
             this.button17.Text = "رفع تقراير اليوم";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // tabPage1
             // 
@@ -2528,27 +2351,19 @@ namespace Optical_Office_Mangment_System
             this.label45.TabIndex = 0;
             this.label45.Text = "الكود:";
             // 
-            // label3
+            // DateTimeBillInfo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1237, 626);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 24);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "كود المنتج:";
+            this.DateTimeBillInfo.HeaderText = "التاريخ";
+            this.DateTimeBillInfo.MinimumWidth = 6;
+            this.DateTimeBillInfo.Name = "DateTimeBillInfo";
+            this.DateTimeBillInfo.Width = 125;
             // 
-            // numericUpDowntotalBillCost
+            // Total
             // 
-            this.numericUpDowntotalBillCost.Location = new System.Drawing.Point(1061, 624);
-            this.numericUpDowntotalBillCost.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDowntotalBillCost.Name = "numericUpDowntotalBillCost";
-            this.numericUpDowntotalBillCost.ReadOnly = true;
-            this.numericUpDowntotalBillCost.Size = new System.Drawing.Size(170, 32);
-            this.numericUpDowntotalBillCost.TabIndex = 12;
+            this.Total.HeaderText = "الأجمالى";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.Width = 125;
             // 
             // MainForm
             // 
@@ -2563,6 +2378,7 @@ namespace Optical_Office_Mangment_System
             this.tabControl1.ResumeLayout(false);
             this.tabBills.ResumeLayout(false);
             this.tabBills.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntotalBillCost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRunTimeBills)).EndInit();
             this.tabCustomers.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -2606,13 +2422,6 @@ namespace Optical_Office_Mangment_System
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWorkerSalary)).EndInit();
-            this.tabAnalytics.ResumeLayout(false);
-            this.tabAnalytics.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.tabPageReportUpload.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxAddManfcturePrice.ResumeLayout(false);
@@ -2635,7 +2444,6 @@ namespace Optical_Office_Mangment_System
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlassesType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntotalBillCost)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2647,7 +2455,6 @@ namespace Optical_Office_Mangment_System
         private System.Windows.Forms.TabPage tabCustomers;
         private System.Windows.Forms.TabPage tabSuppliers;
         private System.Windows.Forms.TabPage tabWorkers;
-        private System.Windows.Forms.TabPage tabAnalytics;
         private System.Windows.Forms.TabPage tabPageReportUpload;
         private System.Windows.Forms.ComboBox comboBoxCustomersNames;
         private System.Windows.Forms.Label label1;
@@ -2751,20 +2558,6 @@ namespace Optical_Office_Mangment_System
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.DateTimePicker dateTimePickerAnalyticsMonthley;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Label label45;
@@ -2800,8 +2593,6 @@ namespace Optical_Office_Mangment_System
         private System.Windows.Forms.TextBox textBoxBillOpticCode;
         private System.Windows.Forms.Button buttonAddIteamToBill;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeCustomerAccount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bill;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paid;
@@ -2864,5 +2655,7 @@ namespace Optical_Office_Mangment_System
         private DataGridViewTextBoxColumn OpticCode;
         private Label label3;
         private NumericUpDown numericUpDowntotalBillCost;
+        private DataGridViewTextBoxColumn DateTimeBillInfo;
+        private DataGridViewTextBoxColumn Total;
     }
 }

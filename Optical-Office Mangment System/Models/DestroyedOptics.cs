@@ -13,6 +13,7 @@ namespace Optical_Office_Mangment_System.Models
         [Key]
         public int Id { get; set; }
         public int Optics_Id { get; set; }
+        public DateTime PaymentDate { get; set; } = DateTime.Now;
         public int Workers_Id { get; set; }
         [ForeignKey("Optics_Id")]
         public Optics Optics { get; set; }

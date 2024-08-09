@@ -12,7 +12,7 @@ namespace Optical_Office_Mangment_System.Models
         [Key]
         public int Id { get; set;}
         
-        public DateTime PaymentDate { get; set;} = DateTime.Now;
+        public DateTime PaymentDate { get; set;} = DateTime.Today;
         public decimal PaidTotal { get; set;}
         public decimal Remain { get; set;}
         public int BillNumber { get; set;}
