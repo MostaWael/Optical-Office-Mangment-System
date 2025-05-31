@@ -35,8 +35,7 @@ This project is a comprehensive Optical Shop Management System composed of two m
 - Secure login form with **username** and **password**.
 - Validates user credentials before accessing the system.
 
-> 📸 *Image Required: Screenshot of the login form*  
-> Save as: `screenshots/login_form.png`
+![Login Form](screenshots/login_form.png)
 
 #### 2. Main Form Tabs
 
@@ -47,8 +46,7 @@ This project is a comprehensive Optical Shop Management System composed of two m
   - Optic Code
   - Type of Glasses Frame
 
-> 📸 *Image Required: Screenshot of the Bills Tab*  
-> Save as: `screenshots/bills_tab.png`
+![Bills Tab](screenshots/bills_tab.png)
 
 ##### Customer Tab
 - View a list of customer bills.
@@ -59,16 +57,14 @@ This project is a comprehensive Optical Shop Management System composed of two m
   - Add new customer
   - Record payments
 
-> 📸 *Image Required: Screenshot of the Customer Tab*  
-> Save as: `screenshots/customer_tab.png`
+![Customer Tab](screenshots/customer_tab.png)
 
 ##### Suppliers Tab
 - Track payments made to suppliers and their sources.
 - Add new suppliers.
 - Pay or deposit money into supplier accounts.
 
-> 📸 *Image Required: Screenshot of the Suppliers Tab*  
-> Save as: `screenshots/suppliers_tab.png`
+![Suppliers Tab](screenshots/suppliers_tab.png)
 
 ##### Workers Tab
 - Manage worker profiles:
@@ -77,14 +73,12 @@ This project is a comprehensive Optical Shop Management System composed of two m
   - Check account status
   - Process salary payments
 
-> 📸 *Image Required: Screenshot of the Workers Tab*  
-> Save as: `screenshots/workers_tab.png`
+![Workers Tab](screenshots/workers_tab.png)
 
 ##### Push Report Tab
 - Push daily reports from the desktop application to a connected mobile app.
 
-> 📸 *Image Required: Screenshot of the Push Report Tab*  
-> Save as: `screenshots/push_report_tab.png`
+![Push Report Tab](screenshots/push_report_tab.png)
 
 ##### Warehouse Tab
 - Inventory and price management:
@@ -93,8 +87,7 @@ This project is a comprehensive Optical Shop Management System composed of two m
   - Edit prices
   - Manage optic manufacturers
 
-> 📸 *Image Required: Screenshot of the Warehouse Tab*  
-> Save as: `screenshots/warehouse_tab.png`
+![Warehouse Tab](screenshots/warehouse_tab.png)
 
 ---
 
